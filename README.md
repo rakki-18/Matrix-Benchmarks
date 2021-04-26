@@ -16,6 +16,6 @@ Package to benchmark different matrix types and operations in Pharo
 To run the symmetric matrix benchmark
 ```
 |aBenchmark|
-aBenchmark := `Symmetric new.
+aBenchmark := Symmetric new.
 aBenchmark benchmark.
 ```
