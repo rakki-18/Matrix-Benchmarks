@@ -1,12 +1,12 @@
 Class {
-	#name : #Symmetric,
+	#name : #PMSymmetricBenchmark,
 	#superclass : #Object,
 	#category : #'Matrix-Benchmark'
 }
 
 { #category : #benchmarking }
-Symmetric >> benchmark [
-	"benchmarks initialisation time of Symmetric Matrix class"
+PMSymmetricBenchmark >> randomMatrix [
+	"benchmarks initialisation time of PMSymmetric Matrix class with random elements"
 
 			
 	|time|
