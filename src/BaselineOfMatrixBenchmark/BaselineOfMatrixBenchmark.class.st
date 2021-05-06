@@ -14,5 +14,5 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 				package: 'Matrix-Benchmark'.
 
 			spec 
-				group: 'Core' 			with: #('Matrix-Benchmarks')]
+				group: 'Core' 			with: #('Matrix-Benchmark')]
 ]
