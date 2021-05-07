@@ -8,6 +8,7 @@ Package to benchmark different matrix types and operations in Pharo
 - AIColumnMatrix
 - AIRowMatrix
 - AISymetricMatrix
+- PMMatrix
 
 ## Matrix Types covered
 - Symmetric Matrix
