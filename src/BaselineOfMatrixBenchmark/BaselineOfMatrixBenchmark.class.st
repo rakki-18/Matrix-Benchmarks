@@ -17,7 +17,7 @@ BaselineOfMatrixBenchmark >> baseline: spec [
   				baseline: 'AILinearAlgebra'
 				with: [ spec repository: 'github://pharo-ai/linear-algebra/src' ].
 			spec 
-				package: 'Matrix-Benchmark';
+				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath') ];
 				package: 'Matrix-Benchmark-Tests' with: [ spec requires: #('Matrix-Benchmark') ].
 
 			spec 
