@@ -8,7 +8,7 @@ Class {
 AIColumnBenchmarkTest >> testinitialization [
 	|aBenchmark time|
 	
-	aBenchmark := AIColumnBenchmark new.
+	aBenchmark := MBAIColumnBenchmark new.
 	time := aBenchmark initialization.
 	self assert: time > 0.
 ]

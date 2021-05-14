@@ -8,7 +8,7 @@ Class {
 Array2DBenchmarkTest >> testcolumnVector [
 	|aBenchmark time|
 	
-	aBenchmark := Array2DBenchmark new.
+	aBenchmark := MBArray2DBenchmark new.
 	time := aBenchmark columnVector.
 	self assert: time >= 0.
 ]
@@ -17,7 +17,7 @@ Array2DBenchmarkTest >> testcolumnVector [
 Array2DBenchmarkTest >> testdiagonal [
 	|aBenchmark time|
 	
-	aBenchmark := Array2DBenchmark new.
+	aBenchmark := MBArray2DBenchmark new.
 	time := aBenchmark diagonal.
 	self assert: time > 0.
 ]
@@ -26,7 +26,7 @@ Array2DBenchmarkTest >> testdiagonal [
 Array2DBenchmarkTest >> testequalMatrix [
 	|aBenchmark time|
 	
-	aBenchmark := Array2DBenchmark new.
+	aBenchmark := MBArray2DBenchmark new.
 	time := aBenchmark equalMatrix.
 	self assert: time > 0.
 ]
@@ -35,7 +35,7 @@ Array2DBenchmarkTest >> testequalMatrix [
 Array2DBenchmarkTest >> testidentity [
 	|aBenchmark time|
 	
-	aBenchmark := Array2DBenchmark new.
+	aBenchmark := MBArray2DBenchmark new.
 	time := aBenchmark identity.
 	self assert: time > 0.
 ]
@@ -44,7 +44,7 @@ Array2DBenchmarkTest >> testidentity [
 Array2DBenchmarkTest >> testnullMatrix [
 	|aBenchmark time|
 	
-	aBenchmark := Array2DBenchmark new.
+	aBenchmark := MBArray2DBenchmark new.
 	time := aBenchmark nullMatrix.
 	self assert: time > 0.
 ]
@@ -53,7 +53,7 @@ Array2DBenchmarkTest >> testnullMatrix [
 Array2DBenchmarkTest >> testrandomMatrix [
 	|aBenchmark time|
 	
-	aBenchmark := Array2DBenchmark new.
+	aBenchmark := MBArray2DBenchmark new.
 	time := aBenchmark randomMatrix.
 	self assert: time > 0.
 ]
@@ -62,7 +62,7 @@ Array2DBenchmarkTest >> testrandomMatrix [
 Array2DBenchmarkTest >> testrowVector [
 	|aBenchmark time|
 	
-	aBenchmark := Array2DBenchmark new.
+	aBenchmark := MBArray2DBenchmark new.
 	time := aBenchmark rowVector.
 	self assert: time >= 0.
 ]

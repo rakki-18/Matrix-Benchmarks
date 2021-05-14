@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #benchmarking }
-AIColumnBenchmark >> initialization [
+MBAIColumnBenchmark >> initialization [
 	"benchmarks initialisation time of  AIColumnMatrix class"
 			
 	| time |

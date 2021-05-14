@@ -8,7 +8,7 @@ Class {
 PMMatrixBenchmarkTest >> testequalMatrix [  
 	|aBenchmark time|
 	
-	aBenchmark := PMMatrixBenchmark new.
+	aBenchmark := MBPMMatrixBenchmark new.
 	time := aBenchmark equalMatrix.
 	self assert: time > 0.
 ]
@@ -17,7 +17,7 @@ PMMatrixBenchmarkTest >> testequalMatrix [
 PMMatrixBenchmarkTest >> testnullMatrix [ 
 	|aBenchmark time|
 	
-	aBenchmark := PMMatrixBenchmark new.
+	aBenchmark := MBPMMatrixBenchmark new.
 	time := aBenchmark nullMatrix.
 	self assert: time > 0.
 ]
@@ -26,7 +26,7 @@ PMMatrixBenchmarkTest >> testnullMatrix [
 PMMatrixBenchmarkTest >> testones [  
 	|aBenchmark time|
 	
-	aBenchmark := PMMatrixBenchmark new.
+	aBenchmark := MBPMMatrixBenchmark new.
 	time := aBenchmark ones.
 	self assert: time > 0.
 ]
@@ -35,7 +35,7 @@ PMMatrixBenchmarkTest >> testones [
 PMMatrixBenchmarkTest >> testzeros [
 	|aBenchmark time|
 	
-	aBenchmark := PMMatrixBenchmark new.
+	aBenchmark := MBPMMatrixBenchmark new.
 	time := aBenchmark zeros.
 	self assert: time > 0.
 ]

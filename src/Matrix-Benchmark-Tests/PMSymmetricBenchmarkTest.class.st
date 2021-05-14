@@ -8,7 +8,7 @@ Class {
 PMSymmetricBenchmarkTest >> testrandomMatrix [ 
 	|aBenchmark time|
 	
-	aBenchmark := PMSymmetricBenchmark new.
+	aBenchmark := MBPMSymmetricBenchmark new.
 	time := aBenchmark randomMatrix.
 	self assert: time > 0.
 ]

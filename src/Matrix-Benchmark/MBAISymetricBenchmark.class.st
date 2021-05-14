@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #benchmarking }
-AISymetricBenchmark >> initialization [
+MBAISymetricBenchmark >> initialization [
 	"benchmarks initialisation time of AISymetricMatrix class"
 			
 	| time |

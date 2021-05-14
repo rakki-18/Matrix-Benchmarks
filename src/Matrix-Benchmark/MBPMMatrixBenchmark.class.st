@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #benchmarking }
-PMMatrixBenchmark >> equalMatrix [
+MBPMMatrixBenchmark >> equalMatrix [
 
 	| time |
 	
@@ -14,7 +14,7 @@ PMMatrixBenchmark >> equalMatrix [
 ]
 
 { #category : #benchmarking }
-PMMatrixBenchmark >> nullMatrix [
+MBPMMatrixBenchmark >> nullMatrix [
 
 	| time |
 	
@@ -23,7 +23,7 @@ PMMatrixBenchmark >> nullMatrix [
 ]
 
 { #category : #benchmarking }
-PMMatrixBenchmark >> ones [
+MBPMMatrixBenchmark >> ones [
 
 	| time |
 	
@@ -32,7 +32,7 @@ PMMatrixBenchmark >> ones [
 ]
 
 { #category : #benchmarking }
-PMMatrixBenchmark >> zeros [
+MBPMMatrixBenchmark >> zeros [
 
 	| time |
 	time := Time millisecondsToRun: [ PMMatrix zerosRows: 5000 cols: 5000].

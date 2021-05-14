@@ -8,7 +8,7 @@ Class {
 AIDiagonalBenchmarkTest >> testinitialization [
 	|aBenchmark time|
 	
-	aBenchmark := AIRowBenchmark  new.
+	aBenchmark := MBAIRowBenchmark  new.
 	time := aBenchmark initialization.
 	self assert: time > 0.
 ]

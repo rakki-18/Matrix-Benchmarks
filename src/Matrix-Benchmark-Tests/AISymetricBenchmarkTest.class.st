@@ -8,7 +8,7 @@ Class {
 AISymetricBenchmarkTest >> testinitialization [
 	|aBenchmark time|
 	
-	aBenchmark := AISymetricBenchmark  new.
+	aBenchmark := MBAISymetricBenchmark  new.
 	time := aBenchmark initialization.
 	self assert: time > 0.
 ]

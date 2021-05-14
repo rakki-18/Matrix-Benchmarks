@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #benchmarking }
-PMSymmetricBenchmark >> randomMatrix [
+MBPMSymmetricBenchmark >> randomMatrix [
 	"benchmarks initialisation time of PMSymmetric Matrix class with random elements"
 
 			

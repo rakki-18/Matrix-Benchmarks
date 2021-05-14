@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #benchmarking }
-AIRowBenchmark >> initialization [
+MBAIRowBenchmark >> initialization [
 	"benchmarks initialisation time of  AIRowMatrix class"
 			
 	| time |

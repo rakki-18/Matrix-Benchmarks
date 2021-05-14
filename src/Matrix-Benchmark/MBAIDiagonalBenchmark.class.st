@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #benchmarking }
-AIDiagonalBenchmark >> initialization [
+MBAIDiagonalBenchmark >> initialization [
 	"benchmarks initialisation time of Diagonal Matrix class"
 			
 	| time aArray |

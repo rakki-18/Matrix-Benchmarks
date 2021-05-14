@@ -5,7 +5,7 @@ Class {
 }
 
 { #category : #benchmarking }
-Array2DBenchmark >> columnVector [
+MBArray2DBenchmark >> columnVector [
 	"benchmarking column vector initialization in Array2D"
 	| time aArray |
 	
@@ -16,7 +16,7 @@ Array2DBenchmark >> columnVector [
 ]
 
 { #category : #benchmarking }
-Array2DBenchmark >> diagonal [
+MBArray2DBenchmark >> diagonal [
 	
 	"benchmarking diagonal matrix initialization in Array2D"
 	| time aArray |
@@ -30,7 +30,7 @@ Array2DBenchmark >> diagonal [
 ]
 
 { #category : #benchmarking }
-Array2DBenchmark >> equalMatrix [
+MBArray2DBenchmark >> equalMatrix [
 	"benchmarks initialisation time of a Matrix with equal elements "
 
 			
@@ -42,7 +42,7 @@ Array2DBenchmark >> equalMatrix [
 ]
 
 { #category : #benchmarking }
-Array2DBenchmark >> identity [
+MBArray2DBenchmark >> identity [
 	" benchmarking initialisation time of Identity matrix"
 			
 	| time |
@@ -52,7 +52,7 @@ Array2DBenchmark >> identity [
 ]
 
 { #category : #benchmarking }
-Array2DBenchmark >> nullMatrix [
+MBArray2DBenchmark >> nullMatrix [
 	"benchmarking initialization in Array2D with nil values"
 	| time |
 	
@@ -61,7 +61,7 @@ Array2DBenchmark >> nullMatrix [
 ]
 
 { #category : #benchmarking }
-Array2DBenchmark >> randomMatrix [
+MBArray2DBenchmark >> randomMatrix [
 	"benchmarking initialization in Array2D with nil values"
 	| time |
 	
@@ -70,7 +70,7 @@ Array2DBenchmark >> randomMatrix [
 ]
 
 { #category : #benchmarking }
-Array2DBenchmark >> rowVector [
+MBArray2DBenchmark >> rowVector [
 	"benchmarking row vector initialization in Array2D"
 	| time aArray |
 	
