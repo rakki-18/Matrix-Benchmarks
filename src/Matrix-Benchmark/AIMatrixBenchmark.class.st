@@ -1,5 +1,5 @@
 Class {
-	#name : #AIMatrixBenchmark,
+	#name : #MBAIMatrixBenchmark,
 	#superclass : #Object,
 	#category : #'Matrix-Benchmark'
 }

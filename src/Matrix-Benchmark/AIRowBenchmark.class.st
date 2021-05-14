@@ -1,5 +1,5 @@
 Class {
-	#name : #AIRowBenchmark,
+	#name : #MBAIRowBenchmark,
 	#superclass : #Object,
 	#category : #'Matrix-Benchmark'
 }

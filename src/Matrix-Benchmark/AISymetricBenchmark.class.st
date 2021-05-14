@@ -1,5 +1,5 @@
 Class {
-	#name : #AISymetricBenchmark,
+	#name : #MBAISymetricBenchmark,
 	#superclass : #Object,
 	#category : #'Matrix-Benchmark'
 }

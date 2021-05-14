@@ -1,5 +1,5 @@
 Class {
-	#name : #Array2DBenchmark,
+	#name : #MBArray2DBenchmark,
 	#superclass : #Object,
 	#category : #'Matrix-Benchmark'
 }

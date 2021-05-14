@@ -1,5 +1,5 @@
 Class {
-	#name : #PMMatrixBenchmark,
+	#name : #MBPMMatrixBenchmark,
 	#superclass : #Object,
 	#category : #'Matrix-Benchmark'
 }
