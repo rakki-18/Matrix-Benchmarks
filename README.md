@@ -49,12 +49,12 @@ Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blo
 To run the benchmarks on `Array2D` matrix on the diagonal matrix initialisation method,
 ```
 |aBenchmark|
-aBenchmark := Array2DBenchmark new.
+aBenchmark := MBArray2DBenchmark new.
 aBenchmark diagonal.
 ```
 To run the benchmarks on  `PMSymetricMatrix` class to initialize it with a random matrix,
 ```
 |aBenchmark|
-aBenchmark := PMSymmetricBenchmark new.
+aBenchmark := MBPMSymmetricBenchmark new.
 aBenchmark randomMatrix.
 ```
