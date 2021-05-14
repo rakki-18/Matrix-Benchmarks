@@ -1,11 +1,11 @@
 Class {
-	#name : #AISymetricBenchmarkTest,
+	#name : #MBAISymetricBenchmarkTest,
 	#superclass : #TestCase,
 	#category : #'Matrix-Benchmark-Tests'
 }
 
 { #category : #test }
-AISymetricBenchmarkTest >> testinitialization [
+MBAISymetricBenchmarkTest >> testinitialization [
 	|aBenchmark time|
 	
 	aBenchmark := MBAISymetricBenchmark  new.

@@ -1,14 +1,14 @@
 Class {
-	#name : #AIDiagonalBenchmarkTest,
+	#name : #MBAIRowBenchmarkTest,
 	#superclass : #TestCase,
 	#category : #'Matrix-Benchmark-Tests'
 }
 
 { #category : #test }
-AIDiagonalBenchmarkTest >> testinitialization [
+MBAIRowBenchmarkTest >> testinitialization [
 	|aBenchmark time|
 	
-	aBenchmark := MBAIRowBenchmark  new.
+	aBenchmark := MBAIRowBenchmark new.
 	time := aBenchmark initialization.
 	self assert: time > 0.
 ]

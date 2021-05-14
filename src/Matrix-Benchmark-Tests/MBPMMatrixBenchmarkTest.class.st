@@ -1,41 +1,47 @@
 Class {
-	#name : #PMMatrixBenchmarkTest,
+	#name : #MBPMMatrixBenchmarkTest,
 	#superclass : #TestCase,
+	#instVars : [
+		'aBenchmark'
+	],
 	#category : #'Matrix-Benchmark-Tests'
 }
 
-{ #category : #test }
-PMMatrixBenchmarkTest >> testequalMatrix [  
-	|aBenchmark time|
+{ #category : #running }
+MBPMMatrixBenchmarkTest >> setUp [
+	super setUp.
 	
 	aBenchmark := MBPMMatrixBenchmark new.
+]
+
+{ #category : #test }
+MBPMMatrixBenchmarkTest >> testequalMatrix [  
+	|time|
+	
 	time := aBenchmark equalMatrix.
 	self assert: time > 0.
 ]
 
 { #category : #test }
-PMMatrixBenchmarkTest >> testnullMatrix [ 
-	|aBenchmark time|
+MBPMMatrixBenchmarkTest >> testnullMatrix [ 
+	|time|
 	
-	aBenchmark := MBPMMatrixBenchmark new.
 	time := aBenchmark nullMatrix.
 	self assert: time > 0.
 ]
 
 { #category : #test }
-PMMatrixBenchmarkTest >> testones [  
-	|aBenchmark time|
+MBPMMatrixBenchmarkTest >> testones [  
+	|time|
 	
-	aBenchmark := MBPMMatrixBenchmark new.
 	time := aBenchmark ones.
 	self assert: time > 0.
 ]
 
 { #category : #test }
-PMMatrixBenchmarkTest >> testzeros [
-	|aBenchmark time|
+MBPMMatrixBenchmarkTest >> testzeros [
+	|time|
 	
-	aBenchmark := MBPMMatrixBenchmark new.
 	time := aBenchmark zeros.
 	self assert: time > 0.
 ]

@@ -1,11 +1,11 @@
 Class {
-	#name : #PMSymmetricBenchmarkTest,
+	#name : #MBPMSymmetricBenchmarkTest,
 	#superclass : #TestCase,
 	#category : #'Matrix-Benchmark-Tests'
 }
 
 { #category : #test }
-PMSymmetricBenchmarkTest >> testrandomMatrix [ 
+MBPMSymmetricBenchmarkTest >> testrandomMatrix [ 
 	|aBenchmark time|
 	
 	aBenchmark := MBPMSymmetricBenchmark new.
