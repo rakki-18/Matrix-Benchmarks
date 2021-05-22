@@ -9,13 +9,13 @@ Class {
 
 { #category : #setup }
 CSArray2DBenchmark >> VectorSetup [
-	"benchmarking column vector initialization in Array2D"
+
 
 	aArray := Array new: 500.
 	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #benchmarking }
 CSArray2DBenchmark >> columnVector [
 	"benchmarking column vector initialization in Array2D"
 	
@@ -25,7 +25,7 @@ CSArray2DBenchmark >> columnVector [
 	100 timesRepeat:[ Array2D columnVector: aArray].
 ]
 
-{ #category : #benchmarks }
+{ #category : #benchmarking }
 CSArray2DBenchmark >> diagonal [
 
 	
@@ -35,7 +35,7 @@ CSArray2DBenchmark >> diagonal [
 	100 timesRepeat:[  Array2D  diagonal: aArray].
 ]
 
-{ #category : #benchmarks }
+{ #category : #benchmarking }
 CSArray2DBenchmark >> equalMatrix [
 
 	
@@ -45,7 +45,7 @@ CSArray2DBenchmark >> equalMatrix [
 	100 timesRepeat:[  Array2D new: 500 element: (10000 random)].
 ]
 
-{ #category : #benchmarks }
+{ #category : #benchmarking }
 CSArray2DBenchmark >> identity [
 
 	
@@ -55,7 +55,7 @@ CSArray2DBenchmark >> identity [
 	100 timesRepeat:[  Array2D identity: 500].
 ]
 
-{ #category : #benchmarks }
+{ #category : #benchmarking }
 CSArray2DBenchmark >> nullMatrix [
 
 	
@@ -65,7 +65,7 @@ CSArray2DBenchmark >> nullMatrix [
 	100 timesRepeat:[  Array2D rows: 500 columns: 500].
 ]
 
-{ #category : #benchmarks }
+{ #category : #benchmarking }
 CSArray2DBenchmark >> randomMatrix [
 
 	
@@ -75,7 +75,7 @@ CSArray2DBenchmark >> randomMatrix [
 	100 timesRepeat:[  Array2D rows: 500 columns: 500 tabulate: [:i :j | (10000 random)]].
 ]
 
-{ #category : #benchmarks }
+{ #category : #benchmarking }
 CSArray2DBenchmark >> rowVector [
 
 	
