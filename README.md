@@ -58,3 +58,15 @@ To run the benchmarks on  `PMSymetricMatrix` class to initialize it with a rando
 aBenchmark := MBPMSymmetricBenchmark new.
 aBenchmark randomMatrix.
 ```
+
+## Generating Benchmark Reports
+To generate a benchmark report on all the methods of a particular class,
+- For `Array2D`
+```
+(BenchmarkSuite class: CSArray2DBenchmark ) run.
+```
+- For `PMMatrix`
+```
+(BenchmarkSuite class: CSPMMatrixBenchmark  ) run.
+```
+
