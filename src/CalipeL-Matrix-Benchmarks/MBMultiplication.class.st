@@ -1,10 +1,6 @@
 Class {
 	#name : #MBMultiplication,
-	#superclass : #Object,
-	#instVars : [
-		'a1',
-		'aNumber'
-	],
+	#superclass : #MBSetup,
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
@@ -13,7 +9,7 @@ MBMultiplication >> multiplyAIMatrix [
 
 	
 	<benchmark: 'AIMatrix multiplication'>
-	<setup: #setupAIMatrix>
+	<setup: #setupAIMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
 	
@@ -24,7 +20,7 @@ MBMultiplication >> multiplyArray2D [
 
 	
 	<benchmark: 'Array2D multiplication'>
-	<setup: #setupArray2D>
+	<setup: #setupArray2DandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
 ]
@@ -34,54 +30,7 @@ MBMultiplication >> multiplyPMMatrix [
 
 	
 	<benchmark: 'PMMatrix multiplication'>
-	<setup: #setupPMMatrix>
+	<setup: #setupPMMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
-]
-
-{ #category : #setup }
-MBMultiplication >> setupAIMatrix [
-
-	aNumber := (10000 random).
-	a1 := AIMatrix new: 500.
-
-	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
-			a1 at: i and: j put: (10000 random) ] ].
-	
-	
-]
-
-{ #category : #setup }
-MBMultiplication >> setupArray2D [
-
-	aNumber := (10000 random).
-	a1 := Array2D new: 500.
-	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
-			a1 at: i at: j put: (10000 random) ] ].
-	
-]
-
-{ #category : #setup }
-MBMultiplication >> setupPMMatrix [
-
-
-	aNumber := (10000 random).
-	a1 := PMMatrix new: 500.
-	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
-			a1 at: i at: j put: (10000 random) ] ].
-	
-]
-
-{ #category : #setup }
-MBMultiplication >> setupaNumber [
-
-
-	aNumber := (10000 random).
-	
 ]
