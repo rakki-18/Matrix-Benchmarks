@@ -11,9 +11,9 @@ CSAISymetricMatrixBenchmarkTest >> testRunAll [
 
 { #category : #tests }
 CSAISymetricMatrixBenchmarkTest >> testRunIndividually [
-	CSPMSymmetricMatrixBenchmark  selectorsAndMethodsDo:[:selector :method |
+	CSAISymetricMatrixBenchmark  selectorsAndMethodsDo:[:selector :method |
 		((method pragmaAt: #benchmark) notNil or:[ (method pragmaAt: #benchmark:) notNil ]) ifTrue:[ 
-			(BenchmarkSuite class: CSPMSymmetricMatrixBenchmark  selector: selector) run.
+			(BenchmarkSuite class: CSAISymetricMatrixBenchmark   selector: selector) run.
 		].
 	]
 

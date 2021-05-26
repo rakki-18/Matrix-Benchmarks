@@ -6,7 +6,7 @@ Class {
 
 { #category : #tests }
 CSAIColumnMatrixBenchmarkTest >> testRunAll [ 
-	(BenchmarkSuite class: CSAISymetricMatrixBenchmark   ) run.
+	(BenchmarkSuite class: CSAIColumnMatrixBenchmark   ) run.
 ]
 
 { #category : #tests }
