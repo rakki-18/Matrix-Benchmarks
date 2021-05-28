@@ -31,8 +31,8 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 				package: 'Matrix-Benchmark-Tests' with: [ spec requires: #('Matrix-Benchmark') ].
 
 			spec 
-				group: 'Core' 						with: #('Matrix-Benchmark');
-				group: 'Tests' 						with: #('Matrix-Benchmark' 'Matrix-Benchmark-Tests');
+				group: 'Core' 							with: #('Matrix-Benchmark' 'CalipeL-Matrix-Benchmarks');
+				group: 'Tests' 						with: #('Matrix-Benchmark-Tests' 'CalipeL-Matrix-Benchmarks-Tests');
 				group: 'default' 					with: #('Core' 'Tests') ]
 
 ]
