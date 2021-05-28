@@ -22,7 +22,7 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 				project: 'CalipeLS'
 				with: [ spec 
 					className: 'ConfigurationOfCalipeLS';
-					versionString: #'CalipeL-S-Pharo-JanVrany.12';
+					versionString: 'CalipeL-S-Pharo-JanVrany.12';
 					repository: 'http://smalltalkhub.com/mc/JanVrany/CalipeL-S/main' ].
 			spec 
 				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLS') ];
