@@ -25,7 +25,9 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 					versionString: #development;
 					repository: 'http://smalltalkhub.com/mc/JanVrany/CalipeL-S/main' ].
 			spec 
-				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLS') ];
+				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath') ];
+				package: 'CalipeL-Matrix-Benchmarks' with: [ spec requires: #('AILinearAlgebra' 'Polymath' 'CalipeLS') ];
+				package: 'CalipeL-Matrix-Benchmarks-Tests' with: [ spec requires: #('CalipeL-Matrix-Benchmarks') ];
 				package: 'Matrix-Benchmark-Tests' with: [ spec requires: #('Matrix-Benchmark') ].
 
 			spec 
