@@ -18,8 +18,14 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 			spec
   				baseline: 'AILinearAlgebra'
 				with: [ spec repository: 'github://pharo-ai/linear-algebra/src' ].
+			spec
+				project: 'CalipeLS'
+				with: [ spec 
+					className: 'ConfigurationOfCalipeLS';
+					versionString: #'CalipeL-S-Pharo-JanVrany.12';
+					repository: 'http://smalltalkhub.com/mc/JanVrany/CalipeL-S/main' ].
 			spec 
-				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath') ];
+				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLS') ];
 				package: 'Matrix-Benchmark-Tests' with: [ spec requires: #('Matrix-Benchmark') ].
 
 			spec 
