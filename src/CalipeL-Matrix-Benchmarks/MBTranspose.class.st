@@ -9,7 +9,7 @@ MBTranspose >> transposeAIMatrix [
 
 	
 	<benchmark: 'AIMatrix transposition'>
-	<setup: #setuptwoAIMatrix>
+	<setup: #setupAIMatrix>
 
 	100 timesRepeat:[  a1 transposed ].
 ]
@@ -19,7 +19,7 @@ MBTranspose >> transposeArray2D [
 
 	
 	<benchmark: 'Array 2D transposition'>
-	<setup: #setuptwoArray2D>
+	<setup: #setupArray2D>
 
 	100 timesRepeat:[  a1 transposed ].
 ]
@@ -29,7 +29,7 @@ MBTranspose >> transposePMMatrix [
 
 	
 	<benchmark: 'PMMatrix transposition'>
-	<setup: #setuptwoPMMatrix>
+	<setup: #setupPMMatrix>
 
 	100 timesRepeat:[  a1 transpose ].
 ]

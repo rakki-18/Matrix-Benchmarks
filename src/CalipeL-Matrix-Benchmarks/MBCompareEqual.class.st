@@ -9,7 +9,7 @@ MBCompareEqual >> comparEqualAIMatrix [
 
 	
 	<benchmark: 'AIMatrix compare  equal matrices'>
-	<setup: #setuptwoAIMatrix>
+	<setup: #setupAIMatrix>
 
 	1000000 timesRepeat:[  a1 = a1 ].
 ]
@@ -19,7 +19,7 @@ MBCompareEqual >> compareEqualArray2D [
 
 	
 	<benchmark: 'Array2D compare equal matrices'>
-	<setup: #setuptwoArray2D>
+	<setup: #setupArray2D>
 
 	1000000 timesRepeat:[  a1 = a1 ].
 ]
@@ -29,7 +29,7 @@ MBCompareEqual >> compareEqualPMMatrix [
 
 	
 	<benchmark: 'PMMatrix compare  equal matrices'>
-	<setup: #setuptwoPMMatrix>
+	<setup: #setupPMMatrix>
 
 	100000 timesRepeat:[  a1 = a1 ].
 ]
