@@ -9,7 +9,7 @@ MBDeterminant >> determinantPMMatrix [
 
 
 	<benchmark: 'Determinant of a PMMatrix'>
-	<setup: #setupPMMatrix>
+	<setup: #setupSmallPMMatrix>
 
 	1 timesRepeat: [ a1 determinant ].
 ]

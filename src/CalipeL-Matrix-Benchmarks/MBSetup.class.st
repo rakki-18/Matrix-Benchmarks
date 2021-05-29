@@ -9,7 +9,7 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
-{ #category : #setup }
+{ #category : #setupOneMatrix }
 MBSetup >> setupAIMatrix [
 
 
@@ -23,7 +23,7 @@ MBSetup >> setupAIMatrix [
 	
 ]
 
-{ #category : #setup }
+{ #category : #setupMatrixandNumber }
 MBSetup >> setupAIMatrixandNumber [
 
 	aNumber := (10000 random).
@@ -37,7 +37,7 @@ MBSetup >> setupAIMatrixandNumber [
 	
 ]
 
-{ #category : #setup }
+{ #category : #setupOneMatrix }
 MBSetup >> setupArray2D [
 
 
@@ -49,7 +49,7 @@ MBSetup >> setupArray2D [
 	
 ]
 
-{ #category : #setup }
+{ #category : #setupMatrixandNumber }
 MBSetup >> setupArray2DandNumber [
 
 	aNumber := (10000 random).
@@ -61,7 +61,7 @@ MBSetup >> setupArray2DandNumber [
 	
 ]
 
-{ #category : #setup }
+{ #category : #setupOneMatrix }
 MBSetup >> setupPMMatrix [
 
 
@@ -74,7 +74,7 @@ MBSetup >> setupPMMatrix [
 	
 ]
 
-{ #category : #setup }
+{ #category : #setupMatrixandNumber }
 MBSetup >> setupPMMatrixandNumber [
 
 
@@ -87,7 +87,19 @@ MBSetup >> setupPMMatrixandNumber [
 	
 ]
 
-{ #category : #setup }
+{ #category : #setupSmall }
+MBSetup >> setupSmallPMMatrix [
+
+
+	a1 := PMMatrix new: 100.
+	
+	1 to: 100 do: [ :i | 
+		1 to: 100 do: [ :j |
+			a1 at: i at: j put: (10 random) ] ].
+	
+]
+
+{ #category : #setupTwoMatrix }
 MBSetup >> setuptwoAIMatrix [
 
 
@@ -103,7 +115,7 @@ MBSetup >> setuptwoAIMatrix [
 			a2 at: i and: j put: (10000 random) ] ].
 ]
 
-{ #category : #setup }
+{ #category : #setupTwoMatrix }
 MBSetup >> setuptwoArray2D [
 
 
@@ -119,7 +131,7 @@ MBSetup >> setuptwoArray2D [
 			a2 at: i at: j put: (10000 random) ] ].
 ]
 
-{ #category : #setup }
+{ #category : #setupTwoMatrix }
 MBSetup >> setuptwoPMMatrix [
 
 
