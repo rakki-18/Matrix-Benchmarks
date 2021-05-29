@@ -118,6 +118,40 @@ MBSetup >> setupPMMatrixandNumber [
 	
 ]
 
+{ #category : #setupOneMatrix }
+MBSetup >> setupPMSymmetricMatrix [
+
+
+
+	a1 := PMSymmetricMatrix new: 500.
+	
+	1 to: 500 do: [ :i | 
+		1 to: i do: [ :j |
+			a1 at: i at: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a1 at: i at: j put: (a1 at:j at: i) ] ].
+	
+]
+
+{ #category : #setupMatrixandNumber }
+MBSetup >> setupPMSymmetricMatrixandNumber [
+
+
+	aNumber := (10000 random).
+	a1 := PMSymmetricMatrix new: 500.
+	
+	1 to: 500 do: [ :i | 
+		1 to: i do: [ :j |
+			a1 at: i at: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a1 at: i at: j put: (a1 at:j at: i) ] ].
+	
+]
+
 { #category : #setupSmall }
 MBSetup >> setupSmallPMMatrix [
 
@@ -176,4 +210,28 @@ MBSetup >> setuptwoPMMatrix [
 	1 to: 500 do: [ :i | 
 		1 to: 500 do: [ :j |
 			a2 at: i at: j put: (10000 random) ] ].
+]
+
+{ #category : #setupTwoMatrix }
+MBSetup >> setuptwoPMSymmetricMatrix [
+
+
+	a1 := PMSymmetricMatrix new: 500.
+	
+	1 to: 500 do: [ :i | 
+		1 to: i do: [ :j |
+			a1 at: i at: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a1 at: i at: j put: (a1 at:j at: i) ] ].
+	a2 := PMSymmetricMatrix new: 500.
+	
+	1 to: 500 do: [ :i | 
+		1 to: i do: [ :j |
+			a2 at: i at: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a2 at: i at: j put: (a2 at:j at: i) ] ].
 ]

@@ -36,3 +36,14 @@ MBMatrixMultiplication >> matrixmultiplyPMMatrix [
 	10 timesRepeat:[  a1 * a2 ].
 	
 ]
+
+{ #category : #benchmarks }
+MBMatrixMultiplication >> matrixmultiplyPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix matrix multiplication'>
+	<setup: #setuptwoPMSymmetricMatrix>
+
+	10 timesRepeat:[  a1 * a2 ].
+	
+]

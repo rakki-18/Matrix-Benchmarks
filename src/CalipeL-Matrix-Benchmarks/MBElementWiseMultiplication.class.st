@@ -36,3 +36,14 @@ MBElementWiseMultiplication >> elementWiseMultiplyPMMatrix [
 	100 timesRepeat:[  a1 hadamardProduct: a2 ].
 	
 ]
+
+{ #category : #benchmarks }
+MBElementWiseMultiplication >> elementWiseMultiplyPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix element-wise multiplication'>
+	<setup: #setuptwoPMSymmetricMatrix>
+
+	100 timesRepeat:[  a1 hadamardProduct: a2 ].
+	
+]

@@ -33,3 +33,13 @@ MBSubtraction >> subtractPMMatrix [
 
 	100 timesRepeat:[  a1 - a2 ].
 ]
+
+{ #category : #benchmarks }
+MBSubtraction >> subtractPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix subtraction'>
+	<setup: #setuptwoPMSymmetricMatrix>
+
+	100 timesRepeat:[  a1 - a2 ].
+]

@@ -33,3 +33,13 @@ MBCompareEqual >> compareEqualPMMatrix [
 
 	100000 timesRepeat:[  a1 = a1 ].
 ]
+
+{ #category : #benchmarks }
+MBCompareEqual >> compareEqualPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix compare  equal matrices'>
+	<setup: #setupPMSymmetricMatrix>
+
+	100000 timesRepeat:[  a1 = a1 ].
+]

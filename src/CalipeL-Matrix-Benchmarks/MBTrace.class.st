@@ -13,3 +13,13 @@ MBTrace >> tracePMMatrix [
 
 	10000 timesRepeat: [ a1 tr ].
 ]
+
+{ #category : #benchmarks }
+MBTrace >> tracePMSymmetricMatrix [
+
+
+	<benchmark: 'Trace of a PMSymmetricMatrix'>
+	<setup: #setupPMSymmetricMatrix>
+
+	10000 timesRepeat: [ a1 tr ].
+]

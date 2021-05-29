@@ -33,3 +33,13 @@ MBCompareNonequal >> comparenonequalPMMatrix [
 
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
+
+{ #category : #benchmarks }
+MBCompareNonequal >> comparenonequalPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix compare non equal matrices'>
+	<setup: #setuptwoPMSymmetricMatrix>
+
+	1000000 timesRepeat:[  a1 = a2 ].
+]

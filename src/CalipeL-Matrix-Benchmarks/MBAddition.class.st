@@ -33,3 +33,13 @@ MBAddition >> addPMMatrix [
 
 	100 timesRepeat:[  a1 + a2 ].
 ]
+
+{ #category : #benchmarks }
+MBAddition >> addPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix addition'>
+	<setup: #setuptwoPMSymmetricMatrix>
+
+	100 timesRepeat:[  a1 + a2 ].
+]

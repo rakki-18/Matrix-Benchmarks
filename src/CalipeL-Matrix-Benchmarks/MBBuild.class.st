@@ -33,3 +33,13 @@ MBBuild >> buildPMMatrix [
 
 	100 timesRepeat:[  PMMatrix new: 500 ].
 ]
+
+{ #category : #benchmarks }
+MBBuild >> buildPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix build'>
+
+
+	100 timesRepeat:[  PMSymmetricMatrix new: 500 ].
+]

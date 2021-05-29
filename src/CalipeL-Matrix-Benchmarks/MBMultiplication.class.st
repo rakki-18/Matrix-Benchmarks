@@ -34,3 +34,13 @@ MBMultiplication >> multiplyPMMatrix [
 
 	100 timesRepeat:[  a1 * aNumber ].
 ]
+
+{ #category : #benchmarks }
+MBMultiplication >> multiplyPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix multiplication'>
+	<setup: #setupPMSymmetricMatrixandNumber>
+
+	100 timesRepeat:[  a1 * aNumber ].
+]

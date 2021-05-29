@@ -33,3 +33,13 @@ MBAccess >> accessPMMatrix [
 
 	1000000 timesRepeat:[  a1 at: 250 at: 250 ].
 ]
+
+{ #category : #benchmarks }
+MBAccess >> accessPMSymmetricMatrix [
+
+	
+	<benchmark: 'Accessing PMSymmetricMatrix'>
+	<setup: #setupPMSymmetricMatrix>
+
+	1000000 timesRepeat:[  a1 at: 250 at: 250 ].
+]
