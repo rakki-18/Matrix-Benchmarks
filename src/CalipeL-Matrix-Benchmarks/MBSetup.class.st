@@ -61,6 +61,37 @@ MBSetup >> setupArray2DandNumber [
 	
 ]
 
+{ #category : #setupSpecial }
+MBSetup >> setupInvertiblePMMatrix [
+	" 2 triangular matrices( upper and lower) are generated.
+	They are multipied to generate the invertible matrix"
+	
+	|l u size|
+	
+	size := 100.
+	l := PMMatrix zerosRows: size cols: size.
+	
+	1 to: size do: [ :i|
+	1 to: i-1 do:[ :j|
+		l at: i at: j put: (100 random)
+		 ]].
+	" principal diagonal elements can not be zero"
+	1 to: size do: [ :i|
+	l at: i at: i put: (100 random)+1 ].
+
+	u := PMMatrix zerosRows: size cols: size.
+
+	1 to: size do: [ :i|
+		i+1 to: size do:[ :j|
+			u at: i at: j put: (100 random)
+		 ]].
+	1 to: size do: [ :i|
+		u at: i at: i put: (100 random)+1 ].
+
+	a1 := l*u.
+
+]
+
 { #category : #setupOneMatrix }
 MBSetup >> setupPMMatrix [
 
