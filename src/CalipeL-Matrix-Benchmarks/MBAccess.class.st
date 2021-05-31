@@ -5,11 +5,11 @@ Class {
 }
 
 { #category : #benchmarks }
-MBAccess >> accessAIMatrix [
+MBAccess >> accessAIRowMatrix [
 
 	
-	<benchmark: 'Accessing AIMatrix'>
-	<setup: #setupAIMatrix>
+	<benchmark: 'Accessing AIRowMatrix'>
+	<setup: #setupAIRowMatrix>
 
 	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
 ]

@@ -5,11 +5,11 @@ Class {
 }
 
 { #category : #benchmarks }
-MBTranspose >> transposeAIMatrix [
+MBTranspose >> transposeAIRowMatrix [
 
 	
-	<benchmark: 'AIMatrix transposition'>
-	<setup: #setupAIMatrix>
+	<benchmark: 'AIRowMatrix transposition'>
+	<setup: #setupAIRowMatrix>
 
 	100 timesRepeat:[  a1 transposed ].
 ]

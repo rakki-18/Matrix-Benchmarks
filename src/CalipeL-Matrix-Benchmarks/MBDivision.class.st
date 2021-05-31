@@ -5,11 +5,11 @@ Class {
 }
 
 { #category : #benchmarks }
-MBDivision >> divideAIMatrix [
+MBDivision >> divideAIRowMatrix [
 
 	
-	<benchmark: 'AIMatrix division'>
-	<setup: #setupAIMatrixandNumber>
+	<benchmark: 'AIRowMatrix division'>
+	<setup: #setupAIRowMatrixandNumber>
 
 	100 timesRepeat:[  a1 / aNumber ].
 	

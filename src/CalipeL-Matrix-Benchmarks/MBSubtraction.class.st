@@ -5,11 +5,11 @@ Class {
 }
 
 { #category : #benchmarks }
-MBSubtraction >> subtractAIMatrix [
+MBSubtraction >> subtractAIRowMatrix [
 
 	
-	<benchmark: 'AIMatrix subtraction'>
-	<setup: #setuptwoAIMatrix>
+	<benchmark: 'AIRowMatrix subtraction'>
+	<setup: #setuptwoAIRowMatrix>
 
 	100 timesRepeat:[  a1 - a2 ].
 ]

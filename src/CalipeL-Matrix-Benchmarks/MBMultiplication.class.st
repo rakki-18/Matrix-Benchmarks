@@ -5,11 +5,11 @@ Class {
 }
 
 { #category : #benchmarks }
-MBMultiplication >> multiplyAIMatrix [
+MBMultiplication >> multiplyAIRowMatrix [
 
 	
-	<benchmark: 'AIMatrix multiplication'>
-	<setup: #setupAIMatrixandNumber>
+	<benchmark: 'AIRowMatrix multiplication'>
+	<setup: #setupAIRowMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
 	

@@ -5,12 +5,12 @@ Class {
 }
 
 { #category : #benchmarks }
-MBBuildZeros >> buildZeroAIMatrix [
+MBBuildZeros >> buildZeroAIRowMatrix [
 
 	
-	<benchmark: 'AIMatrix build with zeros'>
+	<benchmark: 'AIRowMatrix build with zeros'>
 
-	100 timesRepeat:[  AIMatrix new: 500 withAll: 0].
+	100 timesRepeat:[  AIRowMatrix new: 500 withAll: 0].
 	
 ]
 

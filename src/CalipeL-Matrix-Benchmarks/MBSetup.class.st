@@ -10,10 +10,10 @@ Class {
 }
 
 { #category : #setupOneMatrix }
-MBSetup >> setupAIMatrix [
+MBSetup >> setupAIRowMatrix [
 
 
-	a1 := AIMatrix new: 500.
+	a1 := AIRowMatrix new: 500.
 
 	
 	1 to: 500 do: [ :i | 
@@ -24,10 +24,10 @@ MBSetup >> setupAIMatrix [
 ]
 
 { #category : #setupMatrixandNumber }
-MBSetup >> setupAIMatrixandNumber [
+MBSetup >> setupAIRowMatrixandNumber [
 
 	aNumber := (10000 random).
-	a1 := AIMatrix new: 500.
+	a1 := AIRowMatrix new: 500.
 
 	
 	1 to: 500 do: [ :i | 
@@ -165,11 +165,11 @@ MBSetup >> setupSmallPMMatrix [
 ]
 
 { #category : #setupTwoMatrix }
-MBSetup >> setuptwoAIMatrix [
+MBSetup >> setuptwoAIRowMatrix [
 
 
-	a1 := AIMatrix new: 500.
-	a2 := AIMatrix new: 500.
+	a1 := AIRowMatrix new: 500.
+	a2 := AIRowMatrix new: 500.
 	
 	1 to: 500 do: [ :i | 
 		1 to: 500 do: [ :j |

@@ -5,11 +5,11 @@ Class {
 }
 
 { #category : #benchmarks }
-MBElementWiseMultiplication >> elementWiseMultiplyAIMatrix [
+MBElementWiseMultiplication >> elementWiseMultiplyAIRowMatrix [
 
 	
-	<benchmark: 'AIMatrix element-wise multiplication'>
-	<setup: #setuptwoAIMatrix>
+	<benchmark: 'AIRowMatrix element-wise multiplication'>
+	<setup: #setuptwoAIRowMatrix>
 
 	100 timesRepeat:[  a1 productFromMatrix: a2 ].
 	

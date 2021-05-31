@@ -5,11 +5,11 @@ Class {
 }
 
 { #category : #benchmarks }
-MBCompareEqual >> comparEqualAIMatrix [
+MBCompareEqual >> comparEqualAIRowMatrix [
 
 	
-	<benchmark: 'AIMatrix compare  equal matrices'>
-	<setup: #setupAIMatrix>
+	<benchmark: 'AIRowMatrix compare  equal matrices'>
+	<setup: #setupAIRowMatrix>
 
 	1000000 timesRepeat:[  a1 = a1 ].
 ]
