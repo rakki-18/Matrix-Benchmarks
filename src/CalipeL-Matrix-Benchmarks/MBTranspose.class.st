@@ -25,6 +25,16 @@ MBTranspose >> transposeAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBTranspose >> transposeAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix transposition'>
+	<setup: #setupAISymetricMatrix>
+
+	100 timesRepeat:[  a1 transposed ].
+]
+
+{ #category : #benchmarks }
 MBTranspose >> transposeArray2D [
 
 	

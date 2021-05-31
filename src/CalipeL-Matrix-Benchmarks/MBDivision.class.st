@@ -27,6 +27,17 @@ MBDivision >> divideAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBDivision >> divideAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix division'>
+	<setup: #setupAISymetricMatrixandNumber>
+
+	100 timesRepeat:[  a1 / aNumber ].
+	
+]
+
+{ #category : #benchmarks }
 MBDivision >> divideArray2D [
 
 	

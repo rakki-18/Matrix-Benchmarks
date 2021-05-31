@@ -25,6 +25,16 @@ MBBuild >> buildAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBBuild >> buildAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix build'>
+
+	100 timesRepeat:[  AISymetricMatrix new: 500 ].
+	
+]
+
+{ #category : #benchmarks }
 MBBuild >> buildArray2D [
 
 	

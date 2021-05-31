@@ -25,6 +25,16 @@ MBSubtraction >> subtractAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBSubtraction >> subtractAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix subtraction'>
+	<setup: #setuptwoAISymetricMatrix>
+
+	100 timesRepeat:[  a1 - a2 ].
+]
+
+{ #category : #benchmarks }
 MBSubtraction >> subtractArray2D [
 
 	

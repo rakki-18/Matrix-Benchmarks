@@ -27,6 +27,17 @@ MBMatrixMultiplication >> matrixmultiplyAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBMatrixMultiplication >> matrixmultiplyAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix matrix multiplication'>
+	<setup: #setuptwoAISymetricMatrix>
+
+	10 timesRepeat:[  a1 *~ a2 ].
+	
+]
+
+{ #category : #benchmarks }
 MBMatrixMultiplication >> matrixmultiplyArray2D [
 
 	

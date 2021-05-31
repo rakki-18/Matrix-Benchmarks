@@ -66,6 +66,34 @@ MBSetup >> setupAIRowMatrixandNumber [
 ]
 
 { #category : #setupOneMatrix }
+MBSetup >> setupAISymetricMatrix [
+
+
+	a1 := AISymetricMatrix new: 500.
+
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a1 at: i and: j put: (10000 random) ] ].
+	
+	
+]
+
+{ #category : #setupMatrixandNumber }
+MBSetup >> setupAISymetricMatrixandNumber [
+
+	aNumber := (10000 random).
+	a1 := AISymetricMatrix new: 500.
+
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a1 at: i and: j put: (10000 random) ] ].
+	
+	
+]
+
+{ #category : #setupOneMatrix }
 MBSetup >> setupArray2D [
 
 
@@ -214,6 +242,22 @@ MBSetup >> setuptwoAIRowMatrix [
 
 	a1 := AIRowMatrix new: 500.
 	a2 := AIRowMatrix new: 500.
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a1 at: i and: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a2 at: i and: j put: (10000 random) ] ].
+]
+
+{ #category : #setupTwoMatrix }
+MBSetup >> setuptwoAISymetricMatrix [
+
+
+	a1 := AISymetricMatrix new: 500.
+	a2 := AISymetricMatrix new: 500.
 	
 	1 to: 500 do: [ :i | 
 		1 to: 500 do: [ :j |

@@ -25,6 +25,16 @@ MBBuildZeros >> buildZeroAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBBuildZeros >> buildZeroAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix build with zeros'>
+
+	100 timesRepeat:[  AISymetricMatrix new: 500 withAll: 0].
+	
+]
+
+{ #category : #benchmarks }
 MBBuildZeros >> buildZeroArray2D [
 
 	

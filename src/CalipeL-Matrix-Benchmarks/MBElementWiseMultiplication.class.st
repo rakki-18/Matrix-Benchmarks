@@ -27,6 +27,17 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBElementWiseMultiplication >> elementWiseMultiplyAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix element-wise multiplication'>
+	<setup: #setuptwoAISymetricMatrix>
+
+	100 timesRepeat:[  a1 productFromMatrix: a2 ].
+	
+]
+
+{ #category : #benchmarks }
 MBElementWiseMultiplication >> elementWiseMultiplyArray2D [
 
 	

@@ -25,6 +25,16 @@ MBCompareEqual >> comparEqualAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBCompareEqual >> comparEqualAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix compare  equal matrices'>
+	<setup: #setupAISymetricMatrix>
+
+	1000000 timesRepeat:[  a1 = a1 ].
+]
+
+{ #category : #benchmarks }
 MBCompareEqual >> compareEqualArray2D [
 
 	

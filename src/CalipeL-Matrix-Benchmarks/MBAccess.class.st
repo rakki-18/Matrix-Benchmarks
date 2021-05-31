@@ -25,6 +25,16 @@ MBAccess >> accessAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBAccess >> accessAISymetricMatrix [
+
+	
+	<benchmark: 'Accessing AISymetricMatrix'>
+	<setup: #setupAISymetricMatrix>
+
+	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
+]
+
+{ #category : #benchmarks }
 MBAccess >> accessArray2D [
 
 	

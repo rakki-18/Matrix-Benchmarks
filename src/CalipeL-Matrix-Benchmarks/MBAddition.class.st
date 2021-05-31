@@ -25,6 +25,16 @@ MBAddition >> addAIRowMatrix [
 ]
 
 { #category : #benchmarks }
+MBAddition >> addAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetricMatrix addition'>
+	<setup: #setuptwoAISymetricMatrix>
+
+	100 timesRepeat:[  a1 + a2 ].
+]
+
+{ #category : #benchmarks }
 MBAddition >> addArray2D [
 
 	
