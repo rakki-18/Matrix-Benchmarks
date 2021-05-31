@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #benchmarks }
+MBAddition >> addAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix addition'>
+	<setup: #setuptwoAIColumnMatrix>
+
+	100 timesRepeat:[  a1 + a2 ].
+]
+
+{ #category : #benchmarks }
 MBAddition >> addAIRowMatrix [
 
 	

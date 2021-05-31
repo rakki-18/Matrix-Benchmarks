@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #benchmarks }
+MBBuild >> buildAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix build'>
+
+	100 timesRepeat:[  AIColumnMatrix new: 500 ].
+	
+]
+
+{ #category : #benchmarks }
 MBBuild >> buildAIRowMatrix [
 
 	

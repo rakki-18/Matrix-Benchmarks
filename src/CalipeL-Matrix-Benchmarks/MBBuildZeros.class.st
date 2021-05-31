@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #benchmarks }
+MBBuildZeros >> buildZeroAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix build with zeros'>
+
+	100 timesRepeat:[  AIColumnMatrix new: 500 withAll: 0].
+	
+]
+
+{ #category : #benchmarks }
 MBBuildZeros >> buildZeroAIRowMatrix [
 
 	

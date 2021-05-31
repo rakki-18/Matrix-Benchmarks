@@ -6,5 +6,6 @@ Class {
 
 { #category : #tests }
 MBAdditionTest >> testRunAll [
+	self assert: [ 3 < 1 ].
 	(BenchmarkSuite class: MBAddition )run.
 ]

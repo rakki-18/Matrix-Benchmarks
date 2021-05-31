@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #benchmarks }
+MBCompareNonequal >> comparenonequalAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix compare non equal matrices'>
+	<setup: #setuptwoAIColumnMatrix>
+
+	1000000 timesRepeat:[  a1 = a2 ].
+]
+
+{ #category : #benchmarks }
 MBCompareNonequal >> comparenonequalAIRowMatrix [
 
 	

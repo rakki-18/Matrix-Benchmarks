@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #benchmarks }
+MBTranspose >> transposeAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix transposition'>
+	<setup: #setupAIColumnMatrix>
+
+	100 timesRepeat:[  a1 transposed ].
+]
+
+{ #category : #benchmarks }
 MBTranspose >> transposeAIRowMatrix [
 
 	

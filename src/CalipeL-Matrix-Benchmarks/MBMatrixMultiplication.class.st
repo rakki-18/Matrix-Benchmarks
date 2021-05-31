@@ -5,6 +5,17 @@ Class {
 }
 
 { #category : #benchmarks }
+MBMatrixMultiplication >> matrixmultiplyAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix matrix multiplication'>
+	<setup: #setuptwoAIColumnMatrix>
+
+	10 timesRepeat:[  a1 *~ a2 ].
+	
+]
+
+{ #category : #benchmarks }
 MBMatrixMultiplication >> matrixmultiplyAIRowMatrix [
 
 	

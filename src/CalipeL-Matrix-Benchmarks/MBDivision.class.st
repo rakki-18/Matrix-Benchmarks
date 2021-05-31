@@ -5,6 +5,17 @@ Class {
 }
 
 { #category : #benchmarks }
+MBDivision >> divideAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix division'>
+	<setup: #setupAIColumnMatrixandNumber>
+
+	100 timesRepeat:[  a1 / aNumber ].
+	
+]
+
+{ #category : #benchmarks }
 MBDivision >> divideAIRowMatrix [
 
 	

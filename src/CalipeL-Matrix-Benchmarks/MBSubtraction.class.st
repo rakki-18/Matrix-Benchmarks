@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #benchmarks }
+MBSubtraction >> subtractAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumnMatrix subtraction'>
+	<setup: #setuptwoAIColumnMatrix>
+
+	100 timesRepeat:[  a1 - a2 ].
+]
+
+{ #category : #benchmarks }
 MBSubtraction >> subtractAIRowMatrix [
 
 	

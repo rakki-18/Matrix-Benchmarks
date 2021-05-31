@@ -10,6 +10,34 @@ Class {
 }
 
 { #category : #setupOneMatrix }
+MBSetup >> setupAIColumnMatrix [
+
+
+	a1 := AIColumnMatrix new: 500.
+
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a1 at: i and: j put: (10000 random) ] ].
+	
+	
+]
+
+{ #category : #setupMatrixandNumber }
+MBSetup >> setupAIColumnMatrixandNumber [
+
+	aNumber := (10000 random).
+	a1 := AIColumnMatrix new: 500.
+
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a1 at: i and: j put: (10000 random) ] ].
+	
+	
+]
+
+{ #category : #setupOneMatrix }
 MBSetup >> setupAIRowMatrix [
 
 
@@ -162,6 +190,22 @@ MBSetup >> setupSmallPMMatrix [
 		1 to: 100 do: [ :j |
 			a1 at: i at: j put: (10 random) ] ].
 	
+]
+
+{ #category : #setupTwoMatrix }
+MBSetup >> setuptwoAIColumnMatrix [
+
+
+	a1 := AIColumnMatrix new: 500.
+	a2 := AIColumnMatrix new: 500.
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a1 at: i and: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i | 
+		1 to: 500 do: [ :j |
+			a2 at: i and: j put: (10000 random) ] ].
 ]
 
 { #category : #setupTwoMatrix }

@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #benchmarks }
+MBAccess >> accessAIColumnMatrix [
+
+	
+	<benchmark: 'Accessing AIColumnMatrix'>
+	<setup: #setupAIColumnMatrix>
+
+	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
+]
+
+{ #category : #benchmarks }
 MBAccess >> accessAIRowMatrix [
 
 	
