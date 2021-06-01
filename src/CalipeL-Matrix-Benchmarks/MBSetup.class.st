@@ -24,7 +24,7 @@ MBSetup >> setupAIColumnMatrix [
 ]
 
 { #category : #setupMatrixandNumber }
-MBSetup >> setupAIColumnMatrixandNumber [
+MBSetup >> setupAIColumnMatrixandNumber [ 
 
 	aNumber := (10000 random).
 	a1 := AIColumnMatrix new: 500.
@@ -71,10 +71,13 @@ MBSetup >> setupAISymetricMatrix [
 
 	a1 := AISymetricMatrix new: 500.
 
-	
 	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+		1 to: i do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a1 at: i and: j put: (a1 at:j and: i) ] ].
 	
 	
 ]
@@ -84,12 +87,13 @@ MBSetup >> setupAISymetricMatrixandNumber [
 
 	aNumber := (10000 random).
 	a1 := AISymetricMatrix new: 500.
-
-	
 	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+		1 to: i do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a1 at: i and: j put: (a1 at:j and: i) ] ].
 	
 ]
 
@@ -146,6 +150,13 @@ MBSetup >> setupInvertiblePMMatrix [
 
 	a1 := l*u.
 
+]
+
+{ #category : #setupNumber }
+MBSetup >> setupNumber [
+
+			
+	aNumber := (1000 random).
 ]
 
 { #category : #setupOneMatrix }
@@ -220,6 +231,20 @@ MBSetup >> setupSmallPMMatrix [
 	
 ]
 
+{ #category : #setupSmall }
+MBSetup >> setupSmallPMSymmetricMatrix [
+
+
+	a1 := PMSymmetricMatrix new: 100.
+	1 to: 100 do: [ :i | 
+		1 to: i do: [ :j |
+			a1 at: i at: j put: (10000 random) ] ].
+	
+	1 to: 100 do: [ :i|
+		i+1 to: 100 do:[:j|
+			a1 at: i at: j put: (a1 at:j at: i) ] ].
+]
+
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoAIColumnMatrix [
 
@@ -260,12 +285,21 @@ MBSetup >> setuptwoAISymetricMatrix [
 	a2 := AISymetricMatrix new: 500.
 	
 	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+		1 to: i do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a1 at: i and: j put: (a1 at:j and: i) ] ].
+	
 	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+		1 to: i do: [ :j |
 			a2 at: i and: j put: (10000 random) ] ].
+	
+	1 to: 500 do: [ :i|
+		i+1 to: 500 do:[:j|
+			a2 at: i and: j put: (a2 at:j and: i) ] ].
+	
 ]
 
 { #category : #setupTwoMatrix }

@@ -13,3 +13,13 @@ MBDeterminant >> determinantPMMatrix [
 
 	1 timesRepeat: [ a1 determinant ].
 ]
+
+{ #category : #benchmarks }
+MBDeterminant >> determinantPMSymmetricMatrix [
+
+
+	<benchmark: 'Determinant of a PMSymmetricMatrix'>
+	<setup: #setupSmallPMSymmetricMatrix>
+
+	1 timesRepeat: [ a1 determinant ].
+]
