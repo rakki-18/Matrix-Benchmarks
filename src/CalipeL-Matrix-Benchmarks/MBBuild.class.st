@@ -15,6 +15,16 @@ MBBuild >> buildAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBBuild >> buildAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix build'>
+
+	100 timesRepeat:[  AIDiagonalMatrix new: 500 ].
+	
+]
+
+{ #category : #benchmarks }
 MBBuild >> buildAIRowMatrix [
 
 	

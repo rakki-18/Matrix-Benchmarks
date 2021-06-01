@@ -15,6 +15,16 @@ MBAddition >> addAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBAddition >> addAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix addition'>
+	<setup: #setuptwoAIDiagonalMatrix>
+
+	100 timesRepeat:[  a1 + a2 ].
+]
+
+{ #category : #benchmarks }
 MBAddition >> addAIRowMatrix [
 
 	

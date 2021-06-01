@@ -16,6 +16,17 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBElementWiseMultiplication >> elementWiseMultiplyAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix element-wise multiplication'>
+	<setup: #setuptwoAIDiagonalMatrix>
+
+	100 timesRepeat:[  a1 productFromMatrix: a2 ].
+	
+]
+
+{ #category : #benchmarks }
 MBElementWiseMultiplication >> elementWiseMultiplyAIRowMatrix [
 
 	

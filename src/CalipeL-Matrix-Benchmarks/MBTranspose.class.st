@@ -15,6 +15,16 @@ MBTranspose >> transposeAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBTranspose >> transposeAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix transposition'>
+	<setup: #setupAIDiagonalMatrix>
+
+	100 timesRepeat:[  a1 transposed ].
+]
+
+{ #category : #benchmarks }
 MBTranspose >> transposeAIRowMatrix [
 
 	

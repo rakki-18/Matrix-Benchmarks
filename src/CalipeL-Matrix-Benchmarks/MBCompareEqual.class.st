@@ -15,6 +15,16 @@ MBCompareEqual >> comparEqualAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBCompareEqual >> comparEqualAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix compare  equal matrices'>
+	<setup: #setupAIDiagonalMatrix>
+
+	1000000 timesRepeat:[  a1 = a1 ].
+]
+
+{ #category : #benchmarks }
 MBCompareEqual >> comparEqualAIRowMatrix [
 
 	

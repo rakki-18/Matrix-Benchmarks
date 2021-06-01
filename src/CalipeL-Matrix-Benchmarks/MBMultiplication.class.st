@@ -16,6 +16,17 @@ MBMultiplication >> multiplyAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBMultiplication >> multiplyAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix multiplication'>
+	<setup: #setupAIDiagonalMatrixandNumber>
+
+	100 timesRepeat:[  a1 * aNumber ].
+	
+]
+
+{ #category : #benchmarks }
 MBMultiplication >> multiplyAIRowMatrix [
 
 	

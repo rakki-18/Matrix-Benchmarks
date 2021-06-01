@@ -15,6 +15,16 @@ MBSubtraction >> subtractAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBSubtraction >> subtractAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix subtraction'>
+	<setup: #setuptwoAIDiagonalMatrix>
+
+	100 timesRepeat:[  a1 - a2 ].
+]
+
+{ #category : #benchmarks }
 MBSubtraction >> subtractAIRowMatrix [
 
 	

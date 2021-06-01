@@ -15,6 +15,16 @@ MBBuildZeros >> buildZeroAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBBuildZeros >> buildZeroAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix build with zeros'>
+
+	100 timesRepeat:[  AIDiagonalMatrix new: 500 withAll: 0].
+	
+]
+
+{ #category : #benchmarks }
 MBBuildZeros >> buildZeroAIRowMatrix [
 
 	

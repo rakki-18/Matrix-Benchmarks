@@ -38,6 +38,31 @@ MBSetup >> setupAIColumnMatrixandNumber [
 ]
 
 { #category : #setupOneMatrix }
+MBSetup >> setupAIDiagonalMatrix [
+
+
+	|aArray|
+	aArray := Array new: 500.
+	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
+	
+	a1 := AIDiagonalMatrix withDiagonal: aArray.
+	
+]
+
+{ #category : #setupMatrixandNumber }
+MBSetup >> setupAIDiagonalMatrixandNumber [
+
+	|aArray|
+	aArray := Array new: 500.
+	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
+
+	aNumber := (10000 random).
+	
+	a1 := AIDiagonalMatrix withDiagonal: aArray.
+	
+]
+
+{ #category : #setupOneMatrix }
 MBSetup >> setupAIRowMatrix [
 
 
@@ -152,13 +177,6 @@ MBSetup >> setupInvertiblePMMatrix [
 
 ]
 
-{ #category : #setupNumber }
-MBSetup >> setupNumber [
-
-			
-	aNumber := (1000 random).
-]
-
 { #category : #setupOneMatrix }
 MBSetup >> setupPMMatrix [
 
@@ -259,6 +277,21 @@ MBSetup >> setuptwoAIColumnMatrix [
 	1 to: 500 do: [ :i | 
 		1 to: 500 do: [ :j |
 			a2 at: i and: j put: (10000 random) ] ].
+]
+
+{ #category : #setupTwoMatrix }
+MBSetup >> setuptwoAIDiagonalMatrix [
+
+
+	|aArray|
+	aArray := Array new: 500.
+	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
+	
+	a1 := AIDiagonalMatrix withDiagonal: aArray.
+	
+	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
+	
+	a2 := AIDiagonalMatrix withDiagonal: aArray.
 ]
 
 { #category : #setupTwoMatrix }

@@ -16,6 +16,17 @@ MBDivision >> divideAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBDivision >> divideAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonalMatrix division'>
+	<setup: #setupAIDiagonalMatrixandNumber>
+
+	100 timesRepeat:[  a1 / aNumber ].
+	
+]
+
+{ #category : #benchmarks }
 MBDivision >> divideAIRowMatrix [
 
 	

@@ -15,6 +15,16 @@ MBAccess >> accessAIColumnMatrix [
 ]
 
 { #category : #benchmarks }
+MBAccess >> accessAIDiagonalMatrix [
+
+	
+	<benchmark: 'Accessing AIDiagonalMatrix'>
+	<setup: #setupAIDiagonalMatrix>
+
+	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
+]
+
+{ #category : #benchmarks }
 MBAccess >> accessAIRowMatrix [
 
 	
