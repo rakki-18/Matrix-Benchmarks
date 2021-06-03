@@ -1,25 +1,6 @@
 # Matrix-Benchmarks
 Package to benchmark different matrix types and operations in Pharo
 
-## Matrix Implementations covered 
-- PMSymmetricMatrix
-- Array2D
-- AIDiagonalMatrix
-- AIColumnMatrix
-- AIRowMatrix
-- AISymetricMatrix
-- PMMatrix
-
-## Matrix Types covered
-- Symmetric Matrix
-- Diagonal Matrix
-- Identity Matrix
-- Equal Matrix
-- Initialization
-- Random Matrix
-- Row Vector
-- Column Vector
-- Null Matrix
 
 ## How to install the package?
 
@@ -46,27 +27,65 @@ spec
 Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) to learn more about baselines.
 
 ## Running Benchmarks
-To run the benchmarks on `Array2D` matrix on the diagonal matrix initialisation method,
+- To get a benchmarked report of all the matrix implementations on the operation - Addition:
+```Smalltalk
+(BenchmarkSuite class: MBAddition) run.
 ```
-|aBenchmark|
-aBenchmark := MBArray2DBenchmark new.
-aBenchmark diagonal.
+- On the operation - Element-wise Multiplication
+```Smalltalk
+(BenchmarkSuite class: MBElementWiseMultiplication) run.
 ```
-To run the benchmarks on  `PMSymetricMatrix` class to initialize it with a random matrix,
-```
-|aBenchmark|
-aBenchmark := MBPMSymmetricBenchmark new.
-aBenchmark randomMatrix.
+- On the operation - Accessing cells of a matrix
+```Smalltalk
+(BenchmarkSuite class: MBAccess) run.
 ```
 
-## Generating Benchmark Reports
-To generate a benchmark report on all the methods of a particular class,
-- For `Array2D`
+- On the operation - Building an empty matrix
+```Smalltalk
+(BenchmarkSuite class: MBBuild) run.
 ```
+
+- On the operation - Comparing matrices
+```Smalltalk
+(BenchmarkSuite class: MBCompareEqual) run.
+```
+- On the operation - Transpose of a matrix
+```Smalltalk
+(BenchmarkSuite class: MBTranspose) run.
+```
+
+To generate a benchmark report on all the operations of a particular matrix implementation,
+- For `Array2D`
+```Smalltalk
 (BenchmarkSuite class: CSArray2DBenchmark ) run.
 ```
 - For `PMMatrix`
-```
+```Smalltalk
 (BenchmarkSuite class: CSPMMatrixBenchmark  ) run.
 ```
+## Matrix Implementations covered 
+- Array2D
+- PMMatrix
+- PMSymmetricMatrix
+- AIColumnMatrix
+- AIRowMatrix
+- AISymetricMatrix
+- AIDiagonalMatrix
+
+
+## Matrix Operations covered
+- Building an empty Matrix
+- Building a matrix filled with zeros
+- Accessing matrix cells
+- Addition of matrices
+- Subtraction of matrices
+- Matrix Multiplication
+- Element-wise Multiplication
+- Multiplication with a number
+- Division with a number
+- Comparing matrices
+- Finding determinant
+- Finding inverse
+- Transpose of a matrx
+- Trace of a matrix
 
