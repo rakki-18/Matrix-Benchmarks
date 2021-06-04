@@ -9,6 +9,13 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #'running - benchmark' }
+MBSetup class >> runAllBenchmarks [
+
+	
+	^(BenchmarkSuite class: self new class ) run.
+]
+
 { #category : #setupOneMatrix }
 MBSetup >> setupAIColumnMatrix [
 
