@@ -29,29 +29,29 @@ Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blo
 ## Running Benchmarks
 - To get a benchmarked report of all the matrix implementations on the operation - Addition:
 ```Smalltalk
-(BenchmarkSuite class: MBAddition) run.
+MBAddition runAllBenchmarks
 ```
 - On the operation - Element-wise Multiplication
 ```Smalltalk
-(BenchmarkSuite class: MBElementWiseMultiplication) run.
+MBElementWiseMultiplication runAllBenchmarks
 ```
 - On the operation - Accessing cells of a matrix
 ```Smalltalk
-(BenchmarkSuite class: MBAccess) run.
+MBAccess runAllBenchmarks
 ```
 
 - On the operation - Building an empty matrix
 ```Smalltalk
-(BenchmarkSuite class: MBBuild) run.
+MBBuild runAllBenchmarks
 ```
 
 - On the operation - Comparing matrices
 ```Smalltalk
-(BenchmarkSuite class: MBCompareEqual) run.
+MBCompareEqual runAllBenchmarks
 ```
 - On the operation - Transpose of a matrix
 ```Smalltalk
-(BenchmarkSuite class: MBTranspose) run.
+MBTranspose runAllBenchmarks
 ```
 
 To generate a benchmark report on all the operations of a particular matrix implementation,
