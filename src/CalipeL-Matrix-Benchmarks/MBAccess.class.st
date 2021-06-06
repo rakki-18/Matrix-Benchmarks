@@ -8,7 +8,7 @@ Class {
 MBAccess >> accessAIColumnMatrix [
 
 	
-	<benchmark: 'Accessing AIColumnMatrix'>
+	<benchmark: 'AIColumn'>
 	<setup: #setupAIColumnMatrix>
 
 	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
@@ -18,7 +18,7 @@ MBAccess >> accessAIColumnMatrix [
 MBAccess >> accessAIDiagonalMatrix [
 
 	
-	<benchmark: 'Accessing AIDiagonalMatrix'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setupAIDiagonalMatrix>
 
 	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
@@ -28,7 +28,7 @@ MBAccess >> accessAIDiagonalMatrix [
 MBAccess >> accessAIRowMatrix [
 
 	
-	<benchmark: 'Accessing AIRowMatrix'>
+	<benchmark: 'AIRow'>
 	<setup: #setupAIRowMatrix>
 
 	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
@@ -38,7 +38,7 @@ MBAccess >> accessAIRowMatrix [
 MBAccess >> accessAISymetricMatrix [
 
 	
-	<benchmark: 'Accessing AISymetricMatrix'>
+	<benchmark: 'AISymetric'>
 	<setup: #setupAISymetricMatrix>
 
 	1000000 timesRepeat:[  a1 at: 250 and: 250 ].
@@ -48,7 +48,7 @@ MBAccess >> accessAISymetricMatrix [
 MBAccess >> accessArray2D [
 
 	
-	<benchmark: 'Accessing Array 2D'>
+	<benchmark: 'Array2D'>
 	<setup: #setupArray2D>
 
 	1000000 timesRepeat:[  a1 at: 250 at: 250 ].
@@ -58,7 +58,7 @@ MBAccess >> accessArray2D [
 MBAccess >> accessPMMatrix [
 
 	
-	<benchmark: 'Accessing PMMatrix'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
 
 	1000000 timesRepeat:[  a1 at: 250 at: 250 ].
@@ -68,7 +68,7 @@ MBAccess >> accessPMMatrix [
 MBAccess >> accessPMSymmetricMatrix [
 
 	
-	<benchmark: 'Accessing PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
 	1000000 timesRepeat:[  a1 at: 250 at: 250 ].

@@ -8,7 +8,7 @@ Class {
 MBAddition >> addAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix addition'>
+	<benchmark: 'AIColumn'>
 	<setup: #setuptwoAIColumnMatrix>
 
 	100 timesRepeat:[  a1 + a2 ].
@@ -18,7 +18,7 @@ MBAddition >> addAIColumnMatrix [
 MBAddition >> addAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix addition'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setuptwoAIDiagonalMatrix>
 
 	100 timesRepeat:[  a1 + a2 ].
@@ -28,7 +28,7 @@ MBAddition >> addAIDiagonalMatrix [
 MBAddition >> addAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix addition'>
+	<benchmark: 'AIRow'>
 	<setup: #setuptwoAIRowMatrix>
 
 	100 timesRepeat:[  a1 + a2 ].
@@ -38,7 +38,7 @@ MBAddition >> addAIRowMatrix [
 MBAddition >> addAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix addition'>
+	<benchmark: 'AISymetric'>
 	<setup: #setuptwoAISymetricMatrix>
 
 	100 timesRepeat:[  a1 + a2 ].
@@ -48,7 +48,7 @@ MBAddition >> addAISymetricMatrix [
 MBAddition >> addArray2D [
 
 	
-	<benchmark: 'Array 2D addition'>
+	<benchmark: 'Array2D'>
 	<setup: #setuptwoArray2D>
 
 	100 timesRepeat:[  a1 + a2 ].
@@ -58,7 +58,7 @@ MBAddition >> addArray2D [
 MBAddition >> addPMMatrix [
 
 	
-	<benchmark: 'PMMatrix addition'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setuptwoPMMatrix>
 
 	100 timesRepeat:[  a1 + a2 ].
@@ -68,7 +68,7 @@ MBAddition >> addPMMatrix [
 MBAddition >> addPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix addition'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setuptwoPMSymmetricMatrix>
 
 	100 timesRepeat:[  a1 + a2 ].

@@ -12,8 +12,22 @@ Class {
 { #category : #'running - benchmark' }
 MBSetup class >> runAllBenchmarks [
 
+	|aBenchmark data chart names|
+
+	aBenchmark  := (BenchmarkSuite class: self new class ) run.
+	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
+	names := aBenchmark outcomes collect: [ :each | each benchmark name].
 	
-	^(BenchmarkSuite class: self new class ) run.
+	chart := RSChart new.
+
+	chart barHeights: data.
+	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+	chart addDecoration: (RSVerticalTick new integer).
+	chart addDecoration: (RSHorizontalTick new fromNames: names).
+	chart title: self className.
+	^ chart open.
+
+
 ]
 
 { #category : #setupOneMatrix }
