@@ -21,10 +21,13 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 			spec
 				baseline: 'CalipeLSBenchmark'
 				with: [ spec repository: 'github://rakki-18/CalipeL-S-Benchmark' ].
-			
+			spec 
+				baseline: 'Roassal3'
+				with: [ spec repository: 'github://ObjectProfile/Roassal3/src' ].
+
 			spec 
 				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath') ];
-				package: 'CalipeL-Matrix-Benchmarks' with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLSBenchmark') ];
+				package: 'CalipeL-Matrix-Benchmarks' with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLSBenchmark' 'Roassal3') ];
 				package: 'CalipeL-Matrix-Benchmarks-Tests' with: [ spec requires: #('CalipeL-Matrix-Benchmarks') ];
 				package: 'Matrix-Benchmark-Tests' with: [ spec requires: #('Matrix-Benchmark') ].
 
