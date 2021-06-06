@@ -12,6 +12,15 @@ Class {
 { #category : #'running - benchmark' }
 MBSetup class >> runAllBenchmarks [
 
+	^ (BenchmarkSuite class: self new class ) run.
+	
+
+
+]
+
+{ #category : #'running - benchmark' }
+MBSetup class >> runAndPlotAllBenchmarks [
+
 	|aBenchmark data chart names|
 
 	aBenchmark  := (BenchmarkSuite class: self new class ) run.
