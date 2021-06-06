@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBBuildZeros class >> title [
+
+
+	^ 'Building a zero Matrix'
+]
+
 { #category : #benchmarks }
 MBBuildZeros >> buildZeroAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix build with zeros'>
+	<benchmark: 'AIColumn'>
 
 	100 timesRepeat:[  AIColumnMatrix new: 500 withAll: 0].
 	
@@ -18,7 +25,7 @@ MBBuildZeros >> buildZeroAIColumnMatrix [
 MBBuildZeros >> buildZeroAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix build with zeros'>
+	<benchmark: 'AIDiagonal'>
 
 	100 timesRepeat:[  AIDiagonalMatrix new: 500 withAll: 0].
 	
@@ -28,7 +35,7 @@ MBBuildZeros >> buildZeroAIDiagonalMatrix [
 MBBuildZeros >> buildZeroAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix build with zeros'>
+	<benchmark: 'AIRow'>
 
 	100 timesRepeat:[  AIRowMatrix new: 500 withAll: 0].
 	
@@ -38,7 +45,7 @@ MBBuildZeros >> buildZeroAIRowMatrix [
 MBBuildZeros >> buildZeroAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix build with zeros'>
+	<benchmark: 'AISymetric'>
 
 	100 timesRepeat:[  AISymetricMatrix new: 500 withAll: 0].
 	
@@ -48,7 +55,7 @@ MBBuildZeros >> buildZeroAISymetricMatrix [
 MBBuildZeros >> buildZeroArray2D [
 
 	
-	<benchmark: 'Array2D build with zeros'>
+	<benchmark: 'Array2D'>
 
 	100 timesRepeat:[  Array2D zeros: 500 ].
 	
@@ -58,7 +65,7 @@ MBBuildZeros >> buildZeroArray2D [
 MBBuildZeros >> buildZeroPMMatrix [
 
 	
-	<benchmark: 'PMMatrix build with zeros'>
+	<benchmark: 'PMMatrix'>
 
 
 	100 timesRepeat:[  PMMatrix zerosRows: 500 cols: 500].

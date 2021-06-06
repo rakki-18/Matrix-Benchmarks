@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBTrace class >> title [
+
+
+	^ 'Trace of a Matrix'
+]
+
 { #category : #benchmarks }
 MBTrace >> tracePMMatrix [
 
 
-	<benchmark: 'Trace of a PMMatrix'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
 
 	10000 timesRepeat: [ a1 tr ].
@@ -18,7 +25,7 @@ MBTrace >> tracePMMatrix [
 MBTrace >> tracePMSymmetricMatrix [
 
 
-	<benchmark: 'Trace of a PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
 	10000 timesRepeat: [ a1 tr ].

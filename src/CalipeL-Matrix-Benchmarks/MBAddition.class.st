@@ -4,6 +4,13 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBAddition class >> title [
+
+
+	^ 'Matrix Addition'
+]
+
 { #category : #benchmarks }
 MBAddition >> addAIColumnMatrix [
 

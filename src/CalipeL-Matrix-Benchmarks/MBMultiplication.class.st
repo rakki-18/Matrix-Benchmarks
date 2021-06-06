@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBMultiplication class >> title [
+
+
+	^ 'Scalar multiplication'
+]
+
 { #category : #benchmarks }
 MBMultiplication >> multiplyAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix multiplication'>
+	<benchmark: 'AIColumn'>
 	<setup: #setupAIColumnMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
@@ -19,7 +26,7 @@ MBMultiplication >> multiplyAIColumnMatrix [
 MBMultiplication >> multiplyAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix multiplication'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setupAIDiagonalMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
@@ -30,7 +37,7 @@ MBMultiplication >> multiplyAIDiagonalMatrix [
 MBMultiplication >> multiplyAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix multiplication'>
+	<benchmark: 'AIRow'>
 	<setup: #setupAIRowMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
@@ -41,7 +48,7 @@ MBMultiplication >> multiplyAIRowMatrix [
 MBMultiplication >> multiplyAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix multiplication'>
+	<benchmark: 'AISymetric'>
 	<setup: #setupAISymetricMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
@@ -52,7 +59,7 @@ MBMultiplication >> multiplyAISymetricMatrix [
 MBMultiplication >> multiplyArray2D [
 
 	
-	<benchmark: 'Array2D multiplication'>
+	<benchmark: 'Array2D'>
 	<setup: #setupArray2DandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
@@ -62,7 +69,7 @@ MBMultiplication >> multiplyArray2D [
 MBMultiplication >> multiplyPMMatrix [
 
 	
-	<benchmark: 'PMMatrix multiplication'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].
@@ -72,7 +79,7 @@ MBMultiplication >> multiplyPMMatrix [
 MBMultiplication >> multiplyPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix multiplication'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrixandNumber>
 
 	100 timesRepeat:[  a1 * aNumber ].

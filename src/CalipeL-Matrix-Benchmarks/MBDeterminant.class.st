@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBDeterminant class >> title [
+
+
+	^ 'Matrix Determinant'
+]
+
 { #category : #benchmarks }
 MBDeterminant >> determinantPMMatrix [
 
 
-	<benchmark: 'Determinant of a PMMatrix'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setupSmallPMMatrix>
 
 	1 timesRepeat: [ a1 determinant ].
@@ -18,7 +25,7 @@ MBDeterminant >> determinantPMMatrix [
 MBDeterminant >> determinantPMSymmetricMatrix [
 
 
-	<benchmark: 'Determinant of a PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupSmallPMSymmetricMatrix>
 
 	1 timesRepeat: [ a1 determinant ].

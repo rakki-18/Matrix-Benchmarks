@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBMatrixMultiplication class >> title [
+
+
+	^ 'Matrix Multiplication'
+]
+
 { #category : #benchmarks }
 MBMatrixMultiplication >> matrixmultiplyAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix matrix multiplication'>
+	<benchmark: 'AIColumn'>
 	<setup: #setuptwoAIColumnMatrix>
 
 	10 timesRepeat:[  a1 *~ a2 ].
@@ -19,7 +26,7 @@ MBMatrixMultiplication >> matrixmultiplyAIColumnMatrix [
 MBMatrixMultiplication >> matrixmultiplyAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix matrix multiplication'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setuptwoAIDiagonalMatrix>
 
 	10 timesRepeat:[  a1 *~ a2 ].
@@ -30,7 +37,7 @@ MBMatrixMultiplication >> matrixmultiplyAIDiagonalMatrix [
 MBMatrixMultiplication >> matrixmultiplyAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix matrix multiplication'>
+	<benchmark: 'AIRow'>
 	<setup: #setuptwoAIRowMatrix>
 
 	10 timesRepeat:[  a1 *~ a2 ].
@@ -41,7 +48,7 @@ MBMatrixMultiplication >> matrixmultiplyAIRowMatrix [
 MBMatrixMultiplication >> matrixmultiplyAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix matrix multiplication'>
+	<benchmark: 'AISymetric'>
 	<setup: #setuptwoAISymetricMatrix>
 
 	10 timesRepeat:[  a1 *~ a2 ].
@@ -52,7 +59,7 @@ MBMatrixMultiplication >> matrixmultiplyAISymetricMatrix [
 MBMatrixMultiplication >> matrixmultiplyArray2D [
 
 	
-	<benchmark: 'Array2D matrix multiplication'>
+	<benchmark: 'Array2D'>
 	<setup: #setuptwoArray2D>
 
 	10 timesRepeat:[  a1 +* a2 ].
@@ -63,7 +70,7 @@ MBMatrixMultiplication >> matrixmultiplyArray2D [
 MBMatrixMultiplication >> matrixmultiplyPMMatrix [
 
 	
-	<benchmark: 'PMMatrix matrix multiplication'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setuptwoPMMatrix>
 
 	10 timesRepeat:[  a1 * a2 ].
@@ -74,7 +81,7 @@ MBMatrixMultiplication >> matrixmultiplyPMMatrix [
 MBMatrixMultiplication >> matrixmultiplyPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix matrix multiplication'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setuptwoPMSymmetricMatrix>
 
 	10 timesRepeat:[  a1 * a2 ].

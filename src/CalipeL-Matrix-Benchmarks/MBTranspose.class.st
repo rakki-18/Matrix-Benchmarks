@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBTranspose class >> title [
+
+
+	^ 'Transpose of a Matrix'
+]
+
 { #category : #benchmarks }
 MBTranspose >> transposeAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix transposition'>
+	<benchmark: 'AIColumn'>
 	<setup: #setupAIColumnMatrix>
 
 	100 timesRepeat:[  a1 transposed ].
@@ -18,7 +25,7 @@ MBTranspose >> transposeAIColumnMatrix [
 MBTranspose >> transposeAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix transposition'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setupAIDiagonalMatrix>
 
 	100 timesRepeat:[  a1 transposed ].
@@ -28,7 +35,7 @@ MBTranspose >> transposeAIDiagonalMatrix [
 MBTranspose >> transposeAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix transposition'>
+	<benchmark: 'AIRow'>
 	<setup: #setupAIRowMatrix>
 
 	100 timesRepeat:[  a1 transposed ].
@@ -38,7 +45,7 @@ MBTranspose >> transposeAIRowMatrix [
 MBTranspose >> transposeAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix transposition'>
+	<benchmark: 'AISymetric'>
 	<setup: #setupAISymetricMatrix>
 
 	100 timesRepeat:[  a1 transposed ].
@@ -48,7 +55,7 @@ MBTranspose >> transposeAISymetricMatrix [
 MBTranspose >> transposeArray2D [
 
 	
-	<benchmark: 'Array 2D transposition'>
+	<benchmark: 'Array2D'>
 	<setup: #setupArray2D>
 
 	100 timesRepeat:[  a1 transposed ].
@@ -58,7 +65,7 @@ MBTranspose >> transposeArray2D [
 MBTranspose >> transposePMMatrix [
 
 	
-	<benchmark: 'PMMatrix transposition'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
 
 	100 timesRepeat:[  a1 transpose ].

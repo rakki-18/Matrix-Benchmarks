@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBBuild class >> title [
+
+
+	^ 'Building a NULL Matrix'
+]
+
 { #category : #benchmarks }
 MBBuild >> buildAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix build'>
+	<benchmark: 'AIColumn'>
 
 	100 timesRepeat:[  AIColumnMatrix new: 500 ].
 	
@@ -18,7 +25,7 @@ MBBuild >> buildAIColumnMatrix [
 MBBuild >> buildAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix build'>
+	<benchmark: 'AIDiagonal'>
 
 	100 timesRepeat:[  AIDiagonalMatrix new: 500 ].
 	
@@ -28,7 +35,7 @@ MBBuild >> buildAIDiagonalMatrix [
 MBBuild >> buildAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix build'>
+	<benchmark: 'AIRow'>
 
 	100 timesRepeat:[  AIRowMatrix new: 500 ].
 	
@@ -38,7 +45,7 @@ MBBuild >> buildAIRowMatrix [
 MBBuild >> buildAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix build'>
+	<benchmark: 'AISymetric'>
 
 	100 timesRepeat:[  AISymetricMatrix new: 500 ].
 	
@@ -48,7 +55,7 @@ MBBuild >> buildAISymetricMatrix [
 MBBuild >> buildArray2D [
 
 	
-	<benchmark: 'Array2D build'>
+	<benchmark: 'Array2D'>
 
 	100 timesRepeat:[  Array2D new: 500 ].
 	
@@ -58,7 +65,7 @@ MBBuild >> buildArray2D [
 MBBuild >> buildPMMatrix [
 
 	
-	<benchmark: 'PMMatrix build'>
+	<benchmark: 'PMMatrix'>
 
 
 	100 timesRepeat:[  PMMatrix new: 500 ].
@@ -68,7 +75,7 @@ MBBuild >> buildPMMatrix [
 MBBuild >> buildPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix build'>
+	<benchmark: 'PMSymmetric'>
 
 
 	100 timesRepeat:[  PMSymmetricMatrix new: 500 ].

@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBElementWiseMultiplication class >> title [
+
+
+	^ ' Element-wise Matrix multiplication'
+]
+
 { #category : #benchmarks }
 MBElementWiseMultiplication >> elementWiseMultiplyAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix element-wise multiplication'>
+	<benchmark: 'AIColumn'>
 	<setup: #setuptwoAIColumnMatrix>
 
 	100 timesRepeat:[  a1 productFromMatrix: a2 ].
@@ -19,7 +26,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIColumnMatrix [
 MBElementWiseMultiplication >> elementWiseMultiplyAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix element-wise multiplication'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setuptwoAIDiagonalMatrix>
 
 	100 timesRepeat:[  a1 productFromMatrix: a2 ].
@@ -30,7 +37,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIDiagonalMatrix [
 MBElementWiseMultiplication >> elementWiseMultiplyAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix element-wise multiplication'>
+	<benchmark: 'AIRow'>
 	<setup: #setuptwoAIRowMatrix>
 
 	100 timesRepeat:[  a1 productFromMatrix: a2 ].
@@ -41,7 +48,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIRowMatrix [
 MBElementWiseMultiplication >> elementWiseMultiplyAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix element-wise multiplication'>
+	<benchmark: 'AISymetric'>
 	<setup: #setuptwoAISymetricMatrix>
 
 	100 timesRepeat:[  a1 productFromMatrix: a2 ].
@@ -52,7 +59,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAISymetricMatrix [
 MBElementWiseMultiplication >> elementWiseMultiplyArray2D [
 
 	
-	<benchmark: 'Array2D element-wise multiplication'>
+	<benchmark: 'Array2D'>
 	<setup: #setuptwoArray2D>
 
 	100 timesRepeat:[  a1 * a2 ].
@@ -63,7 +70,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyArray2D [
 MBElementWiseMultiplication >> elementWiseMultiplyPMMatrix [
 
 	
-	<benchmark: 'PMMatrix element-wise multiplication'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setuptwoPMMatrix>
 
 	100 timesRepeat:[  a1 hadamardProduct: a2 ].
@@ -74,7 +81,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyPMMatrix [
 MBElementWiseMultiplication >> elementWiseMultiplyPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix element-wise multiplication'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setuptwoPMSymmetricMatrix>
 
 	100 timesRepeat:[  a1 hadamardProduct: a2 ].

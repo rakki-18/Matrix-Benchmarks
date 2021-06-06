@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBCompareNonequal class >> title [
+
+
+	^ 'Comparing non-equal matrices'
+]
+
 { #category : #benchmarks }
 MBCompareNonequal >> comparenonequalAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix compare non equal matrices'>
+	<benchmark: 'AIColumn'>
 	<setup: #setuptwoAIColumnMatrix>
 
 	1000000 timesRepeat:[  a1 = a2 ].
@@ -18,7 +25,7 @@ MBCompareNonequal >> comparenonequalAIColumnMatrix [
 MBCompareNonequal >> comparenonequalAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix compare non equal matrices'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setuptwoAIDiagonalMatrix>
 
 	1000000 timesRepeat:[  a1 = a2 ].
@@ -28,7 +35,7 @@ MBCompareNonequal >> comparenonequalAIDiagonalMatrix [
 MBCompareNonequal >> comparenonequalAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix compare non equal matrices'>
+	<benchmark: 'AIRow'>
 	<setup: #setuptwoAIRowMatrix>
 
 	1000000 timesRepeat:[  a1 = a2 ].
@@ -38,7 +45,7 @@ MBCompareNonequal >> comparenonequalAIRowMatrix [
 MBCompareNonequal >> comparenonequalAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix compare non equal matrices'>
+	<benchmark: 'AISymetric'>
 	<setup: #setuptwoAISymetricMatrix>
 
 	1000000 timesRepeat:[  a1 = a2 ].
@@ -48,7 +55,7 @@ MBCompareNonequal >> comparenonequalAISymetricMatrix [
 MBCompareNonequal >> comparenonequalArray2D [
 
 	
-	<benchmark: 'Array2D compare non equal matrices'>
+	<benchmark: 'Array2D'>
 	<setup: #setuptwoArray2D>
 
 	1000000 timesRepeat:[  a1 = a2 ].
@@ -58,7 +65,7 @@ MBCompareNonequal >> comparenonequalArray2D [
 MBCompareNonequal >> comparenonequalPMMatrix [
 
 	
-	<benchmark: 'PMMatrix compare non equal matrices'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setuptwoPMMatrix>
 
 	1000000 timesRepeat:[  a1 = a2 ].
@@ -68,7 +75,7 @@ MBCompareNonequal >> comparenonequalPMMatrix [
 MBCompareNonequal >> comparenonequalPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix compare non equal matrices'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setuptwoPMSymmetricMatrix>
 
 	1000000 timesRepeat:[  a1 = a2 ].

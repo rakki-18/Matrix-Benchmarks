@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBCompareEqual class >> title [
+
+
+	^ 'Comparing equal matrices'
+]
+
 { #category : #benchmarks }
 MBCompareEqual >> comparEqualAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix compare  equal matrices'>
+	<benchmark: 'AIColumn'>
 	<setup: #setupAIColumnMatrix>
 
 	1000000 timesRepeat:[  a1 = a1 ].
@@ -18,7 +25,7 @@ MBCompareEqual >> comparEqualAIColumnMatrix [
 MBCompareEqual >> comparEqualAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix compare  equal matrices'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setupAIDiagonalMatrix>
 
 	1000000 timesRepeat:[  a1 = a1 ].
@@ -28,7 +35,7 @@ MBCompareEqual >> comparEqualAIDiagonalMatrix [
 MBCompareEqual >> comparEqualAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix compare  equal matrices'>
+	<benchmark: 'AIRow'>
 	<setup: #setupAIRowMatrix>
 
 	1000000 timesRepeat:[  a1 = a1 ].
@@ -38,7 +45,7 @@ MBCompareEqual >> comparEqualAIRowMatrix [
 MBCompareEqual >> comparEqualAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix compare  equal matrices'>
+	<benchmark: 'AISymetric'>
 	<setup: #setupAISymetricMatrix>
 
 	1000000 timesRepeat:[  a1 = a1 ].
@@ -48,7 +55,7 @@ MBCompareEqual >> comparEqualAISymetricMatrix [
 MBCompareEqual >> compareEqualArray2D [
 
 	
-	<benchmark: 'Array2D compare equal matrices'>
+	<benchmark: 'Array2D'>
 	<setup: #setupArray2D>
 
 	1000000 timesRepeat:[  a1 = a1 ].
@@ -58,7 +65,7 @@ MBCompareEqual >> compareEqualArray2D [
 MBCompareEqual >> compareEqualPMMatrix [
 
 	
-	<benchmark: 'PMMatrix compare  equal matrices'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
 
 	100000 timesRepeat:[  a1 = a1 ].
@@ -68,7 +75,7 @@ MBCompareEqual >> compareEqualPMMatrix [
 MBCompareEqual >> compareEqualPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix compare  equal matrices'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
 	100000 timesRepeat:[  a1 = a1 ].

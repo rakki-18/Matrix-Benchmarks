@@ -4,6 +4,13 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBAccess class >> title [
+
+
+	^ 'Accessing a Matrix'
+]
+
 { #category : #benchmarks }
 MBAccess >> accessAIColumnMatrix [
 

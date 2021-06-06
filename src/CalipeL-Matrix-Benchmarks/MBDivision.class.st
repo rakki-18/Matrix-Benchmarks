@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBDivision class >> title [
+
+
+	^ 'Matrix Division'
+]
+
 { #category : #benchmarks }
 MBDivision >> divideAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix division'>
+	<benchmark: 'AIColumn'>
 	<setup: #setupAIColumnMatrixandNumber>
 
 	100 timesRepeat:[  a1 / aNumber ].
@@ -19,7 +26,7 @@ MBDivision >> divideAIColumnMatrix [
 MBDivision >> divideAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix division'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setupAIDiagonalMatrixandNumber>
 
 	100 timesRepeat:[  a1 / aNumber ].
@@ -30,7 +37,7 @@ MBDivision >> divideAIDiagonalMatrix [
 MBDivision >> divideAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix division'>
+	<benchmark: 'AIRow'>
 	<setup: #setupAIRowMatrixandNumber>
 
 	100 timesRepeat:[  a1 / aNumber ].
@@ -41,7 +48,7 @@ MBDivision >> divideAIRowMatrix [
 MBDivision >> divideAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix division'>
+	<benchmark: 'AISymetric'>
 	<setup: #setupAISymetricMatrixandNumber>
 
 	100 timesRepeat:[  a1 / aNumber ].
@@ -52,7 +59,7 @@ MBDivision >> divideAISymetricMatrix [
 MBDivision >> divideArray2D [
 
 	
-	<benchmark: 'Array2D division'>
+	<benchmark: 'Array2D'>
 	<setup: #setupArray2DandNumber>
 
 	100 timesRepeat:[  a1 / aNumber ].

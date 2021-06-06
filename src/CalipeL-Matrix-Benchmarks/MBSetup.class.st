@@ -32,8 +32,8 @@ MBSetup class >> runAndPlotAllBenchmarks [
 	chart barHeights: data.
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
 	chart addDecoration: (RSVerticalTick new integer).
-	chart addDecoration: (RSHorizontalTick new fromNames: names).
-	chart title: self className.
+	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
+	chart title: self title.
 	^ chart open.
 
 

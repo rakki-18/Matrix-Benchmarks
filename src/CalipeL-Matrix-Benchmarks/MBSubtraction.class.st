@@ -4,11 +4,18 @@ Class {
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
+{ #category : #accessing }
+MBSubtraction class >> title [
+
+
+	^ 'Matrix Subtraction'
+]
+
 { #category : #benchmarks }
 MBSubtraction >> subtractAIColumnMatrix [
 
 	
-	<benchmark: 'AIColumnMatrix subtraction'>
+	<benchmark: 'AIColumn'>
 	<setup: #setuptwoAIColumnMatrix>
 
 	100 timesRepeat:[  a1 - a2 ].
@@ -18,7 +25,7 @@ MBSubtraction >> subtractAIColumnMatrix [
 MBSubtraction >> subtractAIDiagonalMatrix [
 
 	
-	<benchmark: 'AIDiagonalMatrix subtraction'>
+	<benchmark: 'AIDiagonal'>
 	<setup: #setuptwoAIDiagonalMatrix>
 
 	100 timesRepeat:[  a1 - a2 ].
@@ -28,7 +35,7 @@ MBSubtraction >> subtractAIDiagonalMatrix [
 MBSubtraction >> subtractAIRowMatrix [
 
 	
-	<benchmark: 'AIRowMatrix subtraction'>
+	<benchmark: 'AIRow'>
 	<setup: #setuptwoAIRowMatrix>
 
 	100 timesRepeat:[  a1 - a2 ].
@@ -38,7 +45,7 @@ MBSubtraction >> subtractAIRowMatrix [
 MBSubtraction >> subtractAISymetricMatrix [
 
 	
-	<benchmark: 'AISymetricMatrix subtraction'>
+	<benchmark: 'AISymetric'>
 	<setup: #setuptwoAISymetricMatrix>
 
 	100 timesRepeat:[  a1 - a2 ].
@@ -48,7 +55,7 @@ MBSubtraction >> subtractAISymetricMatrix [
 MBSubtraction >> subtractArray2D [
 
 	
-	<benchmark: 'Array 2D addition subtraction'>
+	<benchmark: 'Array2D'>
 	<setup: #setuptwoArray2D>
 
 	100 timesRepeat:[  a1 - a2 ].
@@ -58,7 +65,7 @@ MBSubtraction >> subtractArray2D [
 MBSubtraction >> subtractPMMatrix [
 
 	
-	<benchmark: 'PMMatrix subtraction'>
+	<benchmark: 'PMMatrix'>
 	<setup: #setuptwoPMMatrix>
 
 	100 timesRepeat:[  a1 - a2 ].
@@ -68,7 +75,7 @@ MBSubtraction >> subtractPMMatrix [
 MBSubtraction >> subtractPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix subtraction'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setuptwoPMSymmetricMatrix>
 
 	100 timesRepeat:[  a1 - a2 ].
