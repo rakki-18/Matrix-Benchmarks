@@ -13,6 +13,13 @@ Metacello new
   repository: 'github://rakki-18/Matrix-Benchmarks/src';
   load.
 ```
+In order to supress load warnings, you may prefer
+```Smalltalk
+[Metacello new
+  baseline: 'MatrixBenchmark';
+  repository: 'github://rakki-18/Matrix-Benchmarks/src';
+  load] on: MCMergeOrLoadWarning do: [:warning | warning load ]
+```
 
 ## How to depend on the project?
 
@@ -27,31 +34,48 @@ spec
 Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) to learn more about baselines.
 
 ## Running Benchmarks
-- To get a benchmarked report of all the matrix implementations on the operation - Addition:
+To get a benchmarked report of all the matrix implementations on a particular operation:
 ```Smalltalk
-MBAddition runAllBenchmarks
+MBOperationName runAllBenchmarks
+```
+
+To get a graphical report of the benchmarks for a particular operation:
+```Smalltalk
+MBOperationName runAndPlotAllBenchmarks
+```
+
+### Examples
+- On the operation - Addition:
+```Smalltalk
+MBAddition runAllBenchmarks.
+MBAddition runAndPlotAllBenchmarks.
 ```
 - On the operation - Element-wise Multiplication
 ```Smalltalk
-MBElementWiseMultiplication runAllBenchmarks
+MBElementWiseMultiplication runAllBenchmarks.
+MBElementWiseMultiplication runAndPlotAllBenchmarks.
 ```
 - On the operation - Accessing cells of a matrix
 ```Smalltalk
-MBAccess runAllBenchmarks
+MBAccess runAllBenchmarks.
+MBAccess runAndPlotAllBenchmarks
 ```
 
 - On the operation - Building an empty matrix
 ```Smalltalk
-MBBuild runAllBenchmarks
+MBBuild runAllBenchmarks.
+MBBuild runAndPlotAllBenchmarks.
 ```
 
 - On the operation - Comparing matrices
 ```Smalltalk
-MBCompareEqual runAllBenchmarks
+MBCompareEqual runAllBenchmarks.
+MBCompareEqual runAndPlotAllBenchmarks.
 ```
 - On the operation - Transpose of a matrix
 ```Smalltalk
-MBTranspose runAllBenchmarks
+MBTranspose runAllBenchmarks.
+MBTranspose runAndPlotAllBenchmarks.
 ```
 
 To generate a benchmark report on all the operations of a particular matrix implementation,
