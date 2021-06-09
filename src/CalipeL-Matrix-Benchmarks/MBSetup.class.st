@@ -176,7 +176,7 @@ MBSetup >> setupArray2DandNumber [
 	
 ]
 
-{ #category : #setupSpecial }
+{ #category : #setupInvertibleMatrix }
 MBSetup >> setupInvertiblePMMatrix [
 	" 2 triangular matrices( upper and lower) are generated.
 	They are multipied to generate the invertible matrix"
@@ -188,23 +188,43 @@ MBSetup >> setupInvertiblePMMatrix [
 	
 	1 to: size do: [ :i|
 	1 to: i-1 do:[ :j|
-		l at: i at: j put: (100 random)
+		l at: i at: j put: (10 random)
 		 ]].
 	" principal diagonal elements can not be zero"
 	1 to: size do: [ :i|
-	l at: i at: i put: (100 random)+1 ].
+	l at: i at: i put: (10 random)+1 ].
 
 	u := PMMatrix zerosRows: size cols: size.
 
 	1 to: size do: [ :i|
 		i+1 to: size do:[ :j|
-			u at: i at: j put: (100 random)
+			u at: i at: j put: (10 random)
 		 ]].
 	1 to: size do: [ :i|
-		u at: i at: i put: (100 random)+1 ].
+		u at: i at: i put: (10 random)+1 ].
 
 	a1 := l*u.
 
+]
+
+{ #category : #setupInvertibleMatrix }
+MBSetup >> setupInvertiblePMSymmetricMatrix [
+	"A full rank symmetric matrix AtA is generated,
+	where A is a random symmetric matrix."
+	
+	|size|
+	
+	size:= 100.
+	a1 := PMSymmetricMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: i do: [ :j |
+			a1 at: i at: j put: (10 random) ] ].
+	
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
+			a1 at: i at: j put: (a1 at:j at: i) ] ].
+	a1 := a1 transpose * a1.
 ]
 
 { #category : #setupSpecial }

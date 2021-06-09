@@ -20,3 +20,13 @@ MBInverse >> inversePMMatrix [
 
 	1 timesRepeat: [ a1 inverse ].
 ]
+
+{ #category : #benchmarks }
+MBInverse >> inversePMSymmetricMatrix [
+
+
+	<benchmark: 'PMSymmetricMatrix'>
+	<setup: #setupInvertiblePMSymmetricMatrix>
+
+	1 timesRepeat: [ a1 inverse ].
+]
