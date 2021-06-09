@@ -15,10 +15,10 @@ MBEigenVectors >> eigenVectorDecomposition [
 
 
 	<benchmark: 'PMJacobiTransformation'>
-	<setup: #setupPMMatrix>
+	<setup: #setupPMJacobiTransformation>
 
-	|jacobi eigenvalues eigenvectors|
-	jacobi := PMJacobiTransformation matrix: a1.
-	eigenvalues := jacobi evaluate.
-	eigenvectors := jacobi transform columnsCollect: [ :each | each].
+	|eigenvalues eigenvectors|
+
+	eigenvalues := a1 evaluate.
+	eigenvectors := a1 transform columnsCollect: [ :each | each].
 ]

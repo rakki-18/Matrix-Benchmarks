@@ -228,22 +228,47 @@ MBSetup >> setupInvertiblePMSymmetricMatrix [
 ]
 
 { #category : #setupSpecial }
+MBSetup >> setupPMJacobiTransformation [
+	
+	
+	|size|
+
+	size := 500.
+	a1 := PMMatrix new: size.
+	
+	1 to: size  do: [ :i | 
+		1 to: size do: [ :j |
+			a1 at: i at: j put: (10000 random) ] ].
+
+
+
+
+	a1 := PMJacobiTransformation matrix: a1.
+
+
+]
+
+{ #category : #setupSpecial }
 MBSetup >> setupPMLUPDecomposition [ 
 	
 	
 	|size|
+
 	size := 100.
 	a1 := PMMatrix new: size.
 	
 	1 to: size  do: [ :i | 
 		1 to: size do: [ :j |
 			a1 at: i at: j put: (100 random) ] ].
-
-
+	
 	a2 := PMVector new: size.
-	1 to: size do: [ :i| a2 at: i put: (100 random) ].
-
+	1 to: size do: [ :i|
+		a2 at: i put: (100 random) ].
+	
 	a1 := PMLUPDecomposition equations: a1 rows.
+
+
+
 
 
 ]
