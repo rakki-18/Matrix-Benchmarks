@@ -11,7 +11,7 @@ MBLUPDecomposition class >> title [
 ]
 
 { #category : #benchmarks }
-MBLUPDecomposition >> LUPDecomposition [
+MBLUPDecomposition >> lupDecomposition [
 
 
 	<benchmark: 'PMLUPDecomposition'>
