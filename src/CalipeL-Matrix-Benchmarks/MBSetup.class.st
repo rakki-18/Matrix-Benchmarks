@@ -32,6 +32,11 @@ MBSetup class >> runAndPlotAllBenchmarks [
 	chart barHeights: data.
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
 	chart addDecoration: (RSVerticalTick new integer).
+	"workaround as having only one horizontal tick gives error"
+	names size = 1 ifTrue: [  
+		|temp|
+		temp := Array new: 2 withAll: (names at: 1).
+		names := temp].
 	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
 	chart title: self title.
 	^ chart open.
