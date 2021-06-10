@@ -390,6 +390,52 @@ MBSetup >> setupSmallPMSymmetricMatrix [
 			a1 at: i at: j put: (a1 at:j at: i) ] ].
 ]
 
+{ #category : #setupStrassen }
+MBSetup >> setupStrassenPMMatrix [
+
+	|size|
+	
+	"size should be a power of 2"
+	size := 512.
+	
+	a1 := PMMatrix new: size.
+	a2 := PMMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
+			a1 at: i at: j put: (10000 random) ] ].
+	
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
+			a2 at: i at: j put: (10000 random) ] ].
+]
+
+{ #category : #setupStrassen }
+MBSetup >> setupStrassenPMSymmetricMatrix [
+
+	"size of the matrix should be a power of 2."
+	|size|
+	size := 512.
+	a1 := PMSymmetricMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: i do: [ :j |
+			a1 at: i at: j put: (10000 random) ] ].
+	
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
+			a1 at: i at: j put: (a1 at:j at: i) ] ].
+	a2 := PMSymmetricMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: i do: [ :j |
+			a2 at: i at: j put: (10000 random) ] ].
+	
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
+			a2 at: i at: j put: (a2 at:j at: i) ] ].
+]
+
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoAIColumnMatrix [
 
