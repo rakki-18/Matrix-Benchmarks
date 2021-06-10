@@ -278,6 +278,32 @@ MBSetup >> setupPMLUPDecomposition [
 
 ]
 
+{ #category : #setupSpecial }
+MBSetup >> setupPMLinearEquationSystem [
+	
+	" Random matrix and vector is generated.
+	If the matrix is singular, solution will just return nil."
+	|size|
+
+	size := 100.
+	a1 := PMMatrix new: size.
+	
+	1 to: size  do: [ :i | 
+		1 to: size do: [ :j |
+			a1 at: i at: j put: (100 random) ] ].
+	
+	a2 := PMVector new: size.
+	1 to: size do: [ :i|
+		a2 at: i put: (100 random) ].
+	
+	a1 := PMLinearEquationSystem equations: a1 rows constant: a2 asArray.
+
+
+
+
+
+]
+
 { #category : #setupOneMatrix }
 MBSetup >> setupPMMatrix [
 
