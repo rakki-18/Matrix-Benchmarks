@@ -95,6 +95,9 @@ To generate a benchmark report on all the operations of a particular matrix impl
 - AIRowMatrix
 - AISymetricMatrix
 - AIDiagonalMatrix
+- PMJacobiTransformation
+- PMLinearEquationSystem
+- PMLUPDecomposition
 
 
 ## Matrix Operations covered
@@ -112,4 +115,11 @@ To generate a benchmark report on all the operations of a particular matrix impl
 - Finding inverse
 - Transpose of a matrx
 - Trace of a matrix
+- Finding eigenvectors
+- Gaussian Elimination
+- LU Decomposition
+- QR Decomposition
+- Rank factorization
+- Singular Value Decomposition
+- Strassen Multiplication
 
