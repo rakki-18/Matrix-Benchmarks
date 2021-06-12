@@ -1,6 +1,6 @@
 Class {
 	#name : #CSPMSymmetricMatrixBenchmark,
-	#superclass : #Object,
+	#superclass : #CSAbstractMatrixBenchmark,
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
@@ -9,7 +9,7 @@ CSPMSymmetricMatrixBenchmark >> identityMatrix [
 
 	<benchmark: 'Identity Matrix initialization'>
 
-	100 timesRepeat:[ PMSymmetricMatrix identity:  500  ].
+	self initRepetitions timesRepeat:[ PMSymmetricMatrix identity:  self elementSize  ].
 ]
 
 { #category : #benchmarking }
@@ -17,5 +17,5 @@ CSPMSymmetricMatrixBenchmark >> randomMatrix [
 
 	<benchmark: 'Random Matrix initialization'>
 
-	100 timesRepeat:[ PMSymmetricMatrix new: 500 random: 10000  ].
+	self initRepetitions timesRepeat:[ PMSymmetricMatrix new: self elementSize random: 10000  ].
 ]

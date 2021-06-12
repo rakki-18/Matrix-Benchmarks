@@ -1,6 +1,6 @@
 Class {
 	#name : #CSAISymetricMatrixBenchmark,
-	#superclass : #Object,
+	#superclass : #CSAbstractMatrixBenchmark,
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
@@ -9,5 +9,11 @@ CSAISymetricMatrixBenchmark >> initialization [
 
 	<benchmark: 'New Matrix initialization'>
 
-	100 timesRepeat:[ AISymetricMatrix  new:500  ].
+	self benchInitialization.
+]
+
+{ #category : #benchmarking }
+CSAISymetricMatrixBenchmark >> matrixClass [
+
+	^ AISymetricMatrix.
 ]

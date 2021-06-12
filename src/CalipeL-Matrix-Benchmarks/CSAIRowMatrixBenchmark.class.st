@@ -1,6 +1,6 @@
 Class {
 	#name : #CSAIRowMatrixBenchmark,
-	#superclass : #Object,
+	#superclass : #CSAbstractMatrixBenchmark,
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
@@ -9,5 +9,11 @@ CSAIRowMatrixBenchmark >> initialization [
 
 	<benchmark: 'New Matrix initialization'>
 
-	100 timesRepeat:[ AIRowMatrix  new:500  ].
+	self benchInitialization.
+]
+
+{ #category : #benchmarking }
+CSAIRowMatrixBenchmark >> matrixClass [
+
+	^ AIRowMatrix 
 ]

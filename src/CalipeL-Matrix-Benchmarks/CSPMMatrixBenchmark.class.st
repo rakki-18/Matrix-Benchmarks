@@ -1,6 +1,6 @@
 Class {
 	#name : #CSPMMatrixBenchmark,
-	#superclass : #Object,
+	#superclass : #CSAbstractMatrixBenchmark,
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
 
@@ -9,7 +9,7 @@ CSPMMatrixBenchmark >> equalMatrix [
 
 	<benchmark: 'Equal Matrix initialization'>
 
-	100 timesRepeat:[  PMMatrix rows: 500 columns: 500 element: 10000].
+	self initRepetitions timesRepeat:[  PMMatrix rows: self elementSize columns: self elementSize element: 10000].
 ]
 
 { #category : #benchmarking }
@@ -17,7 +17,7 @@ CSPMMatrixBenchmark >> nullMatrix [
 
 	<benchmark: 'Null Matrix initialization'>
 
-	100 timesRepeat:[  PMMatrix rows: 500 columns: 500 ].
+	self initRepetitions timesRepeat:[  PMMatrix rows: self elementSize columns: self elementSize ].
 ]
 
 { #category : #benchmarking }
@@ -25,7 +25,7 @@ CSPMMatrixBenchmark >> ones [
 
 	<benchmark: 'Ones Matrix initialization'>
 
-	100 timesRepeat:[  PMMatrix onesRows: 500 cols: 500 ].
+	self initRepetitions timesRepeat:[  PMMatrix onesRows: self elementSize cols: self elementSize ].
 ]
 
 { #category : #benchmarking }
@@ -33,5 +33,5 @@ CSPMMatrixBenchmark >> zeros [
 
 	<benchmark: 'Zeros Matrix initialization'>
 
-	100 timesRepeat:[  PMMatrix zerosRows: 500 cols: 500 ].
+	self initRepetitions timesRepeat: [  PMMatrix zerosRows: self elementSize cols: self elementSize ].
 ]
