@@ -70,26 +70,14 @@ MBSetup >> matrixSize: anInteger [
 { #category : #setupOneMatrix }
 MBSetup >> setupAIColumnMatrix [
 
-
-	a1 := AIColumnMatrix new: 500.
+	|size|
+	
+	size := matrixSize.
+	a1 := AIColumnMatrix new: size.
 
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
-			a1 at: i and: j put: (10000 random) ] ].
-	
-	
-]
-
-{ #category : #setupMatrixandNumber }
-MBSetup >> setupAIColumnMatrixandNumber [ 
-
-	aNumber := (10000 random).
-	a1 := AIColumnMatrix new: 500.
-
-	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
 	
@@ -99,22 +87,11 @@ MBSetup >> setupAIColumnMatrixandNumber [
 MBSetup >> setupAIDiagonalMatrix [
 
 
-	|aArray|
-	aArray := Array new: 500.
-	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
+	|aArray size|
 	
-	a1 := AIDiagonalMatrix withDiagonal: aArray.
-	
-]
-
-{ #category : #setupMatrixandNumber }
-MBSetup >> setupAIDiagonalMatrixandNumber [
-
-	|aArray|
-	aArray := Array new: 500.
-	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
-
-	aNumber := (10000 random).
+	size := matrixSize.
+	aArray := Array new: size.
+	1 to: size do: [ :i | aArray at: i put: (10000 random) ].
 	
 	a1 := AIDiagonalMatrix withDiagonal: aArray.
 	
@@ -123,26 +100,14 @@ MBSetup >> setupAIDiagonalMatrixandNumber [
 { #category : #setupOneMatrix }
 MBSetup >> setupAIRowMatrix [
 
-
-	a1 := AIRowMatrix new: 500.
+	|size|
+	
+	size := matrixSize.
+	a1 := AIRowMatrix new: size.
 
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
-			a1 at: i and: j put: (10000 random) ] ].
-	
-	
-]
-
-{ #category : #setupMatrixandNumber }
-MBSetup >> setupAIRowMatrixandNumber [
-
-	aNumber := (10000 random).
-	a1 := AIRowMatrix new: 500.
-
-	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
 	
@@ -151,55 +116,32 @@ MBSetup >> setupAIRowMatrixandNumber [
 { #category : #setupOneMatrix }
 MBSetup >> setupAISymetricMatrix [
 
+	|size|
+	
+	size := matrixSize.
+	a1 := AISymetricMatrix new: size.
 
-	a1 := AISymetricMatrix new: 500.
-
-	1 to: 500 do: [ :i | 
+	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
 			a1 at: i and: j put: (a1 at:j and: i) ] ].
 	
-	
-]
-
-{ #category : #setupMatrixandNumber }
-MBSetup >> setupAISymetricMatrixandNumber [
-
-	aNumber := (10000 random).
-	a1 := AISymetricMatrix new: 500.
-	1 to: 500 do: [ :i | 
-		1 to: i do: [ :j |
-			a1 at: i and: j put: (10000 random) ] ].
-	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
-			a1 at: i and: j put: (a1 at:j and: i) ] ].
 	
 ]
 
 { #category : #setupOneMatrix }
 MBSetup >> setupArray2D [
 
-
-	a1 := Array2D new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
-			a1 at: i at: j put: (10000 random) ] ].
+	size := matrixSize.
+	a1 := Array2D new: size.
 	
-]
-
-{ #category : #setupMatrixandNumber }
-MBSetup >> setupArray2DandNumber [
-
-	aNumber := (10000 random).
-	a1 := Array2D new: 500.
-	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i at: j put: (10000 random) ] ].
 	
 ]
@@ -211,7 +153,7 @@ MBSetup >> setupInvertiblePMMatrix [
 	
 	|l u size|
 	
-	size := 100.
+	size := matrixSize.
 	l := PMMatrix zerosRows: size cols: size.
 	
 	1 to: size do: [ :i|
@@ -242,7 +184,7 @@ MBSetup >> setupInvertiblePMSymmetricMatrix [
 	
 	|size|
 	
-	size:= 100.
+	size:= matrixSize.
 	a1 := PMSymmetricMatrix new: size.
 	
 	1 to: size do: [ :i | 
@@ -270,7 +212,7 @@ MBSetup >> setupPMJacobiTransformation [
 	
 	|size|
 
-	size := 500.
+	size := matrixSize.
 	a1 := PMMatrix new: size.
 	
 	1 to: size  do: [ :i | 
@@ -291,7 +233,7 @@ MBSetup >> setupPMLUPDecomposition [
 	
 	|size|
 
-	size := 100.
+	size := matrixSize.
 	a1 := PMMatrix new: size.
 	
 	1 to: size  do: [ :i | 
@@ -317,7 +259,7 @@ MBSetup >> setupPMLinearEquationSystem [
 	If the matrix is singular, solution will just return nil."
 	|size|
 
-	size := 100.
+	size := matrixSize.
 	a1 := PMMatrix new: size.
 	
 	1 to: size  do: [ :i | 
@@ -340,24 +282,13 @@ MBSetup >> setupPMLinearEquationSystem [
 MBSetup >> setupPMMatrix [
 
 
-
-	a1 := PMMatrix new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
-			a1 at: i at: j put: (10000 random) ] ].
+	size := matrixSize.
+	a1 := PMMatrix new: size.
 	
-]
-
-{ #category : #setupMatrixandNumber }
-MBSetup >> setupPMMatrixandNumber [
-
-
-	aNumber := (10000 random).
-	a1 := PMMatrix new: 500.
-	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i at: j put: (10000 random) ] ].
 	
 ]
@@ -366,32 +297,17 @@ MBSetup >> setupPMMatrixandNumber [
 MBSetup >> setupPMSymmetricMatrix [
 
 
-
-	a1 := PMSymmetricMatrix new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
+	size := matrixSize.
+	a1 := PMSymmetricMatrix new: size.
+	
+	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
 			a1 at: i at: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
-			a1 at: i at: j put: (a1 at:j at: i) ] ].
-	
-]
-
-{ #category : #setupMatrixandNumber }
-MBSetup >> setupPMSymmetricMatrixandNumber [
-
-
-	aNumber := (10000 random).
-	a1 := PMSymmetricMatrix new: 500.
-	
-	1 to: 500 do: [ :i | 
-		1 to: i do: [ :j |
-			a1 at: i at: j put: (10000 random) ] ].
-	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
 			a1 at: i at: j put: (a1 at:j at: i) ] ].
 	
 ]
@@ -399,11 +315,13 @@ MBSetup >> setupPMSymmetricMatrixandNumber [
 { #category : #setupSmall }
 MBSetup >> setupSmallPMMatrix [
 
-
-	a1 := PMMatrix new: 100.
+	|size|
 	
-	1 to: 100 do: [ :i | 
-		1 to: 100 do: [ :j |
+	size := matrixSize.
+	a1 := PMMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i at: j put: (10 random) ] ].
 	
 ]
@@ -411,14 +329,16 @@ MBSetup >> setupSmallPMMatrix [
 { #category : #setupSmall }
 MBSetup >> setupSmallPMSymmetricMatrix [
 
-
-	a1 := PMSymmetricMatrix new: 100.
-	1 to: 100 do: [ :i | 
+	|size|
+	
+	size := matrixSize.
+	a1 := PMSymmetricMatrix new: size.
+	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
 			a1 at: i at: j put: (10000 random) ] ].
 	
-	1 to: 100 do: [ :i|
-		i+1 to: 100 do:[:j|
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
 			a1 at: i at: j put: (a1 at:j at: i) ] ].
 ]
 
@@ -428,7 +348,7 @@ MBSetup >> setupStrassenPMMatrix [
 	|size|
 	
 	"size should be a power of 2"
-	size := 512.
+	size := matrixSize.
 	
 	a1 := PMMatrix new: size.
 	a2 := PMMatrix new: size.
@@ -447,7 +367,7 @@ MBSetup >> setupStrassenPMSymmetricMatrix [
 
 	"size of the matrix should be a power of 2."
 	|size|
-	size := 512.
+	size := matrixSize.
 	a1 := PMSymmetricMatrix new: size.
 	
 	1 to: size do: [ :i | 
@@ -471,30 +391,34 @@ MBSetup >> setupStrassenPMSymmetricMatrix [
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoAIColumnMatrix [
 
-
-	a1 := AIColumnMatrix new: 500.
-	a2 := AIColumnMatrix new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	size := matrixSize.
+	a1 := AIColumnMatrix new: size.
+	a2 := AIColumnMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a2 at: i and: j put: (10000 random) ] ].
 ]
 
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoAIDiagonalMatrix [
 
+	|size aArray|
+	
+	size := matrixSize.
 
-	|aArray|
-	aArray := Array new: 500.
-	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
+	aArray := Array new: size.
+	1 to: size do: [ :i | aArray at: i put: (10000 random) ].
 	
 	a1 := AIDiagonalMatrix withDiagonal: aArray.
 	
-	1 to: 500 do: [ :i | aArray at: i put: (10000 random) ].
+	1 to: size do: [ :i | aArray at: i put: (10000 random) ].
 	
 	a2 := AIDiagonalMatrix withDiagonal: aArray.
 ]
@@ -502,27 +426,31 @@ MBSetup >> setuptwoAIDiagonalMatrix [
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoAIRowMatrix [
 
-
-	a1 := AIRowMatrix new: 500.
-	a2 := AIRowMatrix new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	size := matrixSize.
+	a1 := AIRowMatrix new: size.
+	a2 := AIRowMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a2 at: i and: j put: (10000 random) ] ].
 ]
 
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoAISymetricMatrix [
 
-
-	a1 := AISymetricMatrix new: 500.
-	a2 := AISymetricMatrix new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
+	size := matrixSize.
+	a1 := AISymetricMatrix new: size.
+	a2 := AISymetricMatrix new: size.
+	
+	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
@@ -534,8 +462,8 @@ MBSetup >> setuptwoAISymetricMatrix [
 		1 to: i do: [ :j |
 			a2 at: i and: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
 			a2 at: i and: j put: (a2 at:j and: i) ] ].
 	
 ]
@@ -543,55 +471,62 @@ MBSetup >> setuptwoAISymetricMatrix [
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoArray2D [
 
-
-	a1 := Array2D new: 500.
-	a2 := Array2D new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	size := matrixSize.
+	
+	a1 := Array2D new: size.
+	a2 := Array2D new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i at: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a2 at: i at: j put: (10000 random) ] ].
 ]
 
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoPMMatrix [
 
-
-	a1 := PMMatrix new: 500.
-	a2 := PMMatrix new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	size := matrixSize.
+	a1 := PMMatrix new: size.
+	a2 := PMMatrix new: size.
+	
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a1 at: i at: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i | 
-		1 to: 500 do: [ :j |
+	1 to: size do: [ :i | 
+		1 to: size do: [ :j |
 			a2 at: i at: j put: (10000 random) ] ].
 ]
 
 { #category : #setupTwoMatrix }
 MBSetup >> setuptwoPMSymmetricMatrix [
 
-
-	a1 := PMSymmetricMatrix new: 500.
+	|size|
 	
-	1 to: 500 do: [ :i | 
+	size := matrixSize.
+	a1 := PMSymmetricMatrix new: size.
+	
+	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
 			a1 at: i at: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
 			a1 at: i at: j put: (a1 at:j at: i) ] ].
 	a2 := PMSymmetricMatrix new: 500.
 	
-	1 to: 500 do: [ :i | 
+	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
 			a2 at: i at: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
 			a2 at: i at: j put: (a2 at:j at: i) ] ].
 ]
