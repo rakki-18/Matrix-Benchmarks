@@ -1,10 +1,16 @@
 Class {
 	#name : #MBMatrixMultiplicationTest,
-	#superclass : #TestCase,
+	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
 { #category : #tests }
-MBMatrixMultiplicationTest >> testRunAll [
-	(BenchmarkSuite class: MBMatrixMultiplication )run.
+MBMatrixMultiplicationTest >> classname [
+	^ MBMatrixMultiplication 
+]
+
+{ #category : #tests }
+MBMatrixMultiplicationTest >> test [
+
+	self testRunAll.
 ]

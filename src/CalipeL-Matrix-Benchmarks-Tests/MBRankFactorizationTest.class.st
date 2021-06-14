@@ -1,16 +1,16 @@
 Class {
-	#name : #MBDeterminantTest,
+	#name : #MBRankFactorizationTest,
 	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
 { #category : #accessing }
-MBDeterminantTest >> classname [
-	^ MBDeterminant
+MBRankFactorizationTest >> classname [
+	^ MBRankFactorization  
 ]
 
 { #category : #tests }
-MBDeterminantTest >> test [
+MBRankFactorizationTest >> test [
 
 	self testRunAll.
 ]

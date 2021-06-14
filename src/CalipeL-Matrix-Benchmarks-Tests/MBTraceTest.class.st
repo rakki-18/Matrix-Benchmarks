@@ -1,10 +1,16 @@
 Class {
 	#name : #MBTraceTest,
-	#superclass : #TestCase,
+	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
+{ #category : #accessing }
+MBTraceTest >> classname [
+	^ MBTrace 
+]
+
 { #category : #tests }
-MBTraceTest >> testRunAll [
-	(BenchmarkSuite class: MBTrace )run.
+MBTraceTest >> test [
+
+	self testRunAll.
 ]

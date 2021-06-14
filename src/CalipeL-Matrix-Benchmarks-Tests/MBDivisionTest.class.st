@@ -1,10 +1,16 @@
 Class {
 	#name : #MBDivisionTest,
-	#superclass : #TestCase,
+	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
+{ #category : #accessing }
+MBDivisionTest >> classname [
+	^ MBDivision 
+]
+
 { #category : #tests }
-MBDivisionTest >> testRunAll [
-	(BenchmarkSuite class: MBDivision  )run.
+MBDivisionTest >> test [
+
+	self testRunAll.
 ]

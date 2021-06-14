@@ -1,10 +1,16 @@
 Class {
 	#name : #MBAccessTest,
-	#superclass : #TestCase,
+	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
+{ #category : #accessing }
+MBAccessTest >> classname [
+	^ MBAccess
+]
+
 { #category : #tests }
-MBAccessTest >> testRunAll [
-	(BenchmarkSuite class: MBAccess )run.
+MBAccessTest >> test [
+
+	self testRunAll.
 ]

@@ -1,16 +1,16 @@
 Class {
-	#name : #MBDeterminantTest,
+	#name : #MBStrassenMultiplicationTest,
 	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
 { #category : #accessing }
-MBDeterminantTest >> classname [
-	^ MBDeterminant
+MBStrassenMultiplicationTest >> classname [
+	^ MBStrassenMultiplication  
 ]
 
 { #category : #tests }
-MBDeterminantTest >> test [
+MBStrassenMultiplicationTest >> test [
 
 	self testRunAll.
 ]

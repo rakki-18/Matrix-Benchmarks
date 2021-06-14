@@ -1,16 +1,16 @@
 Class {
-	#name : #MBDeterminantTest,
+	#name : #MBGaussianEliminationTest,
 	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
 { #category : #accessing }
-MBDeterminantTest >> classname [
-	^ MBDeterminant
+MBGaussianEliminationTest >> classname [
+	^ MBGaussianElimination 
 ]
 
 { #category : #tests }
-MBDeterminantTest >> test [
+MBGaussianEliminationTest >> test [
 
 	self testRunAll.
 ]

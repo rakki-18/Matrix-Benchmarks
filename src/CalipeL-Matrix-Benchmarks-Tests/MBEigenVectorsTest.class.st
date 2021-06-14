@@ -1,16 +1,16 @@
 Class {
-	#name : #MBDeterminantTest,
+	#name : #MBEigenVectorsTest,
 	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
 { #category : #accessing }
-MBDeterminantTest >> classname [
-	^ MBDeterminant
+MBEigenVectorsTest >> classname [
+	^ MBEigenVectors 
 ]
 
 { #category : #tests }
-MBDeterminantTest >> test [
+MBEigenVectorsTest >> test [
 
 	self testRunAll.
 ]

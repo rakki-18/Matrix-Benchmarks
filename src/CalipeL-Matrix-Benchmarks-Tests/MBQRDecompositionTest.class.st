@@ -1,16 +1,16 @@
 Class {
-	#name : #MBDeterminantTest,
+	#name : #MBQRDecompositionTest,
 	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
 { #category : #accessing }
-MBDeterminantTest >> classname [
-	^ MBDeterminant
+MBQRDecompositionTest >> classname [
+	^ MBQRDecomposition 
 ]
 
 { #category : #tests }
-MBDeterminantTest >> test [
+MBQRDecompositionTest >> test [
 
 	self testRunAll.
 ]

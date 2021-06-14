@@ -1,10 +1,16 @@
 Class {
 	#name : #MBInverseTest,
-	#superclass : #TestCase,
+	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
+{ #category : #accessing }
+MBInverseTest >> classname [
+	^ MBInverse 
+]
+
 { #category : #tests }
-MBInverseTest >> testRunAll [
-	(BenchmarkSuite class: MBInverse  )run.
+MBInverseTest >> test [
+
+	self testRunAll.
 ]

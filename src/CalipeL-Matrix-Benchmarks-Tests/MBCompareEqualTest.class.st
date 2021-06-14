@@ -1,10 +1,16 @@
 Class {
 	#name : #MBCompareEqualTest,
-	#superclass : #TestCase,
+	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
+{ #category : #accessing }
+MBCompareEqualTest >> classname [
+	^ MBCompareEqual 
+]
+
 { #category : #tests }
-MBCompareEqualTest >> testRunAll [
-	(BenchmarkSuite class: MBCompareEqual )run.
+MBCompareEqualTest >> test [
+
+	self testRunAll.
 ]

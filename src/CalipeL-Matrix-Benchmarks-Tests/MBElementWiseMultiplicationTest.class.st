@@ -1,10 +1,16 @@
 Class {
 	#name : #MBElementWiseMultiplicationTest,
-	#superclass : #TestCase,
+	#superclass : #MBAbstractTest,
 	#category : #'CalipeL-Matrix-Benchmarks-Tests'
 }
 
+{ #category : #accessing }
+MBElementWiseMultiplicationTest >> classname [
+	^ MBElementWiseMultiplication 
+]
+
 { #category : #tests }
-MBElementWiseMultiplicationTest >> testRunAll [
-	(BenchmarkSuite class: MBElementWiseMultiplication )run.
+MBElementWiseMultiplicationTest >> test [
+
+	self testRunAll.
 ]

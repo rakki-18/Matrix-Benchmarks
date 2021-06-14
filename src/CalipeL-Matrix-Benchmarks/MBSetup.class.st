@@ -520,7 +520,7 @@ MBSetup >> setuptwoPMSymmetricMatrix [
 	1 to: size do: [ :i|
 		i+1 to: size do:[:j|
 			a1 at: i at: j put: (a1 at:j at: i) ] ].
-	a2 := PMSymmetricMatrix new: 500.
+	a2 := PMSymmetricMatrix new: size.
 	
 	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
