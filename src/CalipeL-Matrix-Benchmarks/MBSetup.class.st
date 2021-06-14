@@ -454,11 +454,11 @@ MBSetup >> setuptwoAISymetricMatrix [
 		1 to: i do: [ :j |
 			a1 at: i and: j put: (10000 random) ] ].
 	
-	1 to: 500 do: [ :i|
-		i+1 to: 500 do:[:j|
+	1 to: size do: [ :i|
+		i+1 to: size do:[:j|
 			a1 at: i and: j put: (a1 at:j and: i) ] ].
 	
-	1 to: 500 do: [ :i | 
+	1 to: size do: [ :i | 
 		1 to: i do: [ :j |
 			a2 at: i and: j put: (10000 random) ] ].
 	
