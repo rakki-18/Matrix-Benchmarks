@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'a1',
 		'a2',
-		'aNumber'
+		'aNumber',
+		'matrixSize'
 	],
 	#category : #'CalipeL-Matrix-Benchmarks'
 }
@@ -42,6 +43,28 @@ MBSetup class >> runAndPlotAllBenchmarks [
 	^ chart open.
 
 
+]
+
+{ #category : #parameters }
+MBSetup >> matrixSize [
+	
+
+	^ matrixSize
+
+	
+	
+]
+
+{ #category : #parameters }
+MBSetup >> matrixSize: anInteger [
+	
+
+	<parameter: #matrixSize type: #Integer default: 100 >
+
+	matrixSize := anInteger.
+
+	
+	
 ]
 
 { #category : #setupOneMatrix }
@@ -230,6 +253,15 @@ MBSetup >> setupInvertiblePMSymmetricMatrix [
 		i+1 to: size do:[:j|
 			a1 at: i at: j put: (a1 at:j at: i) ] ].
 	a1 := a1 transpose * a1.
+]
+
+{ #category : #setupNumber }
+MBSetup >> setupNumber [
+
+	aNumber := (10000 random).
+
+	
+	
 ]
 
 { #category : #setupSpecial }

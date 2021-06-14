@@ -16,7 +16,7 @@ MBDivision >> divideAIColumnMatrix [
 
 	
 	<benchmark: 'AIColumn'>
-	<setup: #setupAIColumnMatrixandNumber>
+	<setup: #( #setupAIColumnMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 / aNumber ].
 	
@@ -27,7 +27,7 @@ MBDivision >> divideAIDiagonalMatrix [
 
 	
 	<benchmark: 'AIDiagonal'>
-	<setup: #setupAIDiagonalMatrixandNumber>
+	<setup: #( #setupAIDiagonalMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 / aNumber ].
 	
@@ -38,7 +38,7 @@ MBDivision >> divideAIRowMatrix [
 
 	
 	<benchmark: 'AIRow'>
-	<setup: #setupAIRowMatrixandNumber>
+	<setup: #( #setupAIRowMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 / aNumber ].
 	
@@ -49,7 +49,7 @@ MBDivision >> divideAISymetricMatrix [
 
 	
 	<benchmark: 'AISymetric'>
-	<setup: #setupAISymetricMatrixandNumber>
+	<setup: #( #setupAISymetricMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 / aNumber ].
 	
@@ -60,7 +60,7 @@ MBDivision >> divideArray2D [
 
 	
 	<benchmark: 'Array2D'>
-	<setup: #setupArray2DandNumber>
+	<setup: #( #setupArray2D #setupNumber)>
 
 	100 timesRepeat:[  a1 / aNumber ].
 ]

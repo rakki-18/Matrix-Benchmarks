@@ -16,7 +16,7 @@ MBMultiplication >> multiplyAIColumnMatrix [
 
 	
 	<benchmark: 'AIColumn'>
-	<setup: #setupAIColumnMatrixandNumber>
+	<setup: #( #setupAIColumnMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 * aNumber ].
 	
@@ -27,7 +27,7 @@ MBMultiplication >> multiplyAIDiagonalMatrix [
 
 	
 	<benchmark: 'AIDiagonal'>
-	<setup: #setupAIDiagonalMatrixandNumber>
+	<setup: #( #setupAIDiagonalMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 * aNumber ].
 	
@@ -38,7 +38,7 @@ MBMultiplication >> multiplyAIRowMatrix [
 
 	
 	<benchmark: 'AIRow'>
-	<setup: #setupAIRowMatrixandNumber>
+	<setup: #( #setupAIRowMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 * aNumber ].
 	
@@ -49,7 +49,7 @@ MBMultiplication >> multiplyAISymetricMatrix [
 
 	
 	<benchmark: 'AISymetric'>
-	<setup: #setupAISymetricMatrixandNumber>
+	<setup: #( #setupAISymetricMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 * aNumber ].
 	
@@ -60,7 +60,7 @@ MBMultiplication >> multiplyArray2D [
 
 	
 	<benchmark: 'Array2D'>
-	<setup: #setupArray2DandNumber>
+	<setup: #( #setupArray2D #setupNumber)>
 
 	100 timesRepeat:[  a1 * aNumber ].
 ]
@@ -70,7 +70,7 @@ MBMultiplication >> multiplyPMMatrix [
 
 	
 	<benchmark: 'PMMatrix'>
-	<setup: #setupPMMatrixandNumber>
+	<setup: #( #setupPMMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 * aNumber ].
 ]
@@ -80,7 +80,7 @@ MBMultiplication >> multiplyPMSymmetricMatrix [
 
 	
 	<benchmark: 'PMSymmetric'>
-	<setup: #setupPMSymmetricMatrixandNumber>
+	<setup: #( #setupPMSymmetricMatrix #setupNumber)>
 
 	100 timesRepeat:[  a1 * aNumber ].
 ]
