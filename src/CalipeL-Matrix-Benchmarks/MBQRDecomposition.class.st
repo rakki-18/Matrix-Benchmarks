@@ -16,7 +16,7 @@ MBQRDecomposition >> qrPMMatrix [
 
 
 	<benchmark: 'PMMatrix'>
-	<setup: #setupSmallPMMatrix>
+	<setup: #setupPMMatrix>
 
 	1 timesRepeat: [ a1 qrFactorization  ].
 ]
@@ -26,7 +26,7 @@ MBQRDecomposition >> qrPMSymmetricMatrix [
 
 
 	<benchmark: 'PMSymmetric'>
-	<setup: #setupSmallPMSymmetricMatrix>
+	<setup: #setupPMSymmetricMatrix>
 
 	1 timesRepeat: [ a1 qrFactorization  ].
 ]

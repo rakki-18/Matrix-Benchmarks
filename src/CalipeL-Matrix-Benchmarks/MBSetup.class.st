@@ -13,7 +13,7 @@ Class {
 { #category : #'running - benchmark' }
 MBSetup class >> runAllBenchmarks [
 
-	^ (BenchmarkSuite class: self new class ) run.
+	50 to: 300 by: 50 do: [ :each| Transcript show: (self new class runBenchmarks: each)].
 	
 
 
@@ -24,7 +24,8 @@ MBSetup class >> runAndPlotAllBenchmarks [
 
 	|aBenchmark data chart names|
 
-	aBenchmark  := (BenchmarkSuite class: self new class ) run.
+	"aBenchmark  := (BenchmarkSuite class: self new class ) run."
+	aBenchmark := self new class runBenchmarks.
 	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
 	names := aBenchmark outcomes collect: [ :each | each benchmark name].
 	
@@ -41,6 +42,26 @@ MBSetup class >> runAndPlotAllBenchmarks [
 	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
 	chart title: self title.
 	^ chart open.
+
+
+]
+
+{ #category : #'running - benchmark' }
+MBSetup class >> runBenchmarks [
+
+	^ (BenchmarkSuite class: self new class ) run.
+	
+
+
+]
+
+{ #category : #'running - benchmark' }
+MBSetup class >> runBenchmarks: anInteger [
+	|integerasString|
+	
+	integerasString := anInteger asString.
+	^ (BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself).
+	
 
 
 ]
@@ -91,7 +112,7 @@ MBSetup >> setupAIDiagonalMatrix [
 	
 	size := matrixSize.
 	aArray := Array new: size.
-	1 to: size do: [ :i | aArray at: i put: (10000 random) ].
+	1 to: size do: [ :i | aArray at: i put: (1000 random) ].
 	
 	a1 := AIDiagonalMatrix withDiagonal: aArray.
 	
@@ -292,38 +313,6 @@ MBSetup >> setupPMSymmetricMatrix [
 		i+1 to: size do:[:j|
 			a1 at: i at: j put: (a1 at:j at: i) ] ].
 	
-]
-
-{ #category : #setupSmall }
-MBSetup >> setupSmallPMMatrix [
-
-	"|size|
-	
-	size := matrixSize.
-	a1 := PMMatrix new: size.
-	
-	1 to: size do: [ :i | 
-		1 to: size do: [ :j |
-			a1 at: i at: j put: (10 random) ] ]."
-	self setupPMMatrix.
-	
-]
-
-{ #category : #setupSmall }
-MBSetup >> setupSmallPMSymmetricMatrix [
-
-	"|size|
-	
-	size := matrixSize.
-	a1 := PMSymmetricMatrix new: size.
-	1 to: size do: [ :i | 
-		1 to: i do: [ :j |
-			a1 at: i at: j put: (10 random) ] ].
-	
-	1 to: size do: [ :i|
-		i+1 to: size do:[:j|
-			a1 at: i at: j put: (a1 at:j at: i) ] ]."
-	self setupPMSymmetricMatrix.
 ]
 
 { #category : #setupStrassen }

@@ -16,7 +16,7 @@ MBDeterminant >> determinantPMMatrix [
 
 
 	<benchmark: 'PMMatrix'>
-	<setup: #setupSmallPMMatrix>
+	<setup: #setupPMMatrix>
 
 	1 timesRepeat: [ a1 determinant ].
 ]
@@ -26,7 +26,7 @@ MBDeterminant >> determinantPMSymmetricMatrix [
 
 
 	<benchmark: 'PMSymmetric'>
-	<setup: #setupSmallPMSymmetricMatrix>
+	<setup: #setupPMSymmetricMatrix>
 
 	1 timesRepeat: [ a1 determinant ].
 ]

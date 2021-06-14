@@ -16,7 +16,7 @@ MBRankFactorization >> rankPMMatrix [
 
 
 	<benchmark: 'PMMatrix'>
-	<setup: #setupSmallPMMatrix>
+	<setup: #setupPMMatrix>
 
 	1 timesRepeat: [ a1 rank ].
 ]
@@ -26,7 +26,7 @@ MBRankFactorization >> rankPMSymmetricMatrix [
 
 
 	<benchmark: 'PMSymmetric'>
-	<setup: #setupSmallPMSymmetricMatrix>
+	<setup: #setupPMSymmetricMatrix>
 
 	1 timesRepeat: [ a1 rank ].
 ]
