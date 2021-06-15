@@ -12,19 +12,23 @@ Class {
 
 { #category : #'running - benchmark' }
 MBSetup class >> runAllBenchmarks [
-
-	50 to: 300 by: 50 do: [ :each| Transcript show: (self new class runBenchmarks: each)].
+	
+	|result|
+	
+	result := OrderedCollection new.
+	50 to: 300 by: 50 do: [ :each| result addLast: (self new class runBenchmarks: each)].
+	^ result.
 	
 
 
 ]
 
-{ #category : #'running - benchmark' }
+{ #category : #'plotting - benchmarks' }
 MBSetup class >> runAndPlotAllBenchmarks [
 
 	|aBenchmark data chart names|
 
-	"aBenchmark  := (BenchmarkSuite class: self new class ) run."
+
 	aBenchmark := self new class runBenchmarks.
 	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
 	names := aBenchmark outcomes collect: [ :each | each benchmark name].
@@ -33,6 +37,68 @@ MBSetup class >> runAndPlotAllBenchmarks [
 
 	chart barHeights: data.
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+	chart addDecoration: (RSVerticalTick new integer).
+	"workaround as having only one horizontal tick gives error"
+	names size = 1 ifTrue: [  
+		|temp|
+		temp := Array new: 2 withAll: (names at: 1).
+		names := temp].
+	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
+	chart title: self title.
+	^ chart open.
+
+
+]
+
+{ #category : #'plotting - benchmarks' }
+MBSetup class >> runAndPlotBenchmarks [
+
+	|aBenchmark data chart names xlabel|
+
+
+	aBenchmark := self new class runBenchmarks.
+	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
+	names := aBenchmark outcomes collect: [ :each | each benchmark name].
+	
+	chart := RSChart new.
+
+	chart barHeights: data.
+	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+	
+	xlabel := ((aBenchmark outcomes at: 1) parameters at: 1) value.
+	xlabel := 'Matrix Size = ', xlabel asString.
+	chart addDecoration: (RSXLabelDecoration new title: xlabel; offset: 35).
+	chart addDecoration: (RSVerticalTick new integer).
+	"workaround as having only one horizontal tick gives error"
+	names size = 1 ifTrue: [  
+		|temp|
+		temp := Array new: 2 withAll: (names at: 1).
+		names := temp].
+	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
+	chart title: self title.
+	^ chart open.
+
+
+]
+
+{ #category : #'plotting - benchmarks' }
+MBSetup class >> runAndPlotBenchmarks: anInteger [
+
+	|aBenchmark data chart names xlabel|
+
+
+	aBenchmark := self new class runBenchmarks: anInteger .
+	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
+	names := aBenchmark outcomes collect: [ :each | each benchmark name].
+	
+	chart := RSChart new.
+
+	chart barHeights: data.
+	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+	
+	xlabel := ((aBenchmark outcomes at: 1) parameters at: 1) value.
+	xlabel := 'Matrix Size = ', xlabel asString.
+	chart addDecoration: (RSXLabelDecoration new title: xlabel; offset: 35).
 	chart addDecoration: (RSVerticalTick new integer).
 	"workaround as having only one horizontal tick gives error"
 	names size = 1 ifTrue: [  
