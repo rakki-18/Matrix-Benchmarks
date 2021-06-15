@@ -26,26 +26,45 @@ MBSetup class >> runAllBenchmarks [
 { #category : #'plotting - benchmarks' }
 MBSetup class >> runAndPlotAllBenchmarks [
 
-	|aBenchmark data chart names|
+	|chart line x legend result names colors color|
 
-
-	aBenchmark := self new class runBenchmarks.
-	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
-	names := aBenchmark outcomes collect: [ :each | each benchmark name].
-	
+	result := self new class runAllBenchmarks. 
 	chart := RSChart new.
+	x := result collect: [:each | ((each outcomes at: 1) parameters at: 1) value].
+	colors := OrderedCollection new.
+	
+	1 to: (result at: 1) outcomes size do: [ :i|
+	|y|
+	y := result collect: [ :each |  (((each outcomes at: i) measurements at: 1) at: 3) value ].
+	line := RSLinePlot new x: x y: y.
+	color := Color random.
+	line color: color.
+	colors addLast: color.
+	chart addPlot: line ].
 
-	chart barHeights: data.
+	Color random.
+	names := (result at: 1) outcomes collect: [ :each | each benchmark name].
+
+	chart addDecoration: (RSXLabelDecoration new title: 'Matrix Size'; offset: 15).
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+
+
+	chart extent: 800@800.
 	chart addDecoration: (RSVerticalTick new integer).
-	"workaround as having only one horizontal tick gives error"
-	names size = 1 ifTrue: [  
-		|temp|
-		temp := Array new: 2 withAll: (names at: 1).
-		names := temp].
-	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
+	chart addDecoration: (RSHorizontalTick new).
 	chart title: self title.
-	^ chart open.
+	chart build.
+
+	legend := RSLegend new.
+	legend container: chart canvas.
+	1 to: names size do:[ :i |
+    	legend text: (names at: i) withBoxColor: (colors at: i)  ].
+	
+	legend layout horizontal gapSize: 20.
+	legend build.
+	
+	^ chart canvas open.
+
 
 
 ]
@@ -53,31 +72,7 @@ MBSetup class >> runAndPlotAllBenchmarks [
 { #category : #'plotting - benchmarks' }
 MBSetup class >> runAndPlotBenchmarks [
 
-	|aBenchmark data chart names xlabel|
-
-
-	aBenchmark := self new class runBenchmarks.
-	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
-	names := aBenchmark outcomes collect: [ :each | each benchmark name].
-	
-	chart := RSChart new.
-
-	chart barHeights: data.
-	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
-	
-	xlabel := ((aBenchmark outcomes at: 1) parameters at: 1) value.
-	xlabel := 'Matrix Size = ', xlabel asString.
-	chart addDecoration: (RSXLabelDecoration new title: xlabel; offset: 35).
-	chart addDecoration: (RSVerticalTick new integer).
-	"workaround as having only one horizontal tick gives error"
-	names size = 1 ifTrue: [  
-		|temp|
-		temp := Array new: 2 withAll: (names at: 1).
-		names := temp].
-	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
-	chart title: self title.
-	^ chart open.
-
+	^ self runAndPlotBenchmarks: self new defaultMatrixSize.
 
 ]
 
@@ -115,7 +110,7 @@ MBSetup class >> runAndPlotBenchmarks: anInteger [
 { #category : #'running - benchmark' }
 MBSetup class >> runBenchmarks [
 
-	^ (BenchmarkSuite class: self new class ) run.
+	^ self runBenchmarks: self new defaultMatrixSize.
 	
 
 
@@ -130,6 +125,16 @@ MBSetup class >> runBenchmarks: anInteger [
 	
 
 
+]
+
+{ #category : #parameters }
+MBSetup >> defaultMatrixSize [
+	
+
+	^ 100
+
+	
+	
 ]
 
 { #category : #parameters }
