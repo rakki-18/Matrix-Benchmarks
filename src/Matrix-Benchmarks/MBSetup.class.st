@@ -291,8 +291,9 @@ MBSetup >> setupInvertiblePMSymmetricMatrix [
 
 { #category : #setupNumber }
 MBSetup >> setupNumber [
-
-	aNumber := (10000 random).
+	
+	"0 is avoided"
+	aNumber := (10000 random) + 1.
 
 	
 	
@@ -392,7 +393,7 @@ MBSetup >> setupStrassenPMMatrix [
 
 	
 	"matrixSize should be a power of 2"
-	self assert: (matrixSize isPowerOfTwo ) description: 'matrixSize should be a power of 2'.
+	self assert: matrixSize isPowerOfTwo  description: 'matrixSize should be a power of 2'.
 	self setuptwoPMMatrix .
 	
 ]
