@@ -10,6 +10,33 @@ Class {
 	#category : #'Matrix-Benchmarks'
 }
 
+{ #category : #'accessing - private' }
+MBSetup class >> chartAddDecoration: chart [
+	
+	chart addDecoration: (RSXLabelDecoration new title: 'Matrix Size'; offset: 15).
+	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+
+
+	chart extent: 800@800.
+	chart addDecoration: (RSVerticalTick new integer).
+	chart addDecoration: (RSHorizontalTick new).
+	^ chart.
+]
+
+{ #category : #'accessing - private' }
+MBSetup class >> getMatrixSize: aBenchmarkResultSet [
+	
+	"get matrix size used as the parameter in the benchmark result"
+	^aBenchmarkResultSet collect: [:each | ((each at: 1) parameters at: 1) value].
+]
+
+{ #category : #'accessing - private' }
+MBSetup class >> getNames: aBenchmarkResultSet [
+	
+	"get names of the matrix implementation in the report"
+	^ (aBenchmarkResultSet at: 1)  collect: [ :each | each benchmark name].
+]
+
 { #category : #'running - benchmark' }
 MBSetup class >> runAllBenchmarks [
 	
@@ -26,38 +53,31 @@ MBSetup class >> runAllBenchmarks [
 { #category : #'plotting - benchmarks' }
 MBSetup class >> runAndPlotAllBenchmarks [
 
-	|chart line x legend result names colors color|
+	|chart x legend result names colors|
 
 	result := self new class runAllBenchmarks. 
+	result := self sortResult: result.
 	chart := RSChart new.
-	x := result collect: [:each | ((each outcomes at: 1) parameters at: 1) value].
+	x := self getMatrixSize: result. 
 	colors := OrderedCollection new.
 	
-	1 to: (result at: 1) outcomes size do: [ :i|
-	|y|
-	y := result collect: [ :each |  (((each outcomes at: i) measurements at: 1) at: 3) value ].
+	1 to: (result at: 1) size do: [ :i|
+	|y line color|
+	y := result collect: [ :each |  (((each at: i) measurements at: 1) at: 3) value ].
 	line := RSLinePlot new x: x y: y.
 	color := Color random.
 	line color: color.
 	colors addLast: color.
 	chart addPlot: line ].
 
-	Color random.
-	names := (result at: 1) outcomes collect: [ :each | each benchmark name].
-
-	chart addDecoration: (RSXLabelDecoration new title: 'Matrix Size'; offset: 15).
-	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
-
-
-	chart extent: 800@800.
-	chart addDecoration: (RSVerticalTick new integer).
-	chart addDecoration: (RSHorizontalTick new).
+	chart := self chartAddDecoration: chart.
+	
 	chart title: self title.
 	chart build.
-
+	names := self getNames: result.
 	legend := RSLegend new.
 	legend container: chart canvas.
-	1 to: names size do:[ :i |
+	1 to: names size do: [ :i |
     	legend text: (names at: i) withBoxColor: (colors at: i)  ].
 	
 	legend layout horizontal gapSize: 20.
@@ -125,6 +145,13 @@ MBSetup class >> runBenchmarks: anInteger [
 	
 
 
+]
+
+{ #category : #'accessing - private' }
+MBSetup class >> sortResult: aBenchmarkResultSet [
+	
+	"sort the outcomes in the result set based on the name of the matrix implementation"
+	^ aBenchmarkResultSet  collect: [ :each | each outcomes asSortedCollection: [ :c :d | c benchmark name <= d benchmark name] ].
 ]
 
 { #category : #parameters }
