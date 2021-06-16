@@ -27,13 +27,13 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 
 			spec 
 				package: 'Matrix-Benchmark' 		with: [ spec requires: #('AILinearAlgebra' 'PolyMath') ];
-				package: 'CalipeL-Matrix-Benchmarks' with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLSBenchmark' 'Roassal3') ];
-				package: 'CalipeL-Matrix-Benchmarks-Tests' with: [ spec requires: #('CalipeL-Matrix-Benchmarks') ];
+				package: 'Matrix-Benchmarks' with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLSBenchmark' 'Roassal3') ];
+				package: 'Matrix-Benchmarks-Tests' with: [ spec requires: #('Matrix-Benchmarks') ];
 				package: 'Matrix-Benchmark-Tests' with: [ spec requires: #('Matrix-Benchmark') ].
 
 			spec 
-				group: 'Core' 							with: #('Matrix-Benchmark' 'CalipeL-Matrix-Benchmarks');
-				group: 'Tests' 						with: #('Matrix-Benchmark-Tests' 'CalipeL-Matrix-Benchmarks-Tests');
+				group: 'Core' 							with: #('Matrix-Benchmark' 'Matrix-Benchmarks');
+				group: 'Tests' 						with: #('Matrix-Benchmark-Tests' 'Matrix-Benchmarks-Tests');
 				group: 'default' 					with: #('Core' 'Tests') ]
 
 ]
