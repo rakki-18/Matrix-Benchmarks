@@ -43,7 +43,9 @@ MBSetup class >> runAllBenchmarks [
 	|result|
 	
 	result := OrderedCollection new.
+	Cursor wait showWhile: [  
 	50 to: 300 by: 50 do: [ :each| result addLast: (self new class runBenchmarks: each)].
+	].
 	^ result.
 	
 
@@ -80,7 +82,7 @@ MBSetup class >> runAndPlotAllBenchmarks [
 	1 to: names size do: [ :i |
     	legend text: (names at: i) withBoxColor: (colors at: i)  ].
 	
-	legend layout horizontal gapSize: 20.
+	legend layout horizontal gapSize: 10.
 	legend build.
 	
 	^ chart canvas open.
@@ -141,7 +143,7 @@ MBSetup class >> runBenchmarks: anInteger [
 	|integerasString|
 	
 	integerasString := anInteger asString.
-	^ (BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself).
+	^ Cursor wait showWhile: [(BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself)]
 	
 
 
