@@ -10,14 +10,14 @@ Class {
 	#category : #'Matrix-Benchmarks'
 }
 
-{ #category : #'accessing - private' }
+{ #category : #decoration }
 MBSetup class >> chartAddDecoration: chart [
 	
 	chart addDecoration: (RSXLabelDecoration new title: 'Matrix Size'; offset: 15).
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
 
 
-	chart extent: 800@800.
+	"chart extent: 800@800."
 	chart addDecoration: (RSVerticalTick new integer).
 	chart addDecoration: (RSHorizontalTick new).
 	^ chart.
@@ -61,22 +61,24 @@ MBSetup class >> runAndPlotAllBenchmarks [
 	result := self sortResult: result.
 	chart := RSChart new.
 	x := self getMatrixSize: result. 
-	colors := OrderedCollection new.
+	colors := self tenDistinctColors.
 	
 	1 to: (result at: 1) size do: [ :i|
-	|y line color|
+	|y line scatter|
 	y := result collect: [ :each |  (((each at: i) measurements at: 1) at: 3) value ].
 	line := RSLinePlot new x: x y: y.
-	color := Color random.
-	line color: color.
-	colors addLast: color.
-	chart addPlot: line ].
+	line color: (colors at: i).
+	chart addPlot: line.
+	scatter := RSScatterPlot new.
+	scatter x: x y: y; color: (colors at: i). 
+	chart addPlot: scatter].
 
 	chart := self chartAddDecoration: chart.
 	
 	chart title: self title.
 	chart build.
 	names := self getNames: result.
+	
 	legend := RSLegend new.
 	legend container: chart canvas.
 	1 to: names size do: [ :i |
@@ -154,6 +156,67 @@ MBSetup class >> sortResult: aBenchmarkResultSet [
 	
 	"sort the outcomes in the result set based on the name of the matrix implementation"
 	^ aBenchmarkResultSet  collect: [ :each | each outcomes asSortedCollection: [ :c :d | c benchmark name <= d benchmark name] ].
+]
+
+{ #category : #decoration }
+MBSetup class >> tenDistinctColors [
+	"This is a list of 10 light colors that can be distinguished b
+	the typical human eye even when seen together in the same picture.
+	They complement the distinctTenStrongColors.
+	They are described in the Show Me the Numbers book by Stephen Few"
+
+	^ OrderedCollection new
+		"red"
+		add: (Color 
+					h: Color red hue
+					s: 0.3
+					v: Color red brightness);
+		"blue"
+		add: (Color 
+					h: Color blue hue
+					s: 0.3
+					v: Color blue brightness);
+		"orange"
+		add: (Color 
+					h: Color orange hue
+					s: 0.3
+					v: Color orange brightness);
+		"cyan"
+		add: (Color 
+					h: Color cyan hue
+					s: 0.3 
+					v: Color cyan brightness );
+		"green"
+		add: (Color 
+					h: Color lightGreen hue
+					s: 0.1
+					v: 0.7);
+		"pink"
+		add: (Color 
+					h: Color pink hue
+					s: 0.1
+					v: Color pink brightness);
+		"brown"
+		add: (Color 
+					h: Color brown hue
+					s: 0.2
+					v: 1 );
+		"purple"
+		add: (Color 
+					h: Color purple hue
+					s: 0.2
+					v: Color purple brightness );
+		"yellow"
+		add: (Color 
+					h: Color yellow hue
+					s: 0.3
+					v: Color yellow brightness);
+		"gray"
+		add: (Color veryLightGray);
+		yourself;
+
+
+		yourself.
 ]
 
 { #category : #parameters }

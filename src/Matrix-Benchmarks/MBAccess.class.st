@@ -4,6 +4,46 @@ Class {
 	#category : #'Matrix-Benchmarks'
 }
 
+{ #category : #'as yet unclassified' }
+MBAccess class >> accessAIColumnMatrix [
+
+	
+	<benchmark: 'AIColumn'>
+	<setup: #setupAIColumnMatrix>
+
+"	1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ]."
+]
+
+{ #category : #'as yet unclassified' }
+MBAccess class >> accessAIDiagonalMatrix [
+
+	
+	<benchmark: 'AIDiagonal'>
+	<setup: #setupAIDiagonalMatrix>
+
+	"1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ]."
+]
+
+{ #category : #'as yet unclassified' }
+MBAccess class >> accessAISymetricMatrix [
+
+	
+	<benchmark: 'AISymetric'>
+	<setup: #setupAISymetricMatrix>
+
+	"1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ]."
+]
+
+{ #category : #'as yet unclassified' }
+MBAccess class >> accessPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetric'>
+	<setup: #setupPMSymmetricMatrix>
+
+"	1000000 timesRepeat:[  a1 at: matrixSize floor at: matrixSize ]."
+]
+
 { #category : #accessing }
 MBAccess class >> title [
 
@@ -12,41 +52,11 @@ MBAccess class >> title [
 ]
 
 { #category : #benchmarks }
-MBAccess >> accessAIColumnMatrix [
-
-	
-	<benchmark: 'AIColumn'>
-	<setup: #setupAIColumnMatrix>
-
-	1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ].
-]
-
-{ #category : #benchmarks }
-MBAccess >> accessAIDiagonalMatrix [
-
-	
-	<benchmark: 'AIDiagonal'>
-	<setup: #setupAIDiagonalMatrix>
-
-	1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ].
-]
-
-{ #category : #benchmarks }
 MBAccess >> accessAIRowMatrix [
 
 	
 	<benchmark: 'AIRow'>
 	<setup: #setupAIRowMatrix>
-
-	1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ].
-]
-
-{ #category : #benchmarks }
-MBAccess >> accessAISymetricMatrix [
-
-	
-	<benchmark: 'AISymetric'>
-	<setup: #setupAISymetricMatrix>
 
 	1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ].
 ]
@@ -67,16 +77,6 @@ MBAccess >> accessPMMatrix [
 	
 	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
-
-	1000000 timesRepeat:[  a1 at: matrixSize floor at: matrixSize ].
-]
-
-{ #category : #benchmarks }
-MBAccess >> accessPMSymmetricMatrix [
-
-	
-	<benchmark: 'PMSymmetric'>
-	<setup: #setupPMSymmetricMatrix>
 
 	1000000 timesRepeat:[  a1 at: matrixSize floor at: matrixSize ].
 ]
