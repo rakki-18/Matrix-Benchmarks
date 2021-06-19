@@ -10,7 +10,7 @@ MBSVDDecomposition class >> title [
 	^'SVD Decomposition of Matrix'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBSVDDecomposition >> svdDecomposition [
 
 

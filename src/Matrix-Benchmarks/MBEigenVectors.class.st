@@ -10,7 +10,7 @@ MBEigenVectors class >> title [
 	^'Eigen vector decomposition'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBEigenVectors >> eigenVectorDecomposition [
 
 

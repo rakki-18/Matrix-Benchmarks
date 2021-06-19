@@ -22,7 +22,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIColumnMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBElementWiseMultiplication >> elementWiseMultiplyAIDiagonalMatrix [
 
 	
@@ -33,7 +33,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIDiagonalMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBElementWiseMultiplication >> elementWiseMultiplyAIRowMatrix [
 
 	
@@ -44,7 +44,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAIRowMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBElementWiseMultiplication >> elementWiseMultiplyAISymetricMatrix [
 
 	
@@ -55,7 +55,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyAISymetricMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBElementWiseMultiplication >> elementWiseMultiplyArray2D [
 
 	
@@ -66,7 +66,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyArray2D [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBElementWiseMultiplication >> elementWiseMultiplyPMMatrix [
 
 	
@@ -77,7 +77,7 @@ MBElementWiseMultiplication >> elementWiseMultiplyPMMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBElementWiseMultiplication >> elementWiseMultiplyPMSymmetricMatrix [
 
 	

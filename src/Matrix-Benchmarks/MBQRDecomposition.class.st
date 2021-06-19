@@ -11,7 +11,7 @@ MBQRDecomposition class >> title [
 	^ 'Matrix QR Decomposition'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBQRDecomposition >> qrPMMatrix [
 
 
@@ -21,7 +21,7 @@ MBQRDecomposition >> qrPMMatrix [
 	1 timesRepeat: [ a1 qrFactorization  ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBQRDecomposition >> qrPMSymmetricMatrix [
 
 

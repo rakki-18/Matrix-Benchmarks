@@ -10,7 +10,7 @@ MBGaussianElimination class >> title [
 	^'Gaussian Elimination of Matrix'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBGaussianElimination >> gaussianElimination [
 
 

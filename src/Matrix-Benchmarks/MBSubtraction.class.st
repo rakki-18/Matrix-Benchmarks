@@ -21,7 +21,7 @@ MBSubtraction >> subtractAIColumnMatrix [
 	100 timesRepeat:[  a1 - a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBSubtraction >> subtractAIDiagonalMatrix [
 
 	
@@ -31,7 +31,7 @@ MBSubtraction >> subtractAIDiagonalMatrix [
 	100 timesRepeat:[  a1 - a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBSubtraction >> subtractAIRowMatrix [
 
 	
@@ -41,7 +41,7 @@ MBSubtraction >> subtractAIRowMatrix [
 	100 timesRepeat:[  a1 - a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBSubtraction >> subtractAISymetricMatrix [
 
 	
@@ -51,7 +51,7 @@ MBSubtraction >> subtractAISymetricMatrix [
 	100 timesRepeat:[  a1 - a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBSubtraction >> subtractArray2D [
 
 	
@@ -61,7 +61,7 @@ MBSubtraction >> subtractArray2D [
 	100 timesRepeat:[  a1 - a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBSubtraction >> subtractPMMatrix [
 
 	
@@ -71,7 +71,7 @@ MBSubtraction >> subtractPMMatrix [
 	100 timesRepeat:[  a1 - a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBSubtraction >> subtractPMSymmetricMatrix [
 
 	

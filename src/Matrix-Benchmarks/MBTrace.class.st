@@ -11,7 +11,7 @@ MBTrace class >> title [
 	^ 'Trace of a Matrix'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBTrace >> tracePMMatrix [
 
 
@@ -21,7 +21,7 @@ MBTrace >> tracePMMatrix [
 	10000 timesRepeat: [ a1 tr ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBTrace >> tracePMSymmetricMatrix [
 
 

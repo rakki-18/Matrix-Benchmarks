@@ -21,7 +21,7 @@ MBAddition >> addAIColumnMatrix [
 	100 timesRepeat:[  a1 + a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBAddition >> addAIDiagonalMatrix [
 
 	
@@ -31,7 +31,7 @@ MBAddition >> addAIDiagonalMatrix [
 	100 timesRepeat:[  a1 + a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBAddition >> addAIRowMatrix [
 
 	
@@ -41,7 +41,7 @@ MBAddition >> addAIRowMatrix [
 	100 timesRepeat:[  a1 + a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBAddition >> addAISymetricMatrix [
 
 	
@@ -51,7 +51,7 @@ MBAddition >> addAISymetricMatrix [
 	100 timesRepeat:[  a1 + a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBAddition >> addArray2D [
 
 	
@@ -61,7 +61,7 @@ MBAddition >> addArray2D [
 	100 timesRepeat:[  a1 + a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBAddition >> addPMMatrix [
 
 	
@@ -71,7 +71,7 @@ MBAddition >> addPMMatrix [
 	100 timesRepeat:[  a1 + a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBAddition >> addPMSymmetricMatrix [
 
 	

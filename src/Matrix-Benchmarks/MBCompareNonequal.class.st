@@ -21,7 +21,7 @@ MBCompareNonequal >> comparenonequalAIColumnMatrix [
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBCompareNonequal >> comparenonequalAIDiagonalMatrix [
 
 	
@@ -31,7 +31,7 @@ MBCompareNonequal >> comparenonequalAIDiagonalMatrix [
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBCompareNonequal >> comparenonequalAIRowMatrix [
 
 	
@@ -41,7 +41,7 @@ MBCompareNonequal >> comparenonequalAIRowMatrix [
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBCompareNonequal >> comparenonequalAISymetricMatrix [
 
 	
@@ -51,7 +51,7 @@ MBCompareNonequal >> comparenonequalAISymetricMatrix [
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBCompareNonequal >> comparenonequalArray2D [
 
 	
@@ -61,7 +61,7 @@ MBCompareNonequal >> comparenonequalArray2D [
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBCompareNonequal >> comparenonequalPMMatrix [
 
 	
@@ -71,7 +71,7 @@ MBCompareNonequal >> comparenonequalPMMatrix [
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBCompareNonequal >> comparenonequalPMSymmetricMatrix [
 
 	

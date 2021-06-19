@@ -22,7 +22,7 @@ MBDivision >> divideAIColumnMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBDivision >> divideAIDiagonalMatrix [
 
 	
@@ -33,7 +33,7 @@ MBDivision >> divideAIDiagonalMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBDivision >> divideAIRowMatrix [
 
 	
@@ -44,7 +44,7 @@ MBDivision >> divideAIRowMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBDivision >> divideAISymetricMatrix [
 
 	
@@ -55,7 +55,7 @@ MBDivision >> divideAISymetricMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBDivision >> divideArray2D [
 
 	

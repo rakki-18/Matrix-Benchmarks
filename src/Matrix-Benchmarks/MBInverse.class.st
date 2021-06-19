@@ -11,7 +11,7 @@ MBInverse class >> title [
 	^ 'Matrix Inverse'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBInverse >> inversePMMatrix [
 
 
@@ -21,7 +21,7 @@ MBInverse >> inversePMMatrix [
 	1 timesRepeat: [ a1 inverse ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBInverse >> inversePMSymmetricMatrix [
 
 

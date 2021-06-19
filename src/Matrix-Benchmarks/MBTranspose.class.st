@@ -21,7 +21,7 @@ MBTranspose >> transposeAIColumnMatrix [
 	100 timesRepeat:[  a1 transposed ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBTranspose >> transposeAIDiagonalMatrix [
 
 	
@@ -31,7 +31,7 @@ MBTranspose >> transposeAIDiagonalMatrix [
 	100 timesRepeat:[  a1 transposed ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBTranspose >> transposeAIRowMatrix [
 
 	
@@ -41,7 +41,7 @@ MBTranspose >> transposeAIRowMatrix [
 	100 timesRepeat:[  a1 transposed ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBTranspose >> transposeAISymetricMatrix [
 
 	
@@ -51,7 +51,7 @@ MBTranspose >> transposeAISymetricMatrix [
 	100 timesRepeat:[  a1 transposed ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBTranspose >> transposeArray2D [
 
 	
@@ -61,12 +61,22 @@ MBTranspose >> transposeArray2D [
 	100 timesRepeat:[  a1 transposed ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBTranspose >> transposePMMatrix [
 
 	
 	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
+
+	100 timesRepeat:[  a1 transpose ].
+]
+
+{ #category : #symmetric }
+MBTranspose >> transposePMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix'>
+	<setup: #setupPMSymmetricMatrix>
 
 	100 timesRepeat:[  a1 transpose ].
 ]

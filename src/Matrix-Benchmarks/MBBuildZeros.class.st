@@ -21,7 +21,7 @@ MBBuildZeros >> buildZeroAIColumnMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBBuildZeros >> buildZeroAIDiagonalMatrix [
 
 	
@@ -31,7 +31,7 @@ MBBuildZeros >> buildZeroAIDiagonalMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBBuildZeros >> buildZeroAIRowMatrix [
 
 	
@@ -41,7 +41,7 @@ MBBuildZeros >> buildZeroAIRowMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBBuildZeros >> buildZeroAISymetricMatrix [
 
 	
@@ -51,7 +51,7 @@ MBBuildZeros >> buildZeroAISymetricMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBBuildZeros >> buildZeroArray2D [
 
 	
@@ -61,7 +61,7 @@ MBBuildZeros >> buildZeroArray2D [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBBuildZeros >> buildZeroPMMatrix [
 
 	
@@ -69,4 +69,14 @@ MBBuildZeros >> buildZeroPMMatrix [
 
 
 	100 timesRepeat:[  PMMatrix zerosRows: 500 cols: 500].
+]
+
+{ #category : #symmetric }
+MBBuildZeros >> buildZeroPMSymmetricMatrix [
+
+	
+	<benchmark: 'PMSymmetricMatrix'>
+
+
+	100 timesRepeat:[  PMSymmetricMatrix  zerosRows: 500 cols: 500].
 ]

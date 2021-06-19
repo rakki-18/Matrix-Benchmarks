@@ -21,7 +21,7 @@ MBBuild >> buildAIColumnMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBBuild >> buildAIDiagonalMatrix [
 
 	
@@ -31,7 +31,7 @@ MBBuild >> buildAIDiagonalMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBBuild >> buildAIRowMatrix [
 
 	
@@ -41,7 +41,7 @@ MBBuild >> buildAIRowMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBBuild >> buildAISymetricMatrix [
 
 	
@@ -51,7 +51,7 @@ MBBuild >> buildAISymetricMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBBuild >> buildArray2D [
 
 	
@@ -61,7 +61,7 @@ MBBuild >> buildArray2D [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBBuild >> buildPMMatrix [
 
 	
@@ -71,7 +71,7 @@ MBBuild >> buildPMMatrix [
 	100 timesRepeat:[  PMMatrix new: 500 ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBBuild >> buildPMSymmetricMatrix [
 
 	

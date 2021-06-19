@@ -22,7 +22,7 @@ MBMatrixMultiplication >> matrixmultiplyAIColumnMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #diagonal }
 MBMatrixMultiplication >> matrixmultiplyAIDiagonalMatrix [
 
 	
@@ -33,7 +33,7 @@ MBMatrixMultiplication >> matrixmultiplyAIDiagonalMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBMatrixMultiplication >> matrixmultiplyAIRowMatrix [
 
 	
@@ -44,7 +44,7 @@ MBMatrixMultiplication >> matrixmultiplyAIRowMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBMatrixMultiplication >> matrixmultiplyAISymetricMatrix [
 
 	
@@ -55,7 +55,7 @@ MBMatrixMultiplication >> matrixmultiplyAISymetricMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBMatrixMultiplication >> matrixmultiplyArray2D [
 
 	
@@ -66,7 +66,7 @@ MBMatrixMultiplication >> matrixmultiplyArray2D [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBMatrixMultiplication >> matrixmultiplyPMMatrix [
 
 	
@@ -77,7 +77,7 @@ MBMatrixMultiplication >> matrixmultiplyPMMatrix [
 	
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBMatrixMultiplication >> matrixmultiplyPMSymmetricMatrix [
 
 	

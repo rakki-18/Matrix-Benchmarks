@@ -11,7 +11,7 @@ MBRankFactorization class >> title [
 	^ 'Matrix Rank Factorization'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBRankFactorization >> rankPMMatrix [
 
 
@@ -21,7 +21,7 @@ MBRankFactorization >> rankPMMatrix [
 	1 timesRepeat: [ a1 rank ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBRankFactorization >> rankPMSymmetricMatrix [
 
 

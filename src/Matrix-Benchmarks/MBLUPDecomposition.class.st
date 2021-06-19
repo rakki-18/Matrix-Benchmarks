@@ -10,7 +10,7 @@ MBLUPDecomposition class >> title [
 	^'LUP Decomposition of Matrix'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBLUPDecomposition >> lupDecomposition [
 
 

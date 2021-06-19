@@ -11,7 +11,7 @@ MBDeterminant class >> title [
 	^ 'Matrix Determinant'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBDeterminant >> determinantPMMatrix [
 
 
@@ -21,7 +21,7 @@ MBDeterminant >> determinantPMMatrix [
 	1 timesRepeat: [ a1 determinant ].
 ]
 
-{ #category : #benchmarks }
+{ #category : #symmetric }
 MBDeterminant >> determinantPMSymmetricMatrix [
 
 

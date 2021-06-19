@@ -11,7 +11,7 @@ MBStrassenMultiplication class >> title [
 	^ 'Strassen Matrix Multiplication'
 ]
 
-{ #category : #benchmarks }
+{ #category : #normal }
 MBStrassenMultiplication >> strassenPMMatrix [
 
 
