@@ -80,3 +80,9 @@ MBAccess >> accessPMSymmetricMatrix [
 
 	1000000 timesRepeat:[  a1 at: matrixSize floor at: matrixSize ].
 ]
+
+{ #category : #parameters }
+MBAccess >> initRepetitions [ 
+
+	^ 100000
+]

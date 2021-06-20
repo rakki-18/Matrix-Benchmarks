@@ -11,6 +11,12 @@ MBMatrixMultiplication class >> title [
 	^ 'Matrix Multiplication'
 ]
 
+{ #category : #parameters }
+MBMatrixMultiplication >> initRepetitions [ 
+
+	^ 10
+]
+
 { #category : #benchmarks }
 MBMatrixMultiplication >> matrixmultiplyAIColumnMatrix [
 

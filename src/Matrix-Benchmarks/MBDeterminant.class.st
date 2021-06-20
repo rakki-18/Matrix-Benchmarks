@@ -30,3 +30,9 @@ MBDeterminant >> determinantPMSymmetricMatrix [
 
 	1 timesRepeat: [ a1 determinant ].
 ]
+
+{ #category : #parameters }
+MBDeterminant >> initRepetitions [ 
+
+	^ 1
+]

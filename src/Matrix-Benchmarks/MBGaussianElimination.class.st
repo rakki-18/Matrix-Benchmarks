@@ -19,3 +19,9 @@ MBGaussianElimination >> gaussianElimination [
 
 	1 timesRepeat: [ a1 solution ].
 ]
+
+{ #category : #parameters }
+MBGaussianElimination >> initRepetitions [ 
+
+	^ 1
+]

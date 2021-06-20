@@ -80,3 +80,9 @@ MBCompareNonequal >> comparenonequalPMSymmetricMatrix [
 
 	1000000 timesRepeat:[  a1 = a2 ].
 ]
+
+{ #category : #parameters }
+MBCompareNonequal >> initRepetitions [ 
+
+	^ 100000
+]

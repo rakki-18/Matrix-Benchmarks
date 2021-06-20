@@ -280,6 +280,11 @@ MBSetup class >> tenDistinctColors [
 ]
 
 { #category : #parameters }
+MBSetup >> defaultInitRepetitions [ 
+	^ 100.
+]
+
+{ #category : #parameters }
 MBSetup >> defaultMatrixSize [
 	
 
@@ -287,6 +292,11 @@ MBSetup >> defaultMatrixSize [
 
 	
 	
+]
+
+{ #category : #parameters }
+MBSetup >> initRepetitions [ 
+	^ self defaultInitRepetitions
 ]
 
 { #category : #parameters }

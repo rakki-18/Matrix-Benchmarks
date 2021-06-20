@@ -10,6 +10,12 @@ MBSVDDecomposition class >> title [
 	^'SVD Decomposition of Matrix'
 ]
 
+{ #category : #parameters }
+MBSVDDecomposition >> initRepetitions [ 
+
+	^ 1
+]
+
 { #category : #normal }
 MBSVDDecomposition >> svdDecomposition [
 

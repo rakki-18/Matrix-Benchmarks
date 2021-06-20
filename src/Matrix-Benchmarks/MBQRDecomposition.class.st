@@ -11,6 +11,12 @@ MBQRDecomposition class >> title [
 	^ 'Matrix QR Decomposition'
 ]
 
+{ #category : #parameters }
+MBQRDecomposition >> initRepetitions [ 
+
+	^ 1
+]
+
 { #category : #normal }
 MBQRDecomposition >> qrPMMatrix [
 

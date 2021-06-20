@@ -11,6 +11,12 @@ MBRankFactorization class >> title [
 	^ 'Matrix Rank Factorization'
 ]
 
+{ #category : #parameters }
+MBRankFactorization >> initRepetitions [ 
+
+	^ 1
+]
+
 { #category : #normal }
 MBRankFactorization >> rankPMMatrix [
 

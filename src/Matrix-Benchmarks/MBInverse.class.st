@@ -11,6 +11,12 @@ MBInverse class >> title [
 	^ 'Matrix Inverse'
 ]
 
+{ #category : #parameters }
+MBInverse >> initRepetitions [ 
+
+	^ 1
+]
+
 { #category : #normal }
 MBInverse >> inversePMMatrix [
 

@@ -10,6 +10,12 @@ MBLUPDecomposition class >> title [
 	^'LUP Decomposition of Matrix'
 ]
 
+{ #category : #parameters }
+MBLUPDecomposition >> initRepetitions [ 
+
+	^ 1
+]
+
 { #category : #normal }
 MBLUPDecomposition >> lupDecomposition [
 

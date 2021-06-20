@@ -11,6 +11,12 @@ MBTrace class >> title [
 	^ 'Trace of a Matrix'
 ]
 
+{ #category : #parameters }
+MBTrace >> initRepetitions [ 
+
+	^ 10000
+]
+
 { #category : #normal }
 MBTrace >> tracePMMatrix [
 

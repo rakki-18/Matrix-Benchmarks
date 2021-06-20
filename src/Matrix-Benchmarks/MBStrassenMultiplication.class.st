@@ -11,6 +11,12 @@ MBStrassenMultiplication class >> title [
 	^ 'Strassen Matrix Multiplication'
 ]
 
+{ #category : #parameters }
+MBStrassenMultiplication >> initRepetitions [ 
+
+	^ 1
+]
+
 { #category : #normal }
 MBStrassenMultiplication >> strassenPMMatrix [
 
