@@ -7,6 +7,9 @@ Class {
 		'aNumber',
 		'matrixSize'
 	],
+	#classInstVars : [
+		'protocol'
+	],
 	#category : #'Matrix-Benchmarks'
 }
 
@@ -37,6 +40,11 @@ MBSetup class >> getNames: aBenchmarkResultSet [
 	^ (aBenchmarkResultSet at: 1)  collect: [ :each | each benchmark name].
 ]
 
+{ #category : #'accessing - private' }
+MBSetup class >> protocol [
+	^ protocol.
+]
+
 { #category : #'running - benchmark' }
 MBSetup class >> runAllBenchmarks [
 	
@@ -52,17 +60,42 @@ MBSetup class >> runAllBenchmarks [
 
 ]
 
+{ #category : #private }
+MBSetup class >> runAllBenchmarksWithProtocol [
+
+	|result|
+	
+	result := OrderedCollection new.
+	Cursor wait showWhile: [  
+	50 to: 300 by: 50 do: [ :each| result addLast: (self new class runBenchmarksWithProtocol: each)].
+	].
+	^ result.
+	
+]
+
 { #category : #'plotting - benchmarks' }
 MBSetup class >> runAndPlotAllBenchmarks [
 
+	|protocols|
+	
+	protocols := #('normal' 'symmetric' 'diagonal').
+	
+	protocols do: [ :each|
+		protocol := each.
+		self runAndPlotAllBenchmarksWithProtocol].
+]
+
+{ #category : #private }
+MBSetup class >> runAndPlotAllBenchmarksWithProtocol [
+
 	|chart x legend result names colors|
 
-	result := self new class runAllBenchmarks. 
+	result := self new class runAllBenchmarksWithProtocol. 
 	result := self sortResult: result.
 	chart := RSChart new.
 	x := self getMatrixSize: result. 
 	colors := self tenDistinctColors.
-	
+
 	1 to: (result at: 1) size do: [ :i|
 	|y line scatter|
 	y := result collect: [ :each |  (((each at: i) measurements at: 1) at: 3) value ].
@@ -78,7 +111,7 @@ MBSetup class >> runAndPlotAllBenchmarks [
 	chart title: self title.
 	chart build.
 	names := self getNames: result.
-	
+
 	legend := RSLegend new.
 	legend container: chart canvas.
 	1 to: names size do: [ :i |
@@ -103,10 +136,23 @@ MBSetup class >> runAndPlotBenchmarks [
 { #category : #'plotting - benchmarks' }
 MBSetup class >> runAndPlotBenchmarks: anInteger [
 
+	|protocols|
+	
+	protocols := #('normal' 'symmetric' 'diagonal').
+	
+
+	protocols do: [ :each|
+		protocol := each.
+		self runAndPlotBenchmarksWithProtocol: anInteger].
+]
+
+{ #category : #private }
+MBSetup class >> runAndPlotBenchmarksWithProtocol: anInteger [
+
 	|aBenchmark data chart names xlabel|
 
 
-	aBenchmark := self new class runBenchmarks: anInteger .
+	aBenchmark := self new class runBenchmarksWithProtocol: anInteger .
 	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
 	names := aBenchmark outcomes collect: [ :each | each benchmark name].
 	
@@ -145,10 +191,24 @@ MBSetup class >> runBenchmarks: anInteger [
 	|integerasString|
 	
 	integerasString := anInteger asString.
+
 	^ Cursor wait showWhile: [(BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself)]
 	
+	
+]
 
+{ #category : #private }
+MBSetup class >> runBenchmarksWithProtocol: anInteger [
+		|integerasString selectors suite|
+	
+		integerasString := anInteger asString.
+	
+		selectors := self selectorsInProtocol: protocol.
+		suite := BenchmarkSuite new.
+		selectors do: [ :each | suite addBenchmark: (BenchmarkInstance class: self selector: each) ].
+		^ Cursor wait showWhile: [ suite run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ; yourself) ].
 
+	
 ]
 
 { #category : #'accessing - private' }
