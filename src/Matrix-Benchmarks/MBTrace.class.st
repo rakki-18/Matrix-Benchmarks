@@ -24,7 +24,7 @@ MBTrace >> tracePMMatrix [
 	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
 
-	10000 timesRepeat: [ a1 tr ].
+	self initRepetitions timesRepeat: [ a1 tr ].
 ]
 
 { #category : #symmetric }
@@ -34,5 +34,5 @@ MBTrace >> tracePMSymmetricMatrix [
 	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
-	10000 timesRepeat: [ a1 tr ].
+	self initRepetitions timesRepeat: [ a1 tr ].
 ]

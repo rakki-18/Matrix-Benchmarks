@@ -24,7 +24,7 @@ MBInverse >> inversePMMatrix [
 	<benchmark: 'PMMatrix'>
 	<setup: #setupInvertiblePMMatrix>
 
-	1 timesRepeat: [ a1 inverse ].
+	self initRepetitions timesRepeat: [ a1 inverse ].
 ]
 
 { #category : #symmetric }
@@ -34,5 +34,5 @@ MBInverse >> inversePMSymmetricMatrix [
 	<benchmark: 'PMSymmetricMatrix'>
 	<setup: #setupInvertiblePMSymmetricMatrix>
 
-	1 timesRepeat: [ a1 inverse ].
+	self initRepetitions timesRepeat: [ a1 inverse ].
 ]

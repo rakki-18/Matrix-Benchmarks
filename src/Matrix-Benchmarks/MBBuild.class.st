@@ -17,7 +17,7 @@ MBBuild >> buildAIColumnMatrix [
 	
 	<benchmark: 'AIColumn'>
 
-	100 timesRepeat:[  AIColumnMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AIColumnMatrix new: 500 ].
 	
 ]
 
@@ -27,7 +27,7 @@ MBBuild >> buildAIDiagonalMatrix [
 	
 	<benchmark: 'AIDiagonal'>
 
-	100 timesRepeat:[  AIDiagonalMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AIDiagonalMatrix new: 500 ].
 	
 ]
 
@@ -37,7 +37,7 @@ MBBuild >> buildAIRowMatrix [
 	
 	<benchmark: 'AIRow'>
 
-	100 timesRepeat:[  AIRowMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AIRowMatrix new: 500 ].
 	
 ]
 
@@ -47,7 +47,7 @@ MBBuild >> buildAISymetricMatrix [
 	
 	<benchmark: 'AISymetric'>
 
-	100 timesRepeat:[  AISymetricMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AISymetricMatrix new: 500 ].
 	
 ]
 
@@ -57,7 +57,7 @@ MBBuild >> buildArray2D [
 	
 	<benchmark: 'Array2D'>
 
-	100 timesRepeat:[  Array2D new: 500 ].
+	self initRepetitions timesRepeat:[  Array2D new: 500 ].
 	
 ]
 
@@ -68,7 +68,7 @@ MBBuild >> buildPMMatrix [
 	<benchmark: 'PMMatrix'>
 
 
-	100 timesRepeat:[  PMMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  PMMatrix new: 500 ].
 ]
 
 { #category : #symmetric }
@@ -78,5 +78,5 @@ MBBuild >> buildPMSymmetricMatrix [
 	<benchmark: 'PMSymmetric'>
 
 
-	100 timesRepeat:[  PMSymmetricMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  PMSymmetricMatrix new: 500 ].
 ]

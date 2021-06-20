@@ -24,5 +24,5 @@ MBStrassenMultiplication >> strassenPMMatrix [
 	<benchmark: 'PMMatrix'>
 	<setup: #setupStrassenPMMatrix>
 
-	1 timesRepeat: [ a1 strassenProductWithMatrix: a2].
+	self initRepetitions timesRepeat: [ a1 strassenProductWithMatrix: a2].
 ]

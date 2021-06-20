@@ -17,7 +17,7 @@ MBGaussianElimination >> gaussianElimination [
 	<benchmark: 'PMLinearEquationSystem'>
 	<setup: #setupPMLinearEquationSystem>
 
-	1 timesRepeat: [ a1 solution ].
+	self initRepetitions timesRepeat: [ a1 solution ].
 ]
 
 { #category : #parameters }

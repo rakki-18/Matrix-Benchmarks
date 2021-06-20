@@ -18,7 +18,7 @@ MBMultiplication >> multiplyAIColumnMatrix [
 	<benchmark: 'AIColumn'>
 	<setup: #( #setupAIColumnMatrix #setupNumber)>
 
-	100 timesRepeat:[  a1 * aNumber ].
+	self initRepetitions timesRepeat:[  a1 * aNumber ].
 	
 ]
 
@@ -29,7 +29,7 @@ MBMultiplication >> multiplyAIDiagonalMatrix [
 	<benchmark: 'AIDiagonal'>
 	<setup: #( #setupAIDiagonalMatrix #setupNumber)>
 
-	100 timesRepeat:[  a1 * aNumber ].
+	self initRepetitions timesRepeat:[  a1 * aNumber ].
 	
 ]
 
@@ -40,7 +40,7 @@ MBMultiplication >> multiplyAIRowMatrix [
 	<benchmark: 'AIRow'>
 	<setup: #( #setupAIRowMatrix #setupNumber)>
 
-	100 timesRepeat:[  a1 * aNumber ].
+	self initRepetitions timesRepeat:[  a1 * aNumber ].
 	
 ]
 
@@ -51,7 +51,7 @@ MBMultiplication >> multiplyAISymetricMatrix [
 	<benchmark: 'AISymetric'>
 	<setup: #( #setupAISymetricMatrix #setupNumber)>
 
-	100 timesRepeat:[  a1 * aNumber ].
+	self initRepetitions timesRepeat:[  a1 * aNumber ].
 	
 ]
 
@@ -62,7 +62,7 @@ MBMultiplication >> multiplyArray2D [
 	<benchmark: 'Array2D'>
 	<setup: #( #setupArray2D #setupNumber)>
 
-	100 timesRepeat:[  a1 * aNumber ].
+	self initRepetitions timesRepeat:[  a1 * aNumber ].
 ]
 
 { #category : #normal }
@@ -72,7 +72,7 @@ MBMultiplication >> multiplyPMMatrix [
 	<benchmark: 'PMMatrix'>
 	<setup: #( #setupPMMatrix #setupNumber)>
 
-	100 timesRepeat:[  a1 * aNumber ].
+	self initRepetitions timesRepeat:[  a1 * aNumber ].
 ]
 
 { #category : #symmetric }
@@ -82,5 +82,5 @@ MBMultiplication >> multiplyPMSymmetricMatrix [
 	<benchmark: 'PMSymmetric'>
 	<setup: #( #setupPMSymmetricMatrix #setupNumber)>
 
-	100 timesRepeat:[  a1 * aNumber ].
+	self initRepetitions timesRepeat:[  a1 * aNumber ].
 ]

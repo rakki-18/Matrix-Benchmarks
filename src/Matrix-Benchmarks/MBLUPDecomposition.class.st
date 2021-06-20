@@ -23,5 +23,5 @@ MBLUPDecomposition >> lupDecomposition [
 	<benchmark: 'PMLUPDecomposition'>
 	<setup: #setupPMLUPDecomposition>
 
-	1 timesRepeat: [ a1 solve: a2 ].
+	self initRepetitions timesRepeat: [ a1 solve: a2 ].
 ]

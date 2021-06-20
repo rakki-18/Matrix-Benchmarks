@@ -24,7 +24,7 @@ MBMatrixMultiplication >> matrixmultiplyAIColumnMatrix [
 	<benchmark: 'AIColumn'>
 	<setup: #setuptwoAIColumnMatrix>
 
-	10 timesRepeat:[  a1 *~ a2 ].
+	self initRepetitions timesRepeat:[  a1 *~ a2 ].
 	
 ]
 
@@ -35,7 +35,7 @@ MBMatrixMultiplication >> matrixmultiplyAIDiagonalMatrix [
 	<benchmark: 'AIDiagonal'>
 	<setup: #setuptwoAIDiagonalMatrix>
 
-	10 timesRepeat:[  a1 *~ a2 ].
+	self initRepetitions timesRepeat:[  a1 *~ a2 ].
 	
 ]
 
@@ -46,7 +46,7 @@ MBMatrixMultiplication >> matrixmultiplyAIRowMatrix [
 	<benchmark: 'AIRow'>
 	<setup: #setuptwoAIRowMatrix>
 
-	10 timesRepeat:[  a1 *~ a2 ].
+	self initRepetitions timesRepeat:[  a1 *~ a2 ].
 	
 ]
 
@@ -57,7 +57,7 @@ MBMatrixMultiplication >> matrixmultiplyAISymetricMatrix [
 	<benchmark: 'AISymetric'>
 	<setup: #setuptwoAISymetricMatrix>
 
-	10 timesRepeat:[  a1 *~ a2 ].
+	self initRepetitions timesRepeat:[  a1 *~ a2 ].
 	
 ]
 
@@ -68,7 +68,7 @@ MBMatrixMultiplication >> matrixmultiplyArray2D [
 	<benchmark: 'Array2D'>
 	<setup: #setuptwoArray2D>
 
-	10 timesRepeat:[  a1 +* a2 ].
+	self initRepetitions timesRepeat:[  a1 +* a2 ].
 	
 ]
 
@@ -79,7 +79,7 @@ MBMatrixMultiplication >> matrixmultiplyPMMatrix [
 	<benchmark: 'PMMatrix'>
 	<setup: #setuptwoPMMatrix>
 
-	10 timesRepeat:[  a1 * a2 ].
+	self initRepetitions timesRepeat:[  a1 * a2 ].
 	
 ]
 
@@ -90,6 +90,6 @@ MBMatrixMultiplication >> matrixmultiplyPMSymmetricMatrix [
 	<benchmark: 'PMSymmetric'>
 	<setup: #setuptwoPMSymmetricMatrix>
 
-	10 timesRepeat:[  a1 * a2 ].
+	self initRepetitions timesRepeat:[  a1 * a2 ].
 	
 ]

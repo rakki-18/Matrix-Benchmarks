@@ -23,5 +23,5 @@ MBSVDDecomposition >> svdDecomposition [
 	<benchmark: 'PMSingularValueDecomposition'>
 	<setup: #setupPMMatrix>
 
-	1 timesRepeat: [ a1 decomposeSV ].
+	self initRepetitions timesRepeat: [ a1 decomposeSV ].
 ]

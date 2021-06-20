@@ -18,7 +18,7 @@ MBDeterminant >> determinantPMMatrix [
 	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
 
-	1 timesRepeat: [ a1 determinant ].
+	self initRepetitions timesRepeat: [ a1 determinant ].
 ]
 
 { #category : #symmetric }
@@ -28,7 +28,7 @@ MBDeterminant >> determinantPMSymmetricMatrix [
 	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
-	1 timesRepeat: [ a1 determinant ].
+	self initRepetitions timesRepeat: [ a1 determinant ].
 ]
 
 { #category : #parameters }
