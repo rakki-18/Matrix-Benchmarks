@@ -17,7 +17,7 @@ MBBuild >> buildAIColumnMatrix [
 	
 	<benchmark: 'AIColumn'>
 
-	self initRepetitions timesRepeat:[  AIColumnMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AIColumnMatrix new: matrixSize ].
 	
 ]
 
@@ -27,7 +27,7 @@ MBBuild >> buildAIDiagonalMatrix [
 	
 	<benchmark: 'AIDiagonal'>
 
-	self initRepetitions timesRepeat:[  AIDiagonalMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AIDiagonalMatrix new: matrixSize ].
 	
 ]
 
@@ -37,7 +37,7 @@ MBBuild >> buildAIRowMatrix [
 	
 	<benchmark: 'AIRow'>
 
-	self initRepetitions timesRepeat:[  AIRowMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AIRowMatrix new: matrixSize ].
 	
 ]
 
@@ -47,7 +47,7 @@ MBBuild >> buildAISymetricMatrix [
 	
 	<benchmark: 'AISymetric'>
 
-	self initRepetitions timesRepeat:[  AISymetricMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  AISymetricMatrix new: matrixSize ].
 	
 ]
 
@@ -57,7 +57,7 @@ MBBuild >> buildArray2D [
 	
 	<benchmark: 'Array2D'>
 
-	self initRepetitions timesRepeat:[  Array2D new: 500 ].
+	self initRepetitions timesRepeat:[  Array2D new: matrixSize ].
 	
 ]
 
@@ -68,7 +68,7 @@ MBBuild >> buildPMMatrix [
 	<benchmark: 'PMMatrix'>
 
 
-	self initRepetitions timesRepeat:[  PMMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  PMMatrix new: matrixSize ].
 ]
 
 { #category : #symmetric }
@@ -78,5 +78,5 @@ MBBuild >> buildPMSymmetricMatrix [
 	<benchmark: 'PMSymmetric'>
 
 
-	self initRepetitions timesRepeat:[  PMSymmetricMatrix new: 500 ].
+	self initRepetitions timesRepeat:[  PMSymmetricMatrix new: matrixSize ].
 ]

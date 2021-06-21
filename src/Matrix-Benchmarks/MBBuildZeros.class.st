@@ -17,7 +17,7 @@ MBBuildZeros >> buildZeroAIColumnMatrix [
 	
 	<benchmark: 'AIColumn'>
 
-	self initRepetitions timesRepeat:[  AIColumnMatrix new: 500 withAll: 0].
+	self initRepetitions timesRepeat:[  AIColumnMatrix new: matrixSize withAll: 0].
 	
 ]
 
@@ -27,7 +27,7 @@ MBBuildZeros >> buildZeroAIDiagonalMatrix [
 	
 	<benchmark: 'AIDiagonal'>
 
-	self initRepetitions timesRepeat:[  AIDiagonalMatrix new: 500 withAll: 0].
+	self initRepetitions timesRepeat:[  AIDiagonalMatrix new: matrixSize withAll: 0].
 	
 ]
 
@@ -37,7 +37,7 @@ MBBuildZeros >> buildZeroAIRowMatrix [
 	
 	<benchmark: 'AIRow'>
 
-	self initRepetitions timesRepeat:[  AIRowMatrix new: 500 withAll: 0].
+	self initRepetitions timesRepeat:[  AIRowMatrix new: matrixSize withAll: 0].
 	
 ]
 
@@ -47,7 +47,7 @@ MBBuildZeros >> buildZeroAISymetricMatrix [
 	
 	<benchmark: 'AISymetric'>
 
-	self initRepetitions timesRepeat:[  AISymetricMatrix new: 500 withAll: 0].
+	self initRepetitions timesRepeat:[  AISymetricMatrix new: matrixSize withAll: 0].
 	
 ]
 
@@ -57,7 +57,7 @@ MBBuildZeros >> buildZeroArray2D [
 	
 	<benchmark: 'Array2D'>
 
-	self initRepetitions timesRepeat:[  Array2D zeros: 500 ].
+	self initRepetitions timesRepeat:[  Array2D zeros: matrixSize ].
 	
 ]
 
@@ -68,7 +68,7 @@ MBBuildZeros >> buildZeroPMMatrix [
 	<benchmark: 'PMMatrix'>
 
 
-	self initRepetitions timesRepeat:[  PMMatrix zerosRows: 500 cols: 500].
+	self initRepetitions timesRepeat:[  PMMatrix zerosRows: matrixSize cols: matrixSize].
 ]
 
 { #category : #symmetric }
@@ -78,5 +78,5 @@ MBBuildZeros >> buildZeroPMSymmetricMatrix [
 	<benchmark: 'PMSymmetricMatrix'>
 
 
-	self initRepetitions timesRepeat:[  PMSymmetricMatrix  zerosRows: 500 cols: 500].
+	self initRepetitions timesRepeat:[  PMSymmetricMatrix  zerosRows: matrixSize cols: matrixSize].
 ]
