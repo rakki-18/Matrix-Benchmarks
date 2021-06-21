@@ -36,3 +36,9 @@ MBDeterminant >> initRepetitions [
 
 	^ 1
 ]
+
+{ #category : #parameters }
+MBDeterminant >> maxMatrixSize [ 
+
+	^ 300
+]

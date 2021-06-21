@@ -17,6 +17,12 @@ MBQRDecomposition >> initRepetitions [
 	^ 1
 ]
 
+{ #category : #parameters }
+MBQRDecomposition >> maxMatrixSize [ 
+
+	^ 300.
+]
+
 { #category : #normal }
 MBQRDecomposition >> qrPMMatrix [
 

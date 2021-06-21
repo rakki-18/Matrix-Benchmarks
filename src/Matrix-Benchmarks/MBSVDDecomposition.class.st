@@ -16,6 +16,12 @@ MBSVDDecomposition >> initRepetitions [
 	^ 1
 ]
 
+{ #category : #parameters }
+MBSVDDecomposition >> maxMatrixSize [ 
+
+	^ 300.
+]
+
 { #category : #normal }
 MBSVDDecomposition >> svdDecomposition [
 

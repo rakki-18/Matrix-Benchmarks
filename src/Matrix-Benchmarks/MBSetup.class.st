@@ -280,6 +280,11 @@ MBSetup class >> tenDistinctColors [
 ]
 
 { #category : #parameters }
+MBSetup >> checkMatrixSize [
+	self assert: matrixSize <= self maxMatrixSize description: 'Matrix Size is too big'
+]
+
+{ #category : #parameters }
 MBSetup >> defaultInitRepetitions [ 
 	^ 100.
 ]
@@ -292,6 +297,11 @@ MBSetup >> defaultMatrixSize [
 
 	
 	
+]
+
+{ #category : #parameters }
+MBSetup >> defaultMaxMatrixSize [
+	^ 500.
 ]
 
 { #category : #parameters }
@@ -321,10 +331,16 @@ MBSetup >> matrixSize: anInteger [
 	
 ]
 
+{ #category : #parameters }
+MBSetup >> maxMatrixSize [ 
+	^ self defaultMaxMatrixSize
+]
+
 { #category : #setupOneMatrix }
 MBSetup >> setupAIColumnMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	a1 := AIColumnMatrix new: size.
@@ -342,6 +358,7 @@ MBSetup >> setupAIDiagonalMatrix [
 
 
 	|aArray size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	aArray := Array new: size.
@@ -355,6 +372,7 @@ MBSetup >> setupAIDiagonalMatrix [
 MBSetup >> setupAIRowMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	a1 := AIRowMatrix new: size.
@@ -371,6 +389,7 @@ MBSetup >> setupAIRowMatrix [
 MBSetup >> setupAISymetricMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	a1 := AISymetricMatrix new: size.
@@ -390,6 +409,7 @@ MBSetup >> setupAISymetricMatrix [
 MBSetup >> setupArray2D [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	a1 := Array2D new: size.
@@ -406,6 +426,8 @@ MBSetup >> setupInvertiblePMMatrix [
 	They are multipied to generate the invertible matrix"
 	
 	|l u size|
+	
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	l := PMMatrix zerosRows: size cols: size.
@@ -437,6 +459,8 @@ MBSetup >> setupInvertiblePMSymmetricMatrix [
 	where A is a random symmetric matrix."
 	
 	|size|
+	
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size:= matrixSize.
 	a1 := PMSymmetricMatrix new: size.
@@ -477,7 +501,8 @@ MBSetup >> setupPMLUPDecomposition [
 	
 	
 	|size|
-
+	self checkMatrixSize. " checks if the matrix size is too big"
+	
 	size := matrixSize.
 	self setupPMMatrix.
 	
@@ -499,7 +524,8 @@ MBSetup >> setupPMLinearEquationSystem [
 	" Random matrix and vector is generated.
 	If the matrix is singular, solution will just return nil."
 	|size|
-
+	self checkMatrixSize. " checks if the matrix size is too big"
+	
 	size := matrixSize.
 	self setupPMMatrix.
 	
@@ -520,6 +546,7 @@ MBSetup >> setupPMMatrix [
 
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	a1 := PMMatrix new: size.
@@ -535,6 +562,7 @@ MBSetup >> setupPMSymmetricMatrix [
 
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	a1 := PMSymmetricMatrix new: size.
@@ -556,6 +584,8 @@ MBSetup >> setupStrassenPMMatrix [
 	
 	"matrixSize should be a power of 2"
 	self assert: matrixSize isPowerOfTwo  description: 'matrixSize should be a power of 2'.
+	self checkMatrixSize. " checks if the matrix size is too big"
+	
 	self setuptwoPMMatrix .
 	
 ]
@@ -566,6 +596,8 @@ MBSetup >> setupStrassenPMSymmetricMatrix [
 
 	"matrixSize should be a power of 2"
 	self assert: (matrixSize isPowerOfTwo ) description: 'matrixSize should be a power of 2'.
+	self checkMatrixSize. " checks if the matrix size is too big"
+	
 	self setuptwoPMSymmetricMatrix.
 ]
 
@@ -573,6 +605,7 @@ MBSetup >> setupStrassenPMSymmetricMatrix [
 MBSetup >> setuptwoAIColumnMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	self setupAIColumnMatrix.
@@ -587,6 +620,7 @@ MBSetup >> setuptwoAIColumnMatrix [
 MBSetup >> setuptwoAIDiagonalMatrix [
 
 	|size aArray|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	self setupAIDiagonalMatrix .
@@ -602,6 +636,7 @@ MBSetup >> setuptwoAIDiagonalMatrix [
 MBSetup >> setuptwoAIRowMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	self setupAIRowMatrix.
@@ -617,6 +652,7 @@ MBSetup >> setuptwoAIRowMatrix [
 MBSetup >> setuptwoAISymetricMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	self setupAISymetricMatrix.
@@ -637,6 +673,7 @@ MBSetup >> setuptwoAISymetricMatrix [
 MBSetup >> setuptwoArray2D [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	
@@ -652,6 +689,7 @@ MBSetup >> setuptwoArray2D [
 MBSetup >> setuptwoPMMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	self setupPMMatrix.
@@ -666,6 +704,7 @@ MBSetup >> setuptwoPMMatrix [
 MBSetup >> setuptwoPMSymmetricMatrix [
 
 	|size|
+	self checkMatrixSize. " checks if the matrix size is too big"
 	
 	size := matrixSize.
 	self setupPMSymmetricMatrix.

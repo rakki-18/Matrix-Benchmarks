@@ -25,3 +25,9 @@ MBLUPDecomposition >> lupDecomposition [
 
 	self initRepetitions timesRepeat: [ a1 solve: a2 ].
 ]
+
+{ #category : #parameters }
+MBLUPDecomposition >> maxMatrixSize [ 
+
+	^ 300.
+]

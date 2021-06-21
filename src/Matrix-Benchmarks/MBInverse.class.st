@@ -36,3 +36,9 @@ MBInverse >> inversePMSymmetricMatrix [
 
 	self initRepetitions timesRepeat: [ a1 inverse ].
 ]
+
+{ #category : #parameters }
+MBInverse >> maxMatrixSize [ 
+
+	^ 300.
+]

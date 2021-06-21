@@ -25,3 +25,9 @@ MBGaussianElimination >> initRepetitions [
 
 	^ 1
 ]
+
+{ #category : #parameters }
+MBGaussianElimination >> maxMatrixSize [ 
+
+	^ 300.
+]

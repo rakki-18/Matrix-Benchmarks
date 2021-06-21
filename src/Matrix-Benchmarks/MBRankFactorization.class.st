@@ -17,6 +17,12 @@ MBRankFactorization >> initRepetitions [
 	^ 1
 ]
 
+{ #category : #parameters }
+MBRankFactorization >> maxMatrixSize [ 
+
+	^ 300.
+]
+
 { #category : #normal }
 MBRankFactorization >> rankPMMatrix [
 
