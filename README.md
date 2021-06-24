@@ -44,10 +44,6 @@ To get a graphical report of the benchmarks for a particular operation for a par
 MBOperationName runAndPlotBenchmarks: matrixSize
 ```
 
-To get a benchmarked report on a particular operation for a set of matrix sizes:
-```Smalltalk
-MBOperationName runAllBenchmarks
-```
 To get a graphical report of the benchmarks for a particular operation for a set of matrix sizes:
 ```Smalltalk
 MBOperationName runAndPlotAllBenchmarks
@@ -55,7 +51,6 @@ MBOperationName runAndPlotAllBenchmarks
 ### Examples
 - On the operation - Addition:
 ```Smalltalk
-MBAddition runAllBenchmarks.
 MBAddition runAndPlotAllBenchmarks.
 ```
 - On the operation - Element-wise Multiplication
@@ -65,25 +60,22 @@ MBElementWiseMultiplication runAndPlotBenchmarks: 200.
 ```
 - On the operation - Accessing cells of a matrix
 ```Smalltalk
-MBAccess runAllBenchmarks.
 MBAccess runAndPlotAllBenchmarks
 ```
 
 - On the operation - Building an empty matrix
 ```Smalltalk
-MBBuild runAllBenchmarks.
 MBBuild runAndPlotAllBenchmarks.
 ```
 
 - On the operation - Comparing matrices
 ```Smalltalk
-MBCompareEqual runAllBenchmarks.
 MBCompareEqual runAndPlotAllBenchmarks.
 ```
 - On the operation - Transpose of a matrix
 ```Smalltalk
-MBTranspose runAllBenchmarks.
-MBTranspose runAndPlotAllBenchmarks.
+MBTranspose runBenchmarks: 300
+MBTranspose runAndPlotBenchmarks: 300.
 ```
 
 To generate a benchmark report on all the operations of a particular matrix implementation,
