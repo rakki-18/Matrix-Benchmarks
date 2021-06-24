@@ -45,7 +45,7 @@ MBSetup class >> protocol [
 	^ protocol.
 ]
 
-{ #category : #'running - benchmark' }
+{ #category : #private }
 MBSetup class >> runAllBenchmarks [
 	
 	|result|
