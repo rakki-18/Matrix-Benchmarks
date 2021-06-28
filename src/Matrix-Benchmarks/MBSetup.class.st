@@ -45,26 +45,10 @@ MBSetup class >> protocol [
 	^ protocol.
 ]
 
-{ #category : #private }
+{ #category : #'running - benchmark' }
 MBSetup class >> runAllBenchmarks [
 	
-	|result|
-	
-	result := OrderedCollection new.
-	Cursor wait showWhile: [  
-	" decide matrix sizes based on the time the operation takes"
-	(self new maxMatrixSize = 500) ifTrue: [ 
-		50 to: 300 by: 50 do: [ :each| result addLast: (self new class runBenchmarks: each)].
-	]
-	ifFalse: [ 
-		50 to: 150 by: 25 do: [ :each| result addLast: (self new class runBenchmarks: each) ]. 
-		]
-	
-	].
-	^ result.
-	
-
-
+	^ self runAndPlotAllBenchmarks 
 ]
 
 { #category : #private }
@@ -154,10 +138,12 @@ MBSetup class >> runAndPlotBenchmarks: anInteger [
 	
 	protocols := #('normal' 'symmetric' 'diagonal').
 	
-
 	protocols do: [ :each|
-		protocol := each.
-		self runAndPlotBenchmarksWithProtocol: anInteger].
+		(self protocols includes: each) ifTrue: [ 
+			protocol := each.
+			self runAndPlotBenchmarksWithProtocol: anInteger.
+			 ]
+		].
 ]
 
 { #category : #private }
@@ -186,7 +172,9 @@ MBSetup class >> runAndPlotBenchmarksWithProtocol: anInteger [
 		names := temp].
 	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
 	chart title: self title.
-	^ chart open.
+	chart open.
+	
+	^aBenchmark
 
 
 ]
@@ -205,7 +193,9 @@ MBSetup class >> runBenchmarks: anInteger [
 	|integerasString|
 	
 	integerasString := anInteger asString.
-
+	"plot the benchmark results"
+	self runAndPlotBenchmarks: anInteger.
+	
 	^ Cursor wait showWhile: [(BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself)]
 	
 	
