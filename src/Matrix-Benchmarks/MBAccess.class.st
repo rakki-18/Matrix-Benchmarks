@@ -18,7 +18,7 @@ MBAccess >> accessAIColumnMatrix [
 	<benchmark: 'AIColumn'>
 	<setup: #setupAIColumnMatrix>
 
-	1000000 timesRepeat:[  a1 at: matrixSize floor and: matrixSize ].
+	1000000 timesRepeat:[  a1 at: matrixSize  and: matrixSize ].
 ]
 
 { #category : #diagonal }

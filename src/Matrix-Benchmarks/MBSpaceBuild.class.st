@@ -5,13 +5,50 @@ Class {
 }
 
 { #category : #normal }
+MBSpaceBuild >> buildAIColumnMatrix [  
+
+	^ self bench: [ AIColumnMatrix new: self matrixSize]
+	
+]
+
+{ #category : #normal }
+MBSpaceBuild >> buildAIDiagonalMatrix [  
+
+	^ self bench: [ AIDiagonalMatrix  new: self matrixSize]
+	
+]
+
+{ #category : #normal }
+MBSpaceBuild >> buildAIRowMatrix [ 
+
+	^ self bench: [ AIRowMatrix  new: self matrixSize].
+	
+]
+
+{ #category : #normal }
+MBSpaceBuild >> buildAISymetricMatrix [   
+
+	^ self bench: [ AISymetricMatrix new: self matrixSize]
+	
+]
+
+{ #category : #normal }
+MBSpaceBuild >> buildArray2D [   
+
+	^ self bench: [ Array2D new: self matrixSize]
+	
+]
+
+{ #category : #normal }
 MBSpaceBuild >> buildPMMatrix [
 
-	|a|
+	^ self bench: [ PMMatrix new: self matrixSize]
 	
-	a := MessageTally spyOn: [ PMMatrix new: 500] reportOtherProcesses: false cutoff: 1 openResultWindow: false.
-	
-	" Used Memory is stored in gcStats"
-	^ a gcStats at: 2.
+]
+
+{ #category : #normal }
+MBSpaceBuild >> buildPMSymmetricMatrix [ 
+
+	^ self bench: [ PMSymmetricMatrix  new: self matrixSize]
 	
 ]
