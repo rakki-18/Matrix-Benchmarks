@@ -40,6 +40,16 @@ MBSetup class >> getNames: aBenchmarkResultSet [
 	^ (aBenchmarkResultSet at: 1)  collect: [ :each | each benchmark name].
 ]
 
+{ #category : #examples }
+MBSetup class >> operations [
+
+	|operations|
+	" list all the available operations that can be benchmarked"
+	operations := OrderedCollection new.
+	self subclassesDo: [ :each | operations addLast: each ].
+	^ operations
+]
+
 { #category : #'accessing - private' }
 MBSetup class >> protocol [
 	^ protocol.
