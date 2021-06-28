@@ -34,48 +34,41 @@ spec
 Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) to learn more about baselines.
 
 ## Running Benchmarks
-To get a benchmarked report on a particular operation for a particular matrix size:
+To run benchmarks on a particular operation for a particular matrix size:
 ```Smalltalk
 MBOperationName runBenchmarks: matrixSize
 ```
 
-To get a graphical report of the benchmarks for a particular operation for a particular matrix size:
+To run benchmarks for a particular operation for a set of matrix sizes:
 ```Smalltalk
-MBOperationName runAndPlotBenchmarks: matrixSize
-```
-
-To get a graphical report of the benchmarks for a particular operation for a set of matrix sizes:
-```Smalltalk
-MBOperationName runAndPlotAllBenchmarks
+MBOperationName runAllBenchmarks
 ```
 ### Examples
 - On the operation - Addition:
 ```Smalltalk
-MBAddition runAndPlotAllBenchmarks.
+MBAddition runAllBenchmarks.
 ```
 - On the operation - Element-wise Multiplication
 ```Smalltalk
 MBElementWiseMultiplication runBenchmarks: 200.
-MBElementWiseMultiplication runAndPlotBenchmarks: 200.
 ```
 - On the operation - Accessing cells of a matrix
 ```Smalltalk
-MBAccess runAndPlotAllBenchmarks
+MBAccess runAllBenchmarks
 ```
 
 - On the operation - Building an empty matrix
 ```Smalltalk
-MBBuild runAndPlotAllBenchmarks.
+MBBuild runAllBenchmarks.
 ```
 
 - On the operation - Comparing matrices
 ```Smalltalk
-MBCompareEqual runAndPlotAllBenchmarks.
+MBCompareEqual runAllBenchmarks.
 ```
 - On the operation - Transpose of a matrix
 ```Smalltalk
 MBTranspose runBenchmarks: 300
-MBTranspose runAndPlotBenchmarks: 300.
 ```
 
 To generate a benchmark report on all the operations of a particular matrix implementation,
