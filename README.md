@@ -43,6 +43,10 @@ To run benchmarks for a particular operation for a set of matrix sizes:
 ```Smalltalk
 MBOperationName runAllBenchmarks
 ```
+To see all the available operations that can be benchmarked:
+```Smalltalk
+MBSetup operations
+```
 ### Examples
 - On the operation - Addition:
 ```Smalltalk
@@ -55,20 +59,6 @@ MBElementWiseMultiplication runBenchmarks: 200.
 - On the operation - Accessing cells of a matrix
 ```Smalltalk
 MBAccess runAllBenchmarks
-```
-
-- On the operation - Building an empty matrix
-```Smalltalk
-MBBuild runAllBenchmarks.
-```
-
-- On the operation - Comparing matrices
-```Smalltalk
-MBCompareEqual runAllBenchmarks.
-```
-- On the operation - Transpose of a matrix
-```Smalltalk
-MBTranspose runBenchmarks: 300
 ```
 
 To generate a benchmark report on all the operations of a particular matrix implementation,
