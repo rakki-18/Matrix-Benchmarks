@@ -1,6 +1,6 @@
 Class {
 	#name : #MBBuildZeros,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

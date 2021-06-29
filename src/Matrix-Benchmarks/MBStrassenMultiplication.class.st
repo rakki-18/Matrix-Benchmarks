@@ -1,6 +1,6 @@
 Class {
 	#name : #MBStrassenMultiplication,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

@@ -1,6 +1,6 @@
 Class {
 	#name : #MBElementWiseMultiplication,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

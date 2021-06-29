@@ -1,6 +1,6 @@
 Class {
 	#name : #MBLUPDecomposition,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

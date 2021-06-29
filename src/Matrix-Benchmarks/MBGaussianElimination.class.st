@@ -1,6 +1,6 @@
 Class {
 	#name : #MBGaussianElimination,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

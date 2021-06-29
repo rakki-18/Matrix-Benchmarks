@@ -1,6 +1,6 @@
 Class {
 	#name : #MBSVDDecomposition,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

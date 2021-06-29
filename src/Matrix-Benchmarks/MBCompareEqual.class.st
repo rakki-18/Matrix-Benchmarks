@@ -1,6 +1,6 @@
 Class {
 	#name : #MBCompareEqual,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 
@@ -12,7 +12,7 @@ MBCompareEqual class >> title [
 ]
 
 { #category : #benchmarks }
-MBCompareEqual >> comparEqualAIColumnMatrix [
+MBCompareEqual >> compareEqualAIColumnMatrix [
 
 	
 	<benchmark: 'AIColumn'>
@@ -22,7 +22,7 @@ MBCompareEqual >> comparEqualAIColumnMatrix [
 ]
 
 { #category : #diagonal }
-MBCompareEqual >> comparEqualAIDiagonalMatrix [
+MBCompareEqual >> compareEqualAIDiagonalMatrix [
 
 	
 	<benchmark: 'AIDiagonal'>
@@ -32,7 +32,7 @@ MBCompareEqual >> comparEqualAIDiagonalMatrix [
 ]
 
 { #category : #normal }
-MBCompareEqual >> comparEqualAIRowMatrix [
+MBCompareEqual >> compareEqualAIRowMatrix [
 
 	
 	<benchmark: 'AIRow'>
@@ -42,7 +42,7 @@ MBCompareEqual >> comparEqualAIRowMatrix [
 ]
 
 { #category : #symmetric }
-MBCompareEqual >> comparEqualAISymetricMatrix [
+MBCompareEqual >> compareEqualAISymetricMatrix [
 
 	
 	<benchmark: 'AISymetric'>

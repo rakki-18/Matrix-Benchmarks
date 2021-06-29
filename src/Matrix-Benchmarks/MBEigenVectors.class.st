@@ -1,6 +1,6 @@
 Class {
 	#name : #MBEigenVectors,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

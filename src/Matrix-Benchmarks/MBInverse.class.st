@@ -1,6 +1,6 @@
 Class {
 	#name : #MBInverse,
-	#superclass : #MBSetup,
+	#superclass : #MBAbstract,
 	#category : #'Matrix-Benchmarks'
 }
 

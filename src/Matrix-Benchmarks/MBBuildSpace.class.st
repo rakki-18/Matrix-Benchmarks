@@ -1,53 +1,53 @@
 Class {
-	#name : #MBSpaceBuild,
-	#superclass : #MBSpaceAbstract,
+	#name : #MBBuildSpace,
+	#superclass : #MBBuild,
 	#category : #'Matrix-Benchmarks'
 }
 
 { #category : #normal }
-MBSpaceBuild >> buildAIColumnMatrix [  
+MBBuildSpace >> buildAIColumnMatrix [  
 
 	^ self bench: [ AIColumnMatrix new: self matrixSize]
 	
 ]
 
 { #category : #normal }
-MBSpaceBuild >> buildAIDiagonalMatrix [  
+MBBuildSpace >> buildAIDiagonalMatrix [  
 
 	^ self bench: [ AIDiagonalMatrix  new: self matrixSize]
 	
 ]
 
 { #category : #normal }
-MBSpaceBuild >> buildAIRowMatrix [ 
+MBBuildSpace >> buildAIRowMatrix [ 
 
 	^ self bench: [ AIRowMatrix  new: self matrixSize].
 	
 ]
 
 { #category : #normal }
-MBSpaceBuild >> buildAISymetricMatrix [   
+MBBuildSpace >> buildAISymetricMatrix [   
 
 	^ self bench: [ AISymetricMatrix new: self matrixSize]
 	
 ]
 
 { #category : #normal }
-MBSpaceBuild >> buildArray2D [   
+MBBuildSpace >> buildArray2D [   
 
 	^ self bench: [ Array2D new: self matrixSize]
 	
 ]
 
 { #category : #normal }
-MBSpaceBuild >> buildPMMatrix [
+MBBuildSpace >> buildPMMatrix [
 
 	^ self bench: [ PMMatrix new: self matrixSize]
 	
 ]
 
 { #category : #normal }
-MBSpaceBuild >> buildPMSymmetricMatrix [ 
+MBBuildSpace >> buildPMSymmetricMatrix [ 
 
 	^ self bench: [ PMSymmetricMatrix  new: self matrixSize]
 	
