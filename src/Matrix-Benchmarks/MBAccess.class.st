@@ -38,7 +38,7 @@ MBAccess >> accessAIRowMatrix [
 	<benchmark: 'AIRow'>
 	<setup: #setupAIRowMatrix>
 
-	 self initRepetitions timesRepeat: [  a1 at: matrixSize floor and: matrixSize ].
+	 self initRepetitions timesRepeat: [  a1 at: matrixSize and: matrixSize ].
 ]
 
 { #category : #symmetric }
@@ -48,7 +48,7 @@ MBAccess >> accessAISymetricMatrix [
 	<benchmark: 'AISymetric'>
 	<setup: #setupAISymetricMatrix>
 
-	self initRepetitions timesRepeat:[  a1 at: matrixSize floor and: matrixSize ].
+	self initRepetitions timesRepeat:[  a1 at: matrixSize and: matrixSize ].
 ]
 
 { #category : #normal }
@@ -58,7 +58,7 @@ MBAccess >> accessArray2D [
 	<benchmark: 'Array2D'>
 	<setup: #setupArray2D>
 
-	self initRepetitions timesRepeat:[  a1 at: matrixSize floor at: matrixSize ].
+	self initRepetitions timesRepeat:[  a1 at: matrixSize at: matrixSize ].
 ]
 
 { #category : #normal }
@@ -68,7 +68,7 @@ MBAccess >> accessPMMatrix [
 	<benchmark: 'PMMatrix'>
 	<setup: #setupPMMatrix>
 
-	self initRepetitions timesRepeat:[  a1 at: matrixSize floor at: matrixSize ].
+	self initRepetitions timesRepeat:[  a1 at: matrixSize at: matrixSize ].
 ]
 
 { #category : #symmetric }
