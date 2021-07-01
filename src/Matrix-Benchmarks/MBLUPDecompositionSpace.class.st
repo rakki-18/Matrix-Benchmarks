@@ -10,5 +10,5 @@ MBLUPDecompositionSpace >> lupDecomposition [
 
 	self setupPMLUPDecomposition.
 
-	self bench: [ a1 solve: a2 ].
+	^ self bench: [ a1 solve: a2 ].
 ]

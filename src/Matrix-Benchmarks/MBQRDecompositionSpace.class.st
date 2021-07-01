@@ -10,7 +10,7 @@ MBQRDecompositionSpace >> qrPMMatrix [
 
 	self setupPMMatrix.
 
-	self bench: [ a1 qrFactorization  ].
+	^ self bench: [ a1 qrFactorization  ].
 ]
 
 { #category : #normal }
@@ -19,5 +19,5 @@ MBQRDecompositionSpace >> qrPMSymmetricMatrix [
 
 	self setupPMSymmetricMatrix.
 
-	self bench: [ a1 qrFactorization  ].
+	^ self bench: [ a1 qrFactorization  ].
 ]

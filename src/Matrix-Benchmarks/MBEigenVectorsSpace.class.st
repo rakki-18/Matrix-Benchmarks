@@ -10,7 +10,7 @@ MBEigenVectorsSpace >> eigenVectorDecomposition [
 
 	self setupPMJacobiTransformation.
 
-	self bench: [  
+	^ self bench: [  
 		|eigenvalues eigenvectors|
 
 		eigenvalues := a1 evaluate.

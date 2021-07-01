@@ -11,7 +11,7 @@ MBDivisionSpace >> divideAIColumnMatrix [
 	self setupAIColumnMatrix.
 	self setupNumber.
 
-	self bench:[  a1 / aNumber ].
+	^ self bench:[  a1 / aNumber ].
 	
 ]
 
@@ -22,7 +22,7 @@ MBDivisionSpace >> divideAIDiagonalMatrix [
 	self setupAIDiagonalMatrix.
 	self setupNumber.
 
-	self bench:[  a1 / aNumber ].
+	^ self bench:[  a1 / aNumber ].
 	
 ]
 
@@ -33,7 +33,7 @@ MBDivisionSpace >> divideAIRowMatrix [
 	self setupAIRowMatrix.
 	self setupNumber.
 
-	self bench:[  a1 / aNumber ].
+	^ self bench:[  a1 / aNumber ].
 	
 ]
 
@@ -44,7 +44,7 @@ MBDivisionSpace >> divideAISymetricMatrix [
 	self setupAISymetricMatrix.
 	self setupNumber.
 
-	self bench:[  a1 / aNumber ].
+	^ self bench:[  a1 / aNumber ].
 	
 ]
 
@@ -55,6 +55,6 @@ MBDivisionSpace >> divideArray2D [
 	self setupArray2D.
 	self setupNumber.
 
-	self bench:[  a1 / aNumber ].
+	^ self bench:[  a1 / aNumber ].
 	
 ]

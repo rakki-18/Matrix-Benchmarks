@@ -10,7 +10,7 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyAIColumnMatrix [
 	
 	self setuptwoAIColumnMatrix.
 
-	self bench:[  a1 productFromMatrix: a2 ].
+	^ self bench:[  a1 productFromMatrix: a2 ].
 	
 ]
 
@@ -20,7 +20,7 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyAIDiagonalMatrix [
 	
 	self setuptwoAIDiagonalMatrix.
 
-	self bench:[  a1 productFromMatrix: a2 ].
+	^ self bench:[  a1 productFromMatrix: a2 ].
 	
 ]
 
@@ -30,7 +30,7 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyAIRowMatrix [
 	
 	self setuptwoAIRowMatrix.
 
-	self bench:[  a1 productFromMatrix: a2 ].
+	^ self bench:[  a1 productFromMatrix: a2 ].
 	
 ]
 
@@ -40,7 +40,7 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyAISymetricMatrix [
 	
 	self setuptwoAISymetricMatrix.
 
-	self bench:[  a1 productFromMatrix: a2 ].
+	^ self bench:[  a1 productFromMatrix: a2 ].
 	
 ]
 
@@ -50,7 +50,7 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyArray2D [
 	
 	self setuptwoArray2D.
 
-	self bench:[  a1 * a2 ].
+	^ self bench:[  a1 * a2 ].
 	
 ]
 
@@ -60,7 +60,7 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyPMMatrix [
 	
 	self setuptwoArray2D.
 
-	self bench:[ a1 hadamardProduct:  a2 ].
+	^ self bench:[ a1 hadamardProduct:  a2 ].
 	
 ]
 
@@ -70,6 +70,6 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyPMSymmetricMatrix [
 	
 	self setuptwoPMSymmetricMatrix.
 
-	self bench:[  a1 hadamardProduct:  a2 ].
+	^ self bench:[  a1 hadamardProduct:  a2 ].
 	
 ]

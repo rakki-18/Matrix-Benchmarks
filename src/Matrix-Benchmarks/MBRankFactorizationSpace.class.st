@@ -10,7 +10,7 @@ MBRankFactorizationSpace >> rankPMMatrix [
 
 	self setupPMMatrix.
 
-	self bench: [ a1 rank ].
+	^ self bench: [ a1 rank ].
 ]
 
 { #category : #normal }

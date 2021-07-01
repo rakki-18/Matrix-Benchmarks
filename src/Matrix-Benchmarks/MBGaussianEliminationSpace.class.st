@@ -10,5 +10,5 @@ MBGaussianEliminationSpace >> gaussianElimination [
 
 	self setupPMLinearEquationSystem.
 
-	self bench: [ a1 solution ].
+	^ self bench: [ a1 solution ].
 ]

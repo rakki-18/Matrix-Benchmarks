@@ -11,7 +11,7 @@ MBMultiplicationSpace >> multiplyAIColumnMatrix [
 	self setupAIColumnMatrix.
 	self setupNumber.
 
-	self bench:[  a1 * aNumber ].
+	^ self bench:[  a1 * aNumber ].
 	
 ]
 
@@ -22,7 +22,7 @@ MBMultiplicationSpace >> multiplyAIDiagonalMatrix [
 	self setupAIDiagonalMatrix.
 	self setupNumber.
 
-	self bench:[  a1 * aNumber ].
+	^ self bench:[  a1 * aNumber ].
 	
 ]
 
@@ -33,7 +33,7 @@ MBMultiplicationSpace >> multiplyAIRowMatrix [
 	self setupAIRowMatrix .
 	self setupNumber.
 
-	self bench:[  a1 * aNumber ].
+	^ self bench:[  a1 * aNumber ].
 	
 ]
 
@@ -44,7 +44,7 @@ MBMultiplicationSpace >> multiplyAISymetricMatrix [
 	self setupAISymetricMatrix .
 	self setupNumber.
 
-	self bench:[  a1 * aNumber ].
+	^ self bench:[  a1 * aNumber ].
 	
 ]
 
@@ -55,7 +55,7 @@ MBMultiplicationSpace >> multiplyArray2D [
 	self setupArray2D.
 	self setupNumber.
 
-	self bench:[  a1 * aNumber ].
+	^ self bench:[  a1 * aNumber ].
 	
 ]
 
@@ -66,7 +66,7 @@ MBMultiplicationSpace >> multiplyPMMatrix [
 	self setupPMMatrix.
 	self setupNumber.
 
-	self bench:[  a1 * aNumber ].
+	^ self bench:[  a1 * aNumber ].
 	
 ]
 
@@ -77,6 +77,6 @@ MBMultiplicationSpace >> multiplyPMSymmetricMatrix [
 	self setupPMSymmetricMatrix.
 	self setupNumber.
 
-	self bench:[  a1 * aNumber ].
+	^ self bench:[  a1 * aNumber ].
 	
 ]

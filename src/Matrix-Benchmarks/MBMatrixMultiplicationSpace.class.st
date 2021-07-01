@@ -10,7 +10,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAIColumnMatrix [
 	
 	self setuptwoAIColumnMatrix.
 
-	self bench:[  a1 *~ a2 ].
+	^ self bench:[  a1 *~ a2 ].
 	
 ]
 
@@ -20,7 +20,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAIDiagonalMatrix [
 	
 	self setuptwoAIDiagonalMatrix.
 
-	self bench:[  a1 *~ a2 ].
+	^ self bench:[  a1 *~ a2 ].
 	
 ]
 
@@ -30,7 +30,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAIRowMatrix [
 	
 	self setuptwoAIRowMatrix.
 
-	self bench:[  a1 *~ a2 ].
+	^ self bench:[  a1 *~ a2 ].
 	
 ]
 
@@ -40,7 +40,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAISymetricMatrix [
 	
 	self setuptwoAISymetricMatrix.
 
-	self bench:[  a1 *~ a2 ].
+	^ self bench:[  a1 *~ a2 ].
 	
 ]
 
@@ -50,7 +50,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyArray2D [
 	
 	self setuptwoArray2D.
 
-	self bench:[  a1 +* a2 ].
+	^ self bench:[  a1 +* a2 ].
 	
 ]
 
@@ -60,7 +60,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyPMMatrix [
 	
 	self setuptwoPMMatrix.
 
-	self bench:[  a1 * a2 ].
+	^ self bench:[  a1 * a2 ].
 	
 ]
 
@@ -70,6 +70,6 @@ MBMatrixMultiplicationSpace >> matrixmultiplyPMSymmetricMatrix [
 	
 	self setuptwoPMSymmetricMatrix.
 
-	self bench:[  a1 * a2 ].
+	^ self bench:[  a1 * a2 ].
 	
 ]

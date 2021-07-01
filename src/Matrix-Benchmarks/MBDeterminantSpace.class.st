@@ -10,7 +10,7 @@ MBDeterminantSpace >> determinantPMMatrix [
 
 	self setupPMMatrix.
 
-	self bench: [ a1 determinant ].
+	^ self bench: [ a1 determinant ].
 ]
 
 { #category : #normal }
@@ -19,5 +19,5 @@ MBDeterminantSpace >> determinantPMSymmetricMatrix [
 
 	self setupPMSymmetricMatrix.
 
-	self bench: [ a1 determinant ].
+	^ self bench: [ a1 determinant ].
 ]
