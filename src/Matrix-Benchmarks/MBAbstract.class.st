@@ -199,14 +199,27 @@ MBAbstract class >> runBenchmarks [
 
 { #category : #'running - benchmark' }
 MBAbstract class >> runBenchmarks: anInteger [
-	|integerasString|
+	|integerasString aBenchmarkSuite iter|
 	
 	integerasString := anInteger asString.
 	"plot the benchmark results"
-	self runAndPlotBenchmarks: anInteger.
+	Cursor wait showWhile: [
+		self runAndPlotBenchmarks: anInteger.
+		].
 	
-	^ Cursor wait showWhile: [(BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself)]
+	"run space benchmarks"
+	Cursor wait showWhile: [
+		self  runSpaceBenchmarks: anInteger.
+		].
 	
+	Cursor wait showWhile: [
+	aBenchmarkSuite := (BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself).
+		].
+	iter := 1.
+	aBenchmarkSuite outcomes do: [ :each | 
+		each spaceMeasurements: (self spaceBenchmarkResult at: iter).
+		iter := iter + 1. ].
+	^ aBenchmarkSuite 
 	
 ]
 

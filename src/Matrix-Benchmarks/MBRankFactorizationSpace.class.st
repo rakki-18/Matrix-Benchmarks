@@ -19,5 +19,5 @@ MBRankFactorizationSpace >> rankPMSymmetricMatrix [
 
 	self setupPMSymmetricMatrix.
 
-	self bench: [ a1 rank ].
+	^ self bench: [ a1 rank ].
 ]
