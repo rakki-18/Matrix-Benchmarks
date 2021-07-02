@@ -5,8 +5,9 @@ Class {
 }
 
 { #category : #normal }
-MBBuildSpace >> buildAIColumnMatrix [  
-
+MBBuildSpace >> buildAIColumnMatrix [ 
+ 
+	<name: 'AIColumn'>
 	^ self bench: [ AIColumnMatrix new: self matrixSize]
 	
 ]
@@ -14,6 +15,7 @@ MBBuildSpace >> buildAIColumnMatrix [
 { #category : #normal }
 MBBuildSpace >> buildAIDiagonalMatrix [  
 
+	<name: 'AIDiagonal'>
 	^ self bench: [ AIDiagonalMatrix  new: self matrixSize]
 	
 ]
@@ -21,6 +23,7 @@ MBBuildSpace >> buildAIDiagonalMatrix [
 { #category : #normal }
 MBBuildSpace >> buildAIRowMatrix [ 
 
+	<name: 'AIRow'>
 	^ self bench: [ AIRowMatrix  new: self matrixSize].
 	
 ]
@@ -28,6 +31,7 @@ MBBuildSpace >> buildAIRowMatrix [
 { #category : #normal }
 MBBuildSpace >> buildAISymetricMatrix [   
 
+	<name: 'AISymetric'>
 	^ self bench: [ AISymetricMatrix new: self matrixSize]
 	
 ]
@@ -35,6 +39,7 @@ MBBuildSpace >> buildAISymetricMatrix [
 { #category : #normal }
 MBBuildSpace >> buildArray2D [   
 
+	<name: 'Array2D'>
 	^ self bench: [ Array2D new: self matrixSize]
 	
 ]
@@ -42,6 +47,7 @@ MBBuildSpace >> buildArray2D [
 { #category : #normal }
 MBBuildSpace >> buildPMMatrix [
 
+	<name: 'PMMatrix'>
 	^ self bench: [ PMMatrix new: self matrixSize]
 	
 ]
@@ -49,6 +55,7 @@ MBBuildSpace >> buildPMMatrix [
 { #category : #normal }
 MBBuildSpace >> buildPMSymmetricMatrix [ 
 
+	<name: 'PMSymmetric'>
 	^ self bench: [ PMSymmetricMatrix  new: self matrixSize]
 	
 ]

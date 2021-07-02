@@ -7,7 +7,7 @@ Class {
 { #category : #benchmarks }
 MBMatrixMultiplicationSpace >> matrixmultiplyAIColumnMatrix [
 
-	
+	<name: 'AIColumn'>
 	self setuptwoAIColumnMatrix.
 
 	^ self bench:[  a1 *~ a2 ].
@@ -17,7 +17,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAIColumnMatrix [
 { #category : #benchmarks }
 MBMatrixMultiplicationSpace >> matrixmultiplyAIDiagonalMatrix [ 
 
-	
+	<name: 'AIDiagonal'>
 	self setuptwoAIDiagonalMatrix.
 
 	^ self bench:[  a1 *~ a2 ].
@@ -27,7 +27,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAIDiagonalMatrix [
 { #category : #benchmarks }
 MBMatrixMultiplicationSpace >> matrixmultiplyAIRowMatrix [ 
 
-	
+	<name: 'AIRow'>
 	self setuptwoAIRowMatrix.
 
 	^ self bench:[  a1 *~ a2 ].
@@ -37,7 +37,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAIRowMatrix [
 { #category : #benchmarks }
 MBMatrixMultiplicationSpace >> matrixmultiplyAISymetricMatrix [  
 
-	
+	<name: 'AISymetric'>
 	self setuptwoAISymetricMatrix.
 
 	^ self bench:[  a1 *~ a2 ].
@@ -47,7 +47,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyAISymetricMatrix [
 { #category : #benchmarks }
 MBMatrixMultiplicationSpace >> matrixmultiplyArray2D [ 
 
-	
+	<name: 'Array2D'>
 	self setuptwoArray2D.
 
 	^ self bench:[  a1 +* a2 ].
@@ -57,7 +57,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyArray2D [
 { #category : #benchmarks }
 MBMatrixMultiplicationSpace >> matrixmultiplyPMMatrix [
 
-	
+	<name: 'PMMatrix'>
 	self setuptwoPMMatrix.
 
 	^ self bench:[  a1 * a2 ].
@@ -67,7 +67,7 @@ MBMatrixMultiplicationSpace >> matrixmultiplyPMMatrix [
 { #category : #benchmarks }
 MBMatrixMultiplicationSpace >> matrixmultiplyPMSymmetricMatrix [
 
-	
+	<name: 'PMSymmetric'>
 	self setuptwoPMSymmetricMatrix.
 
 	^ self bench:[  a1 * a2 ].

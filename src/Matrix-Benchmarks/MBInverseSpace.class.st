@@ -7,7 +7,7 @@ Class {
 { #category : #normal }
 MBInverseSpace >> inversePMMatrix [
 
-
+	<name: 'PMMatrix'>
 	self setupInvertiblePMMatrix.
 
 	^ self bench: [ a1 inverse ].
@@ -16,7 +16,7 @@ MBInverseSpace >> inversePMMatrix [
 { #category : #normal }
 MBInverseSpace >> inversePMSymmetricMatrix [
 
-
+	<name: 'PMSymmetricMatrix'>
 	self setupInvertiblePMSymmetricMatrix.
 
 	^ self bench: [ a1 inverse ].

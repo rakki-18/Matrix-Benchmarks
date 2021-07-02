@@ -7,7 +7,7 @@ Class {
 { #category : #benchmarks }
 MBTransposeSpace >> transposeAIColumnMatrix [
 
-	
+	<name: 'AIColumn'>
 	self setupAIColumnMatrix.
 
 	^ self bench:[  a1 transposed ].
@@ -16,7 +16,7 @@ MBTransposeSpace >> transposeAIColumnMatrix [
 { #category : #benchmarks }
 MBTransposeSpace >> transposeAIDiagonalMatrix [
 
-	
+	<name: 'AIDiagonal'>
 	self setupAIDiagonalMatrix .
 
 	^ self bench:[  a1 transposed ].
@@ -25,7 +25,7 @@ MBTransposeSpace >> transposeAIDiagonalMatrix [
 { #category : #benchmarks }
 MBTransposeSpace >> transposeAIRowMatrix [
 
-	
+	<name: 'AIRow'>
 	self setupAIRowMatrix.
 
 	^ self bench:[  a1 transposed ].
@@ -34,7 +34,7 @@ MBTransposeSpace >> transposeAIRowMatrix [
 { #category : #benchmarks }
 MBTransposeSpace >> transposeAISymetricMatrix [
 
-	
+	<name: 'AISymetric'>
 	self setupAISymetricMatrix .
 
 	^ self bench:[  a1 transposed ].
@@ -43,7 +43,7 @@ MBTransposeSpace >> transposeAISymetricMatrix [
 { #category : #benchmarks }
 MBTransposeSpace >> transposeArray2D [
 
-	
+	<name: 'Array2D'>
 	self setupArray2D .
 
 	^ self bench:[  a1 transposed ].
@@ -52,7 +52,7 @@ MBTransposeSpace >> transposeArray2D [
 { #category : #benchmarks }
 MBTransposeSpace >> transposePMMatrix [
 
-	
+	<name: 'PMMatrix'>
 	self setupPMMatrix .
 
 	^ self bench:[  a1 transpose ].
@@ -61,7 +61,7 @@ MBTransposeSpace >> transposePMMatrix [
 { #category : #benchmarks }
 MBTransposeSpace >> transposePMSymmetricMatrix [
 
-	
+	<name: 'PMSymmetric'>
 	self setupPMSymmetricMatrix .
 
 	^ self bench:[  a1 transpose ].

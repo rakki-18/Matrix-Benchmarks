@@ -7,7 +7,7 @@ Class {
 { #category : #benchmarks }
 MBDivisionSpace >> divideAIColumnMatrix [
 
-	
+	<name: 'AIColumn'>
 	self setupAIColumnMatrix.
 	self setupNumber.
 
@@ -18,7 +18,7 @@ MBDivisionSpace >> divideAIColumnMatrix [
 { #category : #benchmarks }
 MBDivisionSpace >> divideAIDiagonalMatrix [ 
 
-	
+	<name: 'AIDiagonal'>
 	self setupAIDiagonalMatrix.
 	self setupNumber.
 
@@ -29,7 +29,7 @@ MBDivisionSpace >> divideAIDiagonalMatrix [
 { #category : #benchmarks }
 MBDivisionSpace >> divideAIRowMatrix [ 
 
-	
+	<name: 'AIRow'>
 	self setupAIRowMatrix.
 	self setupNumber.
 
@@ -40,7 +40,7 @@ MBDivisionSpace >> divideAIRowMatrix [
 { #category : #benchmarks }
 MBDivisionSpace >> divideAISymetricMatrix [ 
 
-	
+	<name: 'AISymetric'>
 	self setupAISymetricMatrix.
 	self setupNumber.
 
@@ -51,7 +51,7 @@ MBDivisionSpace >> divideAISymetricMatrix [
 { #category : #benchmarks }
 MBDivisionSpace >> divideArray2D [
 
-	
+	<name: 'Array2D'>
 	self setupArray2D.
 	self setupNumber.
 

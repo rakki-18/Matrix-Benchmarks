@@ -7,7 +7,7 @@ Class {
 { #category : #normal }
 MBQRDecompositionSpace >> qrPMMatrix [
 
-
+	<name: 'PMMatrix'>
 	self setupPMMatrix.
 
 	^ self bench: [ a1 qrFactorization  ].
@@ -16,7 +16,7 @@ MBQRDecompositionSpace >> qrPMMatrix [
 { #category : #normal }
 MBQRDecompositionSpace >> qrPMSymmetricMatrix [
 
-
+	<name: 'PMSymmetricMatrix'>
 	self setupPMSymmetricMatrix.
 
 	^ self bench: [ a1 qrFactorization  ].

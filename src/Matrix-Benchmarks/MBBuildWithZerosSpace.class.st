@@ -8,7 +8,7 @@ Class {
 MBBuildWithZerosSpace >> buildZeroAIColumnMatrix [
 
 	
-
+	<name: 'AIColumn'>
 	^ self bench:[  AIColumnMatrix new: matrixSize withAll: 0].
 	
 ]
@@ -17,7 +17,7 @@ MBBuildWithZerosSpace >> buildZeroAIColumnMatrix [
 MBBuildWithZerosSpace >> buildZeroAIDiagonalMatrix [ 
 
 	
-
+	<name: 'AIDiagonal'>
 	^ self bench:[  AIDiagonalMatrix  new: matrixSize withAll: 0].
 	
 ]
@@ -26,7 +26,7 @@ MBBuildWithZerosSpace >> buildZeroAIDiagonalMatrix [
 MBBuildWithZerosSpace >> buildZeroAIRowMatrix [ 
 
 	
-
+	<name: 'AIRow'>
 	^ self bench:[  AIRowMatrix  new: matrixSize withAll: 0].
 	
 ]
@@ -35,7 +35,7 @@ MBBuildWithZerosSpace >> buildZeroAIRowMatrix [
 MBBuildWithZerosSpace >> buildZeroAISymetricMatrix [ 
 
 	
-
+	<name: 'AISymetric'>
 	^ self bench:[  AISymetricMatrix new: matrixSize withAll: 0].
 	
 ]
@@ -44,7 +44,7 @@ MBBuildWithZerosSpace >> buildZeroAISymetricMatrix [
 MBBuildWithZerosSpace >> buildZeroArray2D [ 
 
 	
-
+	<name: 'Array2D'>
 	^ self bench:[  Array2D  zeros: matrixSize ].
 	
 ]
@@ -53,7 +53,7 @@ MBBuildWithZerosSpace >> buildZeroArray2D [
 MBBuildWithZerosSpace >> buildZeroPMMatrix [
 
 	
-
+	<name: 'PMMatrix'>
 	^ self bench:[ PMMatrix zerosRows: matrixSize cols: matrixSize ].
 	
 ]

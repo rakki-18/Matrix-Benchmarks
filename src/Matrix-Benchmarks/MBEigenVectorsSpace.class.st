@@ -7,7 +7,7 @@ Class {
 { #category : #normal }
 MBEigenVectorsSpace >> eigenVectorDecomposition [
 
-
+	<name: 'PMJacobiTransformation'>
 	self setupPMJacobiTransformation.
 
 	^ self bench: [  

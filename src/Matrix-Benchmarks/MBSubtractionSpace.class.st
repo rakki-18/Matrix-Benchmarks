@@ -7,7 +7,7 @@ Class {
 { #category : #benchmarks }
 MBSubtractionSpace >> subtractAIColumnMatrix [
 
-	
+	<name: 'AIColumn'>
 	self setuptwoAIColumnMatrix.
 
 	^ self bench:[  a1 - a2 ].
@@ -16,7 +16,7 @@ MBSubtractionSpace >> subtractAIColumnMatrix [
 { #category : #benchmarks }
 MBSubtractionSpace >> subtractAIDiagonalMatrix [ 
 
-	
+	<name: 'AIDiagonal'>
 	self setuptwoAIDiagonalMatrix.
 
 	^ self bench:[  a1 - a2 ].
@@ -25,7 +25,7 @@ MBSubtractionSpace >> subtractAIDiagonalMatrix [
 { #category : #benchmarks }
 MBSubtractionSpace >> subtractAIRowMatrix [ 
 
-	
+	<name: 'AIRow'>
 	self setuptwoAIRowMatrix.
 
 	^ self bench:[  a1 - a2 ].
@@ -34,7 +34,7 @@ MBSubtractionSpace >> subtractAIRowMatrix [
 { #category : #benchmarks }
 MBSubtractionSpace >> subtractAISymetricMatrix [ 
 
-	
+	<name: 'AISymetric'>
 	self setuptwoAISymetricMatrix.
 
 	^ self bench:[  a1 - a2 ].
@@ -43,7 +43,7 @@ MBSubtractionSpace >> subtractAISymetricMatrix [
 { #category : #benchmarks }
 MBSubtractionSpace >> subtractArray2D [
 
-	
+	<name: 'Array2D'>
 	self setuptwoArray2D.
 
 	^ self bench:[  a1 - a2 ].
@@ -52,7 +52,7 @@ MBSubtractionSpace >> subtractArray2D [
 { #category : #benchmarks }
 MBSubtractionSpace >> subtractPMMatrix [
 
-	
+	<name: 'PMMatrix'>
 	self setuptwoPMMatrix.
 
 	^ self bench:[  a1 - a2 ].
@@ -61,7 +61,7 @@ MBSubtractionSpace >> subtractPMMatrix [
 { #category : #benchmarks }
 MBSubtractionSpace >> subtractPMSymmetricMatrix [
 
-	
+	<name: 'PMSymmetric'>
 	self setuptwoPMSymmetricMatrix.
 
 	^ self bench:[  a1 - a2 ].

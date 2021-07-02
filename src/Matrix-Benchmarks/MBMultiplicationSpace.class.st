@@ -7,7 +7,7 @@ Class {
 { #category : #benchmarks }
 MBMultiplicationSpace >> multiplyAIColumnMatrix [
 
-	
+	<name: 'AIColumn'>
 	self setupAIColumnMatrix.
 	self setupNumber.
 
@@ -18,7 +18,7 @@ MBMultiplicationSpace >> multiplyAIColumnMatrix [
 { #category : #benchmarks }
 MBMultiplicationSpace >> multiplyAIDiagonalMatrix [
 
-	
+	<name: 'AIDiagonal'>
 	self setupAIDiagonalMatrix.
 	self setupNumber.
 
@@ -29,7 +29,7 @@ MBMultiplicationSpace >> multiplyAIDiagonalMatrix [
 { #category : #benchmarks }
 MBMultiplicationSpace >> multiplyAIRowMatrix [ 
 
-	
+	<name: 'AIRow'>
 	self setupAIRowMatrix .
 	self setupNumber.
 
@@ -40,7 +40,7 @@ MBMultiplicationSpace >> multiplyAIRowMatrix [
 { #category : #benchmarks }
 MBMultiplicationSpace >> multiplyAISymetricMatrix [ 
 
-	
+	<name: 'AISymetric'>
 	self setupAISymetricMatrix .
 	self setupNumber.
 
@@ -51,7 +51,7 @@ MBMultiplicationSpace >> multiplyAISymetricMatrix [
 { #category : #benchmarks }
 MBMultiplicationSpace >> multiplyArray2D [
 
-	
+	<name: 'Array2D'>
 	self setupArray2D.
 	self setupNumber.
 
@@ -62,7 +62,7 @@ MBMultiplicationSpace >> multiplyArray2D [
 { #category : #benchmarks }
 MBMultiplicationSpace >> multiplyPMMatrix [
 
-	
+	<name: 'PMMatrix'>
 	self setupPMMatrix.
 	self setupNumber.
 
@@ -73,7 +73,7 @@ MBMultiplicationSpace >> multiplyPMMatrix [
 { #category : #benchmarks }
 MBMultiplicationSpace >> multiplyPMSymmetricMatrix [ 
 
-	
+	<name: 'PMSymmetric'>
 	self setupPMSymmetricMatrix.
 	self setupNumber.
 
