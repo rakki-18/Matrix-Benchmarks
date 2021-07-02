@@ -7,7 +7,7 @@ Class {
 { #category : #benchmarks }
 MBCompareEqualSpace >> compareEqualAIColumnMatrix [
 
-	
+	<name: 'AIColumn'>
 	self setupAIColumnMatrix.
 
 	^ self bench:[  a1 = a1 ].
@@ -16,7 +16,7 @@ MBCompareEqualSpace >> compareEqualAIColumnMatrix [
 { #category : #benchmarks }
 MBCompareEqualSpace >> compareEqualAIDiagonalMatrix [ 
 
-	
+	<name: 'AIDiagonal'>
 	self setupAIDiagonalMatrix .
 
 	^ self bench:[  a1 = a1 ].
@@ -25,7 +25,7 @@ MBCompareEqualSpace >> compareEqualAIDiagonalMatrix [
 { #category : #benchmarks }
 MBCompareEqualSpace >> compareEqualAIRowMatrix [ 
 
-	
+	<name: 'AIRow'>
 	self setupAIRowMatrix.
 
 	^ self bench:[  a1 = a1 ].
@@ -34,7 +34,7 @@ MBCompareEqualSpace >> compareEqualAIRowMatrix [
 { #category : #benchmarks }
 MBCompareEqualSpace >> compareEqualAISymetricMatrix [  
 
-	
+	<name: 'AISymetric'>
 	self setupAISymetricMatrix .
 
 	^ self bench:[  a1 = a1 ].
@@ -43,7 +43,7 @@ MBCompareEqualSpace >> compareEqualAISymetricMatrix [
 { #category : #benchmarks }
 MBCompareEqualSpace >> compareEqualArray2D [
 
-	
+	<name: 'Array2D'>
 	self setupArray2D.
 
 	^ self bench:[  a1 = a1 ].
@@ -52,7 +52,7 @@ MBCompareEqualSpace >> compareEqualArray2D [
 { #category : #benchmarks }
 MBCompareEqualSpace >> compareEqualPMMatrix [
 
-	
+	<name: 'PMMatrix'>
 	self setupPMMatrix.
 
 	^ self bench:[  a1 = a1 ].
@@ -61,7 +61,7 @@ MBCompareEqualSpace >> compareEqualPMMatrix [
 { #category : #benchmarks }
 MBCompareEqualSpace >> compareEqualPMSymmetricMatrix [ 
 
-	
+	<name: 'PMSymmetric'>
 	self setupPMSymmetricMatrix.
 
 	^ self bench:[  a1 = a1 ].

@@ -7,7 +7,7 @@ Class {
 { #category : #adding }
 MBAdditionSpace >> addAIColumnMatrix [
 
-	
+	<name: 'AIColumn'>
 	self setuptwoAIColumnMatrix.
 
 	^ self bench: [ a1 + a2 ].
@@ -16,7 +16,7 @@ MBAdditionSpace >> addAIColumnMatrix [
 { #category : #adding }
 MBAdditionSpace >> addAIDiagonalMatrix [
 
-	
+	<name: 'AIDiagonal'>
 	self setuptwoAIDiagonalMatrix.
 
 	^ self bench: [ a1 + a2 ].
@@ -25,7 +25,7 @@ MBAdditionSpace >> addAIDiagonalMatrix [
 { #category : #adding }
 MBAdditionSpace >> addAIRowMatrix [
 
-	
+	<name: 'AIRow'>
 	self setuptwoAIRowMatrix.
 
 	^ self bench: [ a1 + a2 ].
@@ -34,7 +34,7 @@ MBAdditionSpace >> addAIRowMatrix [
 { #category : #adding }
 MBAdditionSpace >> addAISymetricMatrix [
 
-	
+	<name: 'AISymetric'>
 	self setuptwoAISymetricMatrix.
 
 	^ self bench: [ a1 + a2 ].
@@ -43,7 +43,7 @@ MBAdditionSpace >> addAISymetricMatrix [
 { #category : #adding }
 MBAdditionSpace >> addArray2D [
 
-	
+	<name: 'Array2D'>
 	self setuptwoArray2D.
 
 	^ self bench: [ a1 + a2 ].
@@ -52,7 +52,7 @@ MBAdditionSpace >> addArray2D [
 { #category : #adding }
 MBAdditionSpace >> addPMMatrix [
 
-	
+	<name: 'PMMatrix'>
 	self setuptwoPMMatrix.
 
 	^ self bench: [ a1 + a2 ].
@@ -61,7 +61,7 @@ MBAdditionSpace >> addPMMatrix [
 { #category : #adding }
 MBAdditionSpace >> addPMSymmetricMatrix [ 
 
-	
+	<name: 'PMSymmetric'>
 	self setuptwoPMSymmetricMatrix.
 
 	^ self bench: [ a1 + a2 ].

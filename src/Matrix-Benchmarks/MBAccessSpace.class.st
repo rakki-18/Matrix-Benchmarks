@@ -7,7 +7,7 @@ Class {
 { #category : #benchmarks }
 MBAccessSpace >> accessAIColumnMatrix [ 
 
-	
+	<name: 'AIColumn'>
 	self setupAIColumnMatrix.
 
 	^ self bench:[  a1 at: matrixSize  and: matrixSize ].
@@ -16,7 +16,7 @@ MBAccessSpace >> accessAIColumnMatrix [
 { #category : #benchmarks }
 MBAccessSpace >> accessAIDiagonalMatrix [ 
 
-	
+	<name: 'AIDiagonal'>
 	self setupAIDiagonalMatrix.
 
 	^ self bench:[  a1 at: matrixSize  and: matrixSize ].
@@ -25,7 +25,7 @@ MBAccessSpace >> accessAIDiagonalMatrix [
 { #category : #benchmarks }
 MBAccessSpace >> accessAIRowMatrix [ 
 
-	
+	<name: 'AIRow'>
 	self setupAIRowMatrix.
 
 	^ self bench:[  a1 at: matrixSize  and: matrixSize ].
@@ -34,7 +34,7 @@ MBAccessSpace >> accessAIRowMatrix [
 { #category : #benchmarks }
 MBAccessSpace >> accessAISymetricMatrix [ 
 
-	
+	<name: 'AISymetric'>
 	self setupAISymetricMatrix.
 
 	^ self bench:[  a1 at: matrixSize  and: matrixSize ].
@@ -43,7 +43,7 @@ MBAccessSpace >> accessAISymetricMatrix [
 { #category : #benchmarks }
 MBAccessSpace >> accessArray2D [
 
-	
+	<name: 'Array2D'>
 	self setupArray2D.
 
 	^ self bench:[  a1 at: matrixSize  at: matrixSize ].
@@ -52,7 +52,7 @@ MBAccessSpace >> accessArray2D [
 { #category : #benchmarks }
 MBAccessSpace >> accessPMMatrix [
 
-	
+	<name: 'PMMatrix'>
 	self setupPMMatrix.
 
 	^ self bench:[  a1 at: matrixSize  at: matrixSize ].
@@ -61,7 +61,7 @@ MBAccessSpace >> accessPMMatrix [
 { #category : #benchmarks }
 MBAccessSpace >> accessPMSymmetricMatrix [ 
 
-	
+	<name: 'PMSymmetric'>
 	self setupPMSymmetricMatrix.
 
 	^ self bench:[  a1 at: matrixSize  at: matrixSize ].

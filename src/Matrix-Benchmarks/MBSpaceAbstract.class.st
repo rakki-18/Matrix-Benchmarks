@@ -15,7 +15,7 @@ MBSpaceAbstract class >> runSpaceBenchmarks: anInteger [
 	
 	|subclass anInstance|
 		
-	spaceBenchmarkResult := OrderedCollection new.
+	spaceBenchmarkResult := Dictionary new.
 	
 	"get the space subclass of self"
 	subclass := self subclasses at: 1.
@@ -23,8 +23,9 @@ MBSpaceAbstract class >> runSpaceBenchmarks: anInteger [
 	"specify an instance of the subclass"
 	anInstance := subclass new matrixSize: anInteger.
 	
-	subclass selectorsDo: [ :selector|
-		 spaceBenchmarkResult addLast: (anInstance perform: selector)
+	subclass selectorsAndMethodsDo: [ :selector :method|
+		"store the space consumed for each method in a dictinoary that can be accessed by the name of the implementation"
+		 spaceBenchmarkResult at: (method pragmaAt: #name:) arguments first put: (anInstance perform: selector)
 		].
 	
 	

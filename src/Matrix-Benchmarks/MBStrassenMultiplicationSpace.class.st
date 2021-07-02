@@ -7,7 +7,7 @@ Class {
 { #category : #normal }
 MBStrassenMultiplicationSpace >> strassenPMMatrix [
 
-
+	<name: 'PMMatrix'>
 	self setupStrassenPMMatrix.
 
 	^ self bench: [ a1 strassenProductWithMatrix: a2].
