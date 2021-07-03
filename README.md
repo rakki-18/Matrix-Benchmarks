@@ -45,7 +45,7 @@ MBOperationName runAllBenchmarks
 ```
 To see all the available operations that can be benchmarked:
 ```Smalltalk
-MBSetup operations
+MBAbstract operations
 ```
 ### Examples
 - On the operation - Addition:
