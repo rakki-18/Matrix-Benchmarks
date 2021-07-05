@@ -1,3 +1,14 @@
+"
+I benchmark the operation, ""Building a null matrix"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBBuild runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBBuild runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+"
 Class {
 	#name : #MBBuild,
 	#superclass : #MBAbstract,

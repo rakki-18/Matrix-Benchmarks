@@ -1,3 +1,14 @@
+"
+I benchmark the operation, ""Division of a matrix with a number"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBDivision runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBDivision  runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+"
 Class {
 	#name : #MBDivision,
 	#superclass : #MBAbstract,

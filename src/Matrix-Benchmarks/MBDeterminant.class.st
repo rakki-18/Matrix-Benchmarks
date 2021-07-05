@@ -1,3 +1,17 @@
+"
+I benchmark the operation, ""finding determinant of a matrix"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBDeterminant runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBDeterminant  runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 150 and shows a line chart plot.
+
+Only, `PMMatrix` and `PMSymmetricMatrix` are compared as the other implementations don't support finding determinant.
+
+Since, finding determinant takes considerable time, only small matrix sizes will be passed to run the benchmarks.
+"
 Class {
 	#name : #MBDeterminant,
 	#superclass : #MBAbstract,

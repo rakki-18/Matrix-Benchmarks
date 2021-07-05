@@ -1,3 +1,11 @@
+"
+I am an abstract class used to run space benchmarks.
+
+I run the `bench:` method and `runSpaceBenchmarks` methods that have been used in the subclasses.
+
+I store the `matrixSize` of the benchmarking matrix that is used extensively in all the subclasses.
+
+"
 Class {
 	#name : #MBSpaceAbstract,
 	#superclass : #Object,

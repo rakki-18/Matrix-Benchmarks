@@ -1,3 +1,14 @@
+"
+I benchmark the operation, ""Addition of two random matrices"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBAddition runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBAddition runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+"
 Class {
 	#name : #MBAddition,
 	#superclass : #MBAbstract,

@@ -1,3 +1,14 @@
+"
+I benchmark the operation, ""Accessing a cell in a matrix"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBAccess runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBAccess runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+"
 Class {
 	#name : #MBAccess,
 	#superclass : #MBAbstract,

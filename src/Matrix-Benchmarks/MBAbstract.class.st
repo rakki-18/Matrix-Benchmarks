@@ -1,3 +1,29 @@
+"
+I am an abstract class to run the time benchmarks.
+
+I provide methods to set up all kinds of matrices.
+
+```Smalltalk
+MBAbstract new matrixSize: 100; setupPMMatrix.
+```
+sets the instance variable `a1` to a random PMMatrix of size of 100.
+
+I also provide methods to run the benchmarks on the subclasses.
+
+Public API and Key Messages
+
+```Smalltalk
+MBAbstract operations
+```
+lists down all the operations for which benchmarks have been implemented.
+
+
+
+    Class Variables
+	protocol:		<Object> stores the type of the matrix - {normal, symmetric, diagonal}
+
+
+"
 Class {
 	#name : #MBAbstract,
 	#superclass : #MBSpaceAbstract,
