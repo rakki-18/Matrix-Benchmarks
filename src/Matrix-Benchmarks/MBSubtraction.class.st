@@ -1,3 +1,14 @@
+"
+I benchmark the operation, ""Subtraction of two random matrices"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBSubtraction runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBSubtraction runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+"
 Class {
 	#name : #MBSubtraction,
 	#superclass : #MBAbstract,

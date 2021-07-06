@@ -1,5 +1,6 @@
 "
 I benchmark the operation, ""finding determinant of a matrix"".
+https://en.wikipedia.org/wiki/Determinant
 
 
 Public API and Key Messages

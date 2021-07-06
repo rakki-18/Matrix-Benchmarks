@@ -1,3 +1,16 @@
+"
+I benchmark the operation, ""Multiplication of a matrix with a Number"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBMultiplication runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBMultiplication  runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+
+
+"
 Class {
 	#name : #MBMultiplication,
 	#superclass : #MBAbstract,

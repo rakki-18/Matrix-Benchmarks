@@ -1,3 +1,14 @@
+"
+I benchmark the operation, ""Finding eigenvectors of a matrix"".
+https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBEigenVectors runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBEigenVectors runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+"
 Class {
 	#name : #MBEigenVectors,
 	#superclass : #MBAbstract,

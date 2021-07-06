@@ -1,3 +1,16 @@
+"
+I benchmark the operation, ""Finding the [LUP Decomposition](https://en.wikipedia.org/wiki/LU_decomposition) of a matrix"".
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBLUPDecomposition runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBLUPDecomposition runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 150 and shows a line chart plot.
+
+This operation takes a lot of time and hence big matrix sizes won't be passed by the API.
+`PMLUPDecomposition` supports this operation.
+
+"
 Class {
 	#name : #MBLUPDecomposition,
 	#superclass : #MBAbstract,

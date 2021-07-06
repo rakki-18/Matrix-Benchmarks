@@ -1,3 +1,16 @@
+"
+I benchmark the operation, ""Finding [transpose](https://en.wikipedia.org/wiki/Transpose) of a matrix"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBTranspose runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBTranspose runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+Transpose of a symmetric matrix and a diagoanl matrix is itself. Hence, they can do this operation in no time.
+
+"
 Class {
 	#name : #MBTranspose,
 	#superclass : #MBAbstract,

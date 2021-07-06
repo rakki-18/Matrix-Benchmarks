@@ -1,3 +1,16 @@
+"
+I benchmark the operation, ""Finding the [QR Decomposition](https://en.wikipedia.org/wiki/QR_decomposition) of a matrix"".
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBQRDecomposition runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBQRDecomposition runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 150 and shows a line chart plot.
+
+This operation takes a lot of time and hence big matrix sizes won't be passed by the API.
+Only `PMMatrix` and `PMSymmetricMatrix` support this operation.
+
+"
 Class {
 	#name : #MBQRDecomposition,
 	#superclass : #MBAbstract,

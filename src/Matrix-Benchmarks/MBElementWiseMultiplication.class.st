@@ -1,3 +1,14 @@
+"
+I benchmark the operation, ""Element-wise multiplication of two matrices"".
+
+
+Public API and Key Messages
+
+To run the benchmarks
+- `MBElementWiseMultiplication runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
+- `MBElementWiseMultiplication runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+
+"
 Class {
 	#name : #MBElementWiseMultiplication,
 	#superclass : #MBAbstract,

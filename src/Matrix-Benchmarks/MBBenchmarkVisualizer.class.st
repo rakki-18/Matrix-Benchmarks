@@ -1,3 +1,10 @@
+"
+I am used to visualize benchmarks obtained from `MBAbstract`.
+
+I implement two methods
+- `plotBenchmarks:title:` used to plot a bar graph. Results from `MBAbstract>>#runBenchmarks:` is plotted using this method.
+- `plotBenchmarksLineGraph:title:` used to plot a line graph. Results from `MBAbstract>>#runAllBenchmarks` is plotted using this method.
+"
 Class {
 	#name : #MBBenchmarkVisualizer,
 	#superclass : #Object,
