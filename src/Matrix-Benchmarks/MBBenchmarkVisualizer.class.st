@@ -28,14 +28,14 @@ MBBenchmarkVisualizer >> chartAddDecoration: chart [
 MBBenchmarkVisualizer >> getMatrixSize: aBenchmarkResultSet [
 	
 	"get matrix size used as the parameter in the benchmark result"
-	^aBenchmarkResultSet collect: [:each | ((each at: 1) parameters at: 1) value].
+	^aBenchmarkResultSet collect: [:each | each first parameters first value].
 ]
 
 { #category : #accessing }
 MBBenchmarkVisualizer >> getNames: aBenchmarkResultSet [
 	
 	"get names of the matrix implementation in the report"
-	^ (aBenchmarkResultSet at: 1)  collect: [ :each | each benchmark name].
+	^ aBenchmarkResultSet first  collect: [ :each | each benchmark name].
 ]
 
 { #category : #'plotting - benchmarks' }
@@ -43,7 +43,7 @@ MBBenchmarkVisualizer >> plotBenchmarksBarGraph: aBenchmark title: title protoco
 	"Plots bar chart for the results obtained by MBAbstract>>#runBenchmarks:"
 	|data names chart xlabel|	
 	
-	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
+	data := aBenchmark outcomes collect: [ :each | ( each measurements first at: 3) value].
 	names := aBenchmark outcomes collect: [ :each | each benchmark name].
 	
 	chart := RSChart new.
@@ -51,7 +51,7 @@ MBBenchmarkVisualizer >> plotBenchmarksBarGraph: aBenchmark title: title protoco
 	chart barHeights: data.
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time(ms)'; offset: -15).
 	
-	xlabel := ((aBenchmark outcomes at: 1) parameters at: 1) value.
+	xlabel := aBenchmark outcomes first parameters first value.
 	xlabel := 'Matrix Size = ', xlabel asString.
 	chart addDecoration: (RSXLabelDecoration new title: xlabel; offset: 35).
 	chart addDecoration: (RSVerticalTick new integer).
@@ -59,7 +59,7 @@ MBBenchmarkVisualizer >> plotBenchmarksBarGraph: aBenchmark title: title protoco
 	"workaround as having only one horizontal tick gives error"
 	names size = 1 ifTrue: [  
 		|temp|
-		temp := Array new: 2 withAll: (names at: 1).
+		temp := Array new: 2 withAll: names first.
 		names := temp].
 	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
 	chart title: title,protocol,' matrix'.
@@ -75,9 +75,9 @@ MBBenchmarkVisualizer >> plotBenchmarksLineGraph: result title: title protocol: 
 	x := self getMatrixSize: result. 
 	colors := self tenDistinctColors.
 
-	1 to: (result at: 1) size do: [ :i|
+	1 to: result first size do: [ :i|
 	|y line scatter|
-	y := result collect: [ :each |  (((each at: i) measurements at: 1) at: 3) value ].
+	y := result collect: [ :each |  ((each at: i) measurements first at: 3) value ].
 	line := RSLinePlot new x: x y: y.
 	line color: (colors at: i).
 	chart addPlot: line.

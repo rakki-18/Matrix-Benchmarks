@@ -26,7 +26,7 @@ MBSpaceAbstract class >> runSpaceBenchmarks: anInteger [
 	spaceBenchmarkResult := Dictionary new.
 	
 	"get the space subclass of self"
-	subclass := self subclasses at: 1.
+	subclass := self subclasses first.
 	
 	"specify an instance of the subclass"
 	anInstance := subclass new matrixSize: anInteger.
