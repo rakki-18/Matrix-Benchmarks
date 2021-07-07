@@ -21,7 +21,7 @@ Class {
 MBInverse class >> title [
 
 
-	^ 'Matrix Inverse'
+	^ 'Inverse '
 ]
 
 { #category : #parameters }

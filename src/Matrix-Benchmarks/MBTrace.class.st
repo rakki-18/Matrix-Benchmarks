@@ -21,7 +21,7 @@ Class {
 MBTrace class >> title [
 
 
-	^ 'Trace of a Matrix'
+	^ 'Trace of '
 ]
 
 { #category : #parameters }

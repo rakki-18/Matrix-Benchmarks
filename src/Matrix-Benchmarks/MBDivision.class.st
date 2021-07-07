@@ -19,7 +19,7 @@ Class {
 MBDivision class >> title [
 
 
-	^ 'Matrix Division'
+	^ 'Division '
 ]
 
 { #category : #benchmarks }

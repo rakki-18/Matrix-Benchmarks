@@ -21,7 +21,7 @@ Class {
 MBMultiplication class >> title [
 
 
-	^ 'Scalar multiplication'
+	^ 'Scalar multiplication '
 ]
 
 { #category : #benchmarks }

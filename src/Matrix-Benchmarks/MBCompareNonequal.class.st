@@ -19,7 +19,7 @@ Class {
 MBCompareNonequal class >> title [
 
 
-	^ 'Comparing non-equal matrices'
+	^ 'Comparing non-equal '
 ]
 
 { #category : #benchmarks }

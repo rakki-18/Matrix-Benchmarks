@@ -20,7 +20,7 @@ Class {
 MBStrassenMultiplication class >> title [
 
 
-	^ 'Strassen Matrix Multiplication'
+	^ 'Strassen Multiplication '
 ]
 
 { #category : #parameters }

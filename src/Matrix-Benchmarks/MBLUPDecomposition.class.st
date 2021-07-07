@@ -20,7 +20,7 @@ Class {
 { #category : #accessing }
 MBLUPDecomposition class >> title [
 
-	^'LUP Decomposition of Matrix'
+	^'LUP Decomposition '
 ]
 
 { #category : #parameters }

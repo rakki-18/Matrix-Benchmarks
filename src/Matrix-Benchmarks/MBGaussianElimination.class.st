@@ -19,7 +19,7 @@ Class {
 { #category : #accessing }
 MBGaussianElimination class >> title [
 
-	^'Gaussian Elimination of Matrix'
+	^'Gaussian Elimination '
 ]
 
 { #category : #normal }

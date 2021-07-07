@@ -15,7 +15,7 @@ Class {
 MBBenchmarkVisualizer >> chartAddDecoration: chart [
 	
 	chart addDecoration: (RSXLabelDecoration new title: 'Matrix Size'; offset: 15).
-	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+	chart addDecoration: (RSYLabelDecoration  new title: 'Time(ms)'; offset: -15).
 
 
 	"chart extent: 800@800."
@@ -39,8 +39,8 @@ MBBenchmarkVisualizer >> getNames: aBenchmarkResultSet [
 ]
 
 { #category : #'plotting - benchmarks' }
-MBBenchmarkVisualizer >> plotBenchmarks: aBenchmark title: title [
-
+MBBenchmarkVisualizer >> plotBenchmarksBarGraph: aBenchmark title: title protocol: protocol [
+	"Plots bar chart for the results obtained by MBAbstract>>#runBenchmarks:"
 	|data names chart xlabel|	
 	
 	data := aBenchmark outcomes collect: [ :each | (( each measurements at: 1) at: 3) value].
@@ -49,7 +49,7 @@ MBBenchmarkVisualizer >> plotBenchmarks: aBenchmark title: title [
 	chart := RSChart new.
 
 	chart barHeights: data.
-	chart addDecoration: (RSYLabelDecoration  new title: 'Time'; offset: -15).
+	chart addDecoration: (RSYLabelDecoration  new title: 'Time(ms)'; offset: -15).
 	
 	xlabel := ((aBenchmark outcomes at: 1) parameters at: 1) value.
 	xlabel := 'Matrix Size = ', xlabel asString.
@@ -62,13 +62,13 @@ MBBenchmarkVisualizer >> plotBenchmarks: aBenchmark title: title [
 		temp := Array new: 2 withAll: (names at: 1).
 		names := temp].
 	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
-	chart title: title.
+	chart title: title,protocol,' matrix'.
 	chart open.
 ]
 
 { #category : #'plotting - benchmarks' }
-MBBenchmarkVisualizer >> plotBenchmarksLineGraph: result title: title [
-
+MBBenchmarkVisualizer >> plotBenchmarksLineGraph: result title: title protocol: protocol [
+	"plots a line graph for the results obtained by MBAbstract>>#runAllBenchmarks"
 	|chart x legend names colors|
 	
 	chart := RSChart new.
@@ -87,7 +87,7 @@ MBBenchmarkVisualizer >> plotBenchmarksLineGraph: result title: title [
 
 	chart := self chartAddDecoration: chart.
 	
-	chart title: title.
+	chart title: title,protocol,' matrix'.
 	chart build.
 	names := self getNames: result.
 

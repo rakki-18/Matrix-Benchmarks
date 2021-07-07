@@ -19,7 +19,7 @@ Class {
 MBBuild class >> title [
 
 
-	^ 'Building a NULL Matrix'
+	^ 'Building a NULL '
 ]
 
 { #category : #benchmarks }

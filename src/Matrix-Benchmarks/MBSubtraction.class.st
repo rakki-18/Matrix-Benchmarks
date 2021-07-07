@@ -19,7 +19,7 @@ Class {
 MBSubtraction class >> title [
 
 
-	^ 'Matrix Subtraction'
+	^ 'Subtraction '
 ]
 
 { #category : #benchmarks }

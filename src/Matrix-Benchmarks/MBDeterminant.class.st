@@ -23,7 +23,7 @@ Class {
 MBDeterminant class >> title [
 
 
-	^ 'Matrix Determinant'
+	^ 'Determinant '
 ]
 
 { #category : #normal }

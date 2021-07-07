@@ -21,7 +21,7 @@ Class {
 MBMatrixMultiplication class >> title [
 
 
-	^ 'Matrix Multiplication'
+	^ 'Matrix Multiplication '
 ]
 
 { #category : #parameters }

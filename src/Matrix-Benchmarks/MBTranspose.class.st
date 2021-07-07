@@ -21,7 +21,7 @@ Class {
 MBTranspose class >> title [
 
 
-	^ 'Transpose of a Matrix'
+	^ 'Transpose of '
 ]
 
 { #category : #benchmarks }

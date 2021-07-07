@@ -21,7 +21,7 @@ Class {
 MBQRDecomposition class >> title [
 
 
-	^ 'Matrix QR Decomposition'
+	^ 'QR Decomposition '
 ]
 
 { #category : #parameters }

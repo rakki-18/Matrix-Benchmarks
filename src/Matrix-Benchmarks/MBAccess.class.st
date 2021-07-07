@@ -19,7 +19,7 @@ Class {
 MBAccess class >> title [
 
 
-	^ 'Accessing a Matrix'
+	^ 'Accessing a '
 ]
 
 { #category : #'as yet unclassified' }

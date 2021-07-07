@@ -18,7 +18,7 @@ Class {
 { #category : #accessing }
 MBEigenVectors class >> title [
 
-	^'Eigen vector decomposition'
+	^'Eigen vector decomposition '
 ]
 
 { #category : #normal }

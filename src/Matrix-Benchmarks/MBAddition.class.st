@@ -19,7 +19,7 @@ Class {
 MBAddition class >> title [
 
 
-	^ 'Matrix Addition'
+	^ 'Addition '
 ]
 
 { #category : #benchmarks }

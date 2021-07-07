@@ -20,7 +20,7 @@ Class {
 { #category : #accessing }
 MBSVDDecomposition class >> title [
 
-	^'SVD Decomposition of Matrix'
+	^'SVD Decomposition '
 ]
 
 { #category : #parameters }

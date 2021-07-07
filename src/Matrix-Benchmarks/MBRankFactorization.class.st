@@ -21,7 +21,7 @@ Class {
 MBRankFactorization class >> title [
 
 
-	^ 'Matrix Rank Factorization'
+	^ 'Rank Factorization '
 ]
 
 { #category : #parameters }

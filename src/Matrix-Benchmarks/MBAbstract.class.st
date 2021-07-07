@@ -64,6 +64,8 @@ MBAbstract class >> runAllBenchmarksWithProtocol [
 
 	|result|
 	
+	"runs the benchmarks from the sizes 50 to 300 if the operation is not too time-consuming.
+	Otherwise benchmarks are run from 50 to 150."
 	result := OrderedCollection new.
 	Cursor wait showWhile: [  
 	(self new maxMatrixSize >= 500) ifTrue: [  
@@ -97,10 +99,11 @@ MBAbstract class >> runAndPlotAllBenchmarksWithProtocol [
 	|result|
 
 	result := self new class runAllBenchmarksWithProtocol. 
+	"sorting the implementations alphabetically"
 	result := self sortResult: result.
 	
 	"visulize the benchmark"
-	MBBenchmarkVisualizer new plotBenchmarksLineGraph: result title: self title.
+	MBBenchmarkVisualizer new plotBenchmarksLineGraph: result title: self title protocol: protocol.
 
 
 
@@ -129,7 +132,7 @@ MBAbstract class >> runAndPlotBenchmarksWithProtocol: anInteger [
 
 	aBenchmark := self new class runBenchmarksWithProtocol: anInteger .
 	" visulize the benchmark"
-	MBBenchmarkVisualizer new plotBenchmarks: aBenchmark title: self title.
+	MBBenchmarkVisualizer new plotBenchmarksBarGraph: aBenchmark title: self title protocol: protocol.
 	
 	^aBenchmark
 
@@ -159,7 +162,7 @@ MBAbstract class >> runBenchmarks: anInteger [
 	Cursor wait showWhile: [
 		self  runSpaceBenchmarks: anInteger.
 		].
-	
+	"run time benchmarks"
 	Cursor wait showWhile: [
 	aBenchmarkSuite := (BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself).
 		].
@@ -176,6 +179,8 @@ MBAbstract class >> runBenchmarks: anInteger [
 MBAbstract class >> runBenchmarksWithProtocol: anInteger [
 		|integerasString selectors suite|
 	
+	 "runs the benchmarks contained in the particular protocol.
+	  For example, protocol -> symmetric, runs PMSymmetricMatrix and AISymmetricMatrix."
 		integerasString := anInteger asString.
 	
 		selectors := self selectorsInProtocol: protocol.
@@ -195,6 +200,8 @@ MBAbstract class >> sortResult: aBenchmarkResultSet [
 
 { #category : #parameters }
 MBAbstract >> checkMatrixSize [
+	"checks if the matrix size is too big."
+	"big matrix sizes are not passed considering time constraints."
 	self assert: matrixSize <= self maxMatrixSize description: 'Matrix Size is too big'
 ]
 

@@ -19,7 +19,7 @@ Class {
 MBBuildZeros class >> title [
 
 
-	^ 'Building a zero Matrix'
+	^ 'Building a zero '
 ]
 
 { #category : #benchmarks }

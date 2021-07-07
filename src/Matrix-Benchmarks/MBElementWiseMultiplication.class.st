@@ -19,7 +19,7 @@ Class {
 MBElementWiseMultiplication class >> title [
 
 
-	^ ' Element-wise Matrix multiplication'
+	^ ' Element-wise multiplication '
 ]
 
 { #category : #benchmarks }
