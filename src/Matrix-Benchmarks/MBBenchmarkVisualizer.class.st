@@ -12,7 +12,7 @@ Class {
 }
 
 { #category : #decoration }
-MBBenchmarkVisualizer >> chartAddDecoration: chart [
+MBBenchmarkVisualizer class >> chartAddDecoration: chart [
 	
 	chart addDecoration: (RSXLabelDecoration new title: 'Matrix Size'; offset: 15).
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time(ms)'; offset: -15).
@@ -24,22 +24,46 @@ MBBenchmarkVisualizer >> chartAddDecoration: chart [
 	^ chart.
 ]
 
+{ #category : #decoration }
+MBBenchmarkVisualizer class >> chartAddPlot: chart result: result x: x color: colors [
+
+	1 to: result first size do: [ :i|
+	|y line scatter|
+	y := result collect: [ :each |  ((each at: i) measurements first at: 3) value ].
+	line := RSLinePlot new x: x y: y.
+	line color: (colors at: i).
+	chart addPlot: line.
+	scatter := RSScatterPlot new.
+	scatter x: x y: y; color: (colors at: i). 
+	chart addPlot: scatter].
+
+	^chart.
+]
+
 { #category : #accessing }
-MBBenchmarkVisualizer >> getMatrixSize: aBenchmarkResultSet [
+MBBenchmarkVisualizer class >> getMatrixSize: aBenchmarkResultSet [
 	
 	"get matrix size used as the parameter in the benchmark result"
 	^aBenchmarkResultSet collect: [:each | each first parameters first value].
 ]
 
 { #category : #accessing }
-MBBenchmarkVisualizer >> getNames: aBenchmarkResultSet [
+MBBenchmarkVisualizer class >> getNames: aBenchmarkResultSet [
 	
 	"get names of the matrix implementation in the report"
 	^ aBenchmarkResultSet first  collect: [ :each | each benchmark name].
 ]
 
+{ #category : #decoration }
+MBBenchmarkVisualizer class >> legendAddText: legend text: names color: colors [
+	" make legends with the given text and color"
+	1 to: names size do: [ :i |
+    	legend text: (names at: i) withBoxColor: (colors at: i)  ].
+	^ legend.
+]
+
 { #category : #'plotting - benchmarks' }
-MBBenchmarkVisualizer >> plotBenchmarksBarGraph: aBenchmark title: title protocol: protocol [
+MBBenchmarkVisualizer class >> plotBenchmarksBarGraph: aBenchmark title: title protocol: protocol [
 	"Plots bar chart for the results obtained by MBAbstract>>#runBenchmarks:"
 	|data names chart xlabel|	
 	
@@ -67,34 +91,30 @@ MBBenchmarkVisualizer >> plotBenchmarksBarGraph: aBenchmark title: title protoco
 ]
 
 { #category : #'plotting - benchmarks' }
-MBBenchmarkVisualizer >> plotBenchmarksLineGraph: result title: title protocol: protocol [
+MBBenchmarkVisualizer class >> plotBenchmarksLineGraph: result title: title protocol: protocol [
 	"plots a line graph for the results obtained by MBAbstract>>#runAllBenchmarks"
 	|chart x legend names colors|
 	
 	chart := RSChart new.
+	" get the matrix size from the benchmark result that will be displayed in the X-axis."
 	x := self getMatrixSize: result. 
 	colors := self tenDistinctColors.
 
-	1 to: result first size do: [ :i|
-	|y line scatter|
-	y := result collect: [ :each |  ((each at: i) measurements first at: 3) value ].
-	line := RSLinePlot new x: x y: y.
-	line color: (colors at: i).
-	chart addPlot: line.
-	scatter := RSScatterPlot new.
-	scatter x: x y: y; color: (colors at: i). 
-	chart addPlot: scatter].
+	" Add the line plot and scatter plot to the chart"
+	chart := self chartAddPlot: chart result: result x: x color: colors.
 
+	" Add decorations to the chart i.e specifying X-axis, Y-axis, etc"
 	chart := self chartAddDecoration: chart.
 	
 	chart title: title,protocol,' matrix'.
 	chart build.
+	" get names of the matrix implementations benchmarked in the report."
 	names := self getNames: result.
 
 	legend := RSLegend new.
 	legend container: chart canvas.
-	1 to: names size do: [ :i |
-    	legend text: (names at: i) withBoxColor: (colors at: i)  ].
+	legend := self legendAddText: legend text: names color: colors.
+
 	
 	legend layout horizontal gapSize: 10.
 	legend build.
@@ -103,7 +123,7 @@ MBBenchmarkVisualizer >> plotBenchmarksLineGraph: result title: title protocol: 
 ]
 
 { #category : #decoration }
-MBBenchmarkVisualizer >> tenDistinctColors [
+MBBenchmarkVisualizer class >> tenDistinctColors [
 	"This is a list of 10 light colors that can be distinguished b
 	the typical human eye even when seen together in the same picture.
 	They complement the distinctTenStrongColors.

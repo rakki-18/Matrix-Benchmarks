@@ -103,7 +103,7 @@ MBAbstract class >> runAndPlotAllBenchmarksWithProtocol [
 	result := self sortResult: result.
 	
 	"visulize the benchmark"
-	MBBenchmarkVisualizer new plotBenchmarksLineGraph: result title: self title protocol: protocol.
+	MBBenchmarkVisualizer plotBenchmarksLineGraph: result title: self title protocol: protocol.
 
 
 
@@ -132,7 +132,7 @@ MBAbstract class >> runAndPlotBenchmarksWithProtocol: anInteger [
 
 	aBenchmark := self new class runBenchmarksWithProtocol: anInteger .
 	" visulize the benchmark"
-	MBBenchmarkVisualizer new plotBenchmarksBarGraph: aBenchmark title: self title protocol: protocol.
+	MBBenchmarkVisualizer plotBenchmarksBarGraph: aBenchmark title: self title protocol: protocol.
 	
 	^aBenchmark
 

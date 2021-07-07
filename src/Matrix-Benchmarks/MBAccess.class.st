@@ -89,7 +89,7 @@ MBAccess >> accessPMSymmetricMatrix [
 	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
-	self initRepetitions timesRepeat:[  a1 at: matrixSize floor at: matrixSize ].
+	self initRepetitions timesRepeat:[  a1 at: matrixSize at: matrixSize ].
 ]
 
 { #category : #parameters }
