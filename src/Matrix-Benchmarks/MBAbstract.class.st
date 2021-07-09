@@ -171,6 +171,9 @@ MBAbstract class >> runBenchmarks: anInteger [
 		" add the information of space benchmarks"
 		each spaceMeasurements: (self spaceBenchmarkResult at: each benchmark name ).
 		 ].
+	
+	"store the benchmark class in the report for the user to check how the operations have been implemented"
+	aBenchmarkSuite benchmarkClass: self new.
 	^ aBenchmarkSuite 
 	
 ]
