@@ -55,31 +55,55 @@ MBAbstract class >> protocol [
 
 { #category : #'running - benchmark' }
 MBAbstract class >> runAllBenchmarks [
+	"runs the benchmarks from the sizes 50 to 300 if the operation is not too time-consuming.
+	Otherwise benchmarks are run from 50 to 150."
 	
-	^ self runAndPlotAllBenchmarks 
+	self new defaultMaxMatrixSize  >= 500 ifTrue: [
+		 ^ self runAllBenchmarksFrom: 50 to: 300 by: 50 ]
+	ifFalse: [ 
+		^ self runAllBenchmarksFrom: 50 to: 150 by: 25
+		 ]
+
+]
+
+{ #category : #'running - benchmark' }
+MBAbstract class >> runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize [ 
+	
+	|stepValue|
+	self assert: toMatrixSize > (fromMatrixSize + 1) description: 'to matrix size should be greater than from matrix size'.
+
+	" find a suitable gap to run the benchmarks for around 6 different matrix sizes"
+	stepValue := ((toMatrixSize - fromMatrixSize)/5) ceiling.
+
+	^ self runAllBenchmarksFrom: fromMatrixSize  to: toMatrixSize  by: stepValue 
+]
+
+{ #category : #'running - benchmark' }
+MBAbstract class >> runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber [
+	
+	self assert: toMatrixSize > (fromMatrixSize + 1) description: 'to matrix size should be greater than from matrix size'.
+	
+	^ self runAndPlotAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber 
 ]
 
 { #category : #private }
-MBAbstract class >> runAllBenchmarksWithProtocol [
+MBAbstract class >> runAllBenchmarksWithProtocolFrom: fromMatrixSize to: toMatrixSize by: aNumber [
 
 	|result|
 	
-	"runs the benchmarks from the sizes 50 to 300 if the operation is not too time-consuming.
-	Otherwise benchmarks are run from 50 to 150."
+	"runs the benchmarks from the sizes fromMatrixSize toMatrixSize with a gap of aNumber"
+
 	result := OrderedCollection new.
 	Cursor wait showWhile: [  
-	(self new maxMatrixSize >= 500) ifTrue: [  
-	50 to: 300 by: 50 do: [ :each| result addLast: (self new class runBenchmarksWithProtocol: each)].
-	]
-	ifFalse: [ 
-		50 to: 150 by: 25 do: [ :each| result addLast: (self new class runBenchmarksWithProtocol: each)] ]
+
+	fromMatrixSize to: toMatrixSize  by: aNumber do: [ :each| result addLast: (self new class runBenchmarksWithProtocol: each)].
 	].
 	^ result.
 	
 ]
 
 { #category : #'plotting - benchmarks' }
-MBAbstract class >> runAndPlotAllBenchmarks [
+MBAbstract class >> runAndPlotAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber [
 
 	|protocols|
 	
@@ -88,17 +112,17 @@ MBAbstract class >> runAndPlotAllBenchmarks [
 	protocols do: [ :each|
 		(self protocols includes: each) ifTrue: [ 
 			protocol := each.
-			self runAndPlotAllBenchmarksWithProtocol
+			self runAndPlotAllBenchmarksWithProtocolFrom: fromMatrixSize to: toMatrixSize by: aNumber
 			 ]
 		].
 ]
 
 { #category : #private }
-MBAbstract class >> runAndPlotAllBenchmarksWithProtocol [
+MBAbstract class >> runAndPlotAllBenchmarksWithProtocolFrom: fromMatrixSize to: toMatrixSize by: aNumber [
 
 	|result|
 
-	result := self new class runAllBenchmarksWithProtocol. 
+	result := self new class runAllBenchmarksWithProtocolFrom: fromMatrixSize to: toMatrixSize by: aNumber. 
 	"sorting the implementations alphabetically"
 	result := self sortResult: result.
 	
