@@ -3,7 +3,7 @@ I contain the classes to benchmark matrix implementations.
 
 I support two types of benchmarks.
 - `runBenchmarks:` which runs the benchmarks for a particular matrix Size as provided by the user.
-- `runAllBenchmarks` runs the benchmarks for matrix sizes 50,100,..300 if the operation is not time consuming and for matrix sizes, 50,75,..,150 if the operation is time-consuming.
+- `runAllBenchmarksFrom: to: by:` runs the benchmarks for the set of matrix sizes specified
 
 To check all the operations that have been benchmarked
 ```Smalltalk
@@ -14,7 +14,8 @@ Public API to run the Benchmarks
 
 ```Smalltalk
 MBOperation runBenchmarks: matrixSize. ""or""
-MBOperation runAllBenchmarks.
+MBOperation runAllBenchmarks. ""or""
+MBOperation runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber
 ```
 where `MBOperation` can be any operation that was listed by `MBAbstract operations`.
 

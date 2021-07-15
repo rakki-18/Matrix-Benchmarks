@@ -8,6 +8,7 @@ Public API and Key Messages
 To run the benchmarks
 - `MBDeterminant runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
 - `MBDeterminant  runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 150 and shows a line chart plot.
+- `MBDeterminant runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber` runs the benchmarks for the set of matrix sizes specified if it is valid.
 
 Only, `PMMatrix` and `PMSymmetricMatrix` are compared as the other implementations don't support finding determinant.
 

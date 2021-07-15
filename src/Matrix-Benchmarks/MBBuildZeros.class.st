@@ -7,6 +7,7 @@ Public API and Key Messages
 To run the benchmarks
 - `MBBuildZeros runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
 - `MBBuildZeros  runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+- `MBBuildZeros runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber` runs the benchmarks for the set of matrix sizes specified.
 
 "
 Class {

@@ -7,6 +7,8 @@ Public API and Key Messages
 To run the benchmarks
 - `MBMatrixMultiplication runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
 - `MBMatrixMultiplication  runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 300 and shows a line chart plot.
+- `MBMatrixMultiplication runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber` runs the benchmarks for the set of matrix sizes specified if it is valid.
+
 
 This benchmark takes some time to run. But, even big matrix sizes are passed by the API.
 

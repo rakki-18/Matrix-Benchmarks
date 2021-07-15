@@ -6,6 +6,7 @@ Public API and Key Messages
 To run the benchmarks
 - `MBGaussianElimination runBenchmarks: anInteger` runs the benchmarks for a matrix size of `anInteger`.
 - `MBGaussianElimination runAllBenchmarks` runs the benchmarks for the matrix sizes from 50 to 150 and shows a line chart plot.
+- `MBGaussianElimination runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber` runs the benchmarks for the set of matrix sizes specified if it is valid.
 
 This operation takes a lot of time and hence big matrix sizes won't be passed by the API.
 
