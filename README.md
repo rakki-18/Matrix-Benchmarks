@@ -43,6 +43,11 @@ To run benchmarks for a particular operation for a set of matrix sizes:
 ```Smalltalk
 MBOperationName runAllBenchmarks
 ```
+The range of the matrix sizes on which the benchmarks are run can be customized by:
+```Smalltalk
+MBOperationName runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber
+```
+
 To see all the available operations that can be benchmarked:
 ```Smalltalk
 MBAbstract operations
@@ -56,9 +61,9 @@ MBAddition runAllBenchmarks.
 ```Smalltalk
 MBElementWiseMultiplication runBenchmarks: 200.
 ```
-- On the operation - Accessing cells of a matrix
+- On the operation - Accessing cells of a matrix for the matrix sizes {50,100,150,200}
 ```Smalltalk
-MBAccess runAllBenchmarks
+MBAccess runAllBenchmarksFrom: 50 to: 200 by: 50 
 ```
 
 To generate a benchmark report on all the operations of a particular matrix implementation,
