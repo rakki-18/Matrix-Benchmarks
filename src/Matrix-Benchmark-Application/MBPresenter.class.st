@@ -4,7 +4,8 @@ Class {
 	#instVars : [
 		'matrixSize',
 		'operations',
-		'button'
+		'benchmarkButton',
+		'stopButton'
 	],
 	#category : #'Matrix-Benchmark-Application'
 }
@@ -18,7 +19,10 @@ MBPresenter class >> defaultSpec [
 	add: 'Select the operation to benchmark' expand: false;
 	add: #operations ;
 	
-	addLast: #button expand: false;
+	addLast: (SpBoxLayout newLeftToRight 
+		add: #benchmarkButton ;
+		add: #stopButton ; yourself
+		);
 	yourself
 ]
 
@@ -30,7 +34,8 @@ MBPresenter >> initializePresenters [
 	operations := self newList.
 	operations 
 		items: MBAbstract subclasses.
-	button := self newButton label: 'benchmark'.
+	benchmarkButton  := self newButton label: 'benchmark'; color: Color orange ; yourself.
+	stopButton := self newButton label: 'Stop'; color: Color red; yourself.
 	self focusOrder add: matrixSize.
 ]
 
