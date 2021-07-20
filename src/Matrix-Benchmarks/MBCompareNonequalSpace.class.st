@@ -1,7 +1,7 @@
 Class {
 	#name : #MBCompareNonequalSpace,
 	#superclass : #MBCompareNonequal,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

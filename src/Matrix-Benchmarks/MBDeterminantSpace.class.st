@@ -1,7 +1,7 @@
 Class {
 	#name : #MBDeterminantSpace,
 	#superclass : #MBDeterminant,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

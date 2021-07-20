@@ -14,7 +14,7 @@ Only `PMMatrix` and `PMSymmetricMatrix` support this operation.
 Class {
 	#name : #MBRankFactorization,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }

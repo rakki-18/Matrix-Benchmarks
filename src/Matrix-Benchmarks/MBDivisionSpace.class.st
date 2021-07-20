@@ -1,7 +1,7 @@
 Class {
 	#name : #MBDivisionSpace,
 	#superclass : #MBDivision,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

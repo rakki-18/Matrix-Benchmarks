@@ -1,7 +1,7 @@
 Class {
 	#name : #MBEigenVectorsSpace,
 	#superclass : #MBEigenVectors,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

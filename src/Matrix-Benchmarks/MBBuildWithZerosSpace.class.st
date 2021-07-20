@@ -1,7 +1,7 @@
 Class {
 	#name : #MBBuildWithZerosSpace,
 	#superclass : #MBBuildZeros,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

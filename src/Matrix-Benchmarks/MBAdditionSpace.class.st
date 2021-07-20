@@ -1,7 +1,7 @@
 Class {
 	#name : #MBAdditionSpace,
 	#superclass : #MBAddition,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #adding }

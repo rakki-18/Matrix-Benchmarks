@@ -1,7 +1,7 @@
 Class {
 	#name : #MBTraceSpace,
 	#superclass : #MBTrace,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

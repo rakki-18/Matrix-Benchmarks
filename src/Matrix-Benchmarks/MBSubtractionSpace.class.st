@@ -1,7 +1,7 @@
 Class {
 	#name : #MBSubtractionSpace,
 	#superclass : #MBSubtraction,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

@@ -1,7 +1,7 @@
 Class {
 	#name : #MBGaussianEliminationSpace,
 	#superclass : #MBGaussianElimination,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

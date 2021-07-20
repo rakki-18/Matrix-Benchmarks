@@ -1,7 +1,7 @@
 Class {
 	#name : #MBMatrixMultiplicationSpace,
 	#superclass : #MBMatrixMultiplication,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

@@ -1,7 +1,7 @@
 Class {
 	#name : #MBInverseSpace,
 	#superclass : #MBInverse,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

@@ -1,7 +1,7 @@
 Class {
 	#name : #MBElementWiseMultiplicationSpace,
 	#superclass : #MBElementWiseMultiplication,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

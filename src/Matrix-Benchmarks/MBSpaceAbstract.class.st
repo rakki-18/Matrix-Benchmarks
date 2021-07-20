@@ -15,7 +15,7 @@ Class {
 	#classInstVars : [
 		'spaceBenchmarkResult'
 	],
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #'running - benchmarks' }

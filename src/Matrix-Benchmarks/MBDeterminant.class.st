@@ -17,7 +17,7 @@ Since, finding determinant takes considerable time, only small matrix sizes will
 Class {
 	#name : #MBDeterminant,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }

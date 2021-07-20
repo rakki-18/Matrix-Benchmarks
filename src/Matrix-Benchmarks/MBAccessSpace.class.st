@@ -25,7 +25,7 @@ Implementation Points
 Class {
 	#name : #MBAccessSpace,
 	#superclass : #MBAccess,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

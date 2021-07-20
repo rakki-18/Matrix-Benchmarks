@@ -16,7 +16,7 @@ To run the benchmarks
 Class {
 	#name : #MBMultiplication,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }
