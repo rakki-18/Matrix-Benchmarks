@@ -1,7 +1,7 @@
 Class {
 	#name : #MBLUPDecompositionSpace,
 	#superclass : #MBLUPDecomposition,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

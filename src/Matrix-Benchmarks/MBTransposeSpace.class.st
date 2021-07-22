@@ -1,7 +1,7 @@
 Class {
 	#name : #MBTransposeSpace,
 	#superclass : #MBTranspose,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #benchmarks }

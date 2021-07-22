@@ -1,7 +1,7 @@
 Class {
 	#name : #MBStrassenMultiplicationSpace,
 	#superclass : #MBStrassenMultiplication,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

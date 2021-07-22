@@ -1,7 +1,7 @@
 Class {
 	#name : #MBBuildSpace,
 	#superclass : #MBBuild,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

@@ -14,7 +14,7 @@ Transpose of a symmetric matrix and a diagoanl matrix is itself. Hence, they can
 Class {
 	#name : #MBTranspose,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }

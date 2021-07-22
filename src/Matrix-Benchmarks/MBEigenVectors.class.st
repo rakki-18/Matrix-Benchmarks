@@ -13,7 +13,7 @@ To run the benchmarks
 Class {
 	#name : #MBEigenVectors,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }

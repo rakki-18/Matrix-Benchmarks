@@ -16,7 +16,9 @@ MBPresenter class >> defaultSpec [
 
 	^ SpBoxLayout newTopToBottom
 	
-	add: #matrixSizeLabel withConstraints: [ :constraints | constraints height: self labelledPresenterHeight];
+
+	add: #matrixSize withConstraints: [ :constraints | constraints height: self labelHeight];
+
 	add: 'Select the operation to benchmark' expand: false;
 	add: #operations ;
 	
@@ -64,8 +66,9 @@ MBPresenter >> getMatrixSize [
 { #category : #initialization }
 MBPresenter >> initializePresenters [
 
-	matrixSizeInput := self newNumberInput  placeholder: '100'.
-	matrixSizeLabel := self instantiate: (SpLabelledPresenter label: 'Matrix Size' input: matrixSizeInput  description: 'Size of the square matrices on which the benchmarks will be run.').
+
+	matrixSize := self instantiate: (SpLabeledPresenter label: 'Matrix Size' input: (self newTextInput placeholder: '100') description: 'Size of the square matrices on which the benchmarks will be run.').
+
 	
 	operations := self newList.
 	operations 

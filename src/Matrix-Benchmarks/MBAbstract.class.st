@@ -35,7 +35,7 @@ Class {
 	#classInstVars : [
 		'protocol'
 	],
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #examples }

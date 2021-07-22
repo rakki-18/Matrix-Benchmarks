@@ -16,7 +16,7 @@ This operation takes a lot of time and hence big matrix sizes won't be passed by
 Class {
 	#name : #MBInverse,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }

@@ -1,7 +1,7 @@
 Class {
 	#name : #MBRankFactorizationSpace,
 	#superclass : #MBRankFactorization,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #normal }

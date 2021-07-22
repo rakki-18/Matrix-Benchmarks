@@ -16,7 +16,7 @@ This benchmark takes some time to run. But, even big matrix sizes are passed by 
 Class {
 	#name : #MBMatrixMultiplication,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }

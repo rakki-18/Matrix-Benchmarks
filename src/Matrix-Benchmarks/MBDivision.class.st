@@ -12,7 +12,7 @@ To run the benchmarks
 Class {
 	#name : #MBDivision,
 	#superclass : #MBAbstract,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-Core'
 }
 
 { #category : #accessing }

@@ -8,7 +8,7 @@ I implement two methods
 Class {
 	#name : #MBBenchmarkVisualizer,
 	#superclass : #Object,
-	#category : #'Matrix-Benchmarks'
+	#category : #'Matrix-Benchmarks-UI'
 }
 
 { #category : #decoration }
