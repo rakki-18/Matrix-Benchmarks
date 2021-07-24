@@ -12,6 +12,15 @@ Class {
 }
 
 { #category : #accessing }
+MBApplication >> initialize [ 
+
+		self 
+		useBackend: #Morphic 
+		with: MBApplicationConfiguration  new.
+
+]
+
+{ #category : #accessing }
 MBApplication >> start [
 
 	^ (self new: MBPresenter) openWithSpec.
