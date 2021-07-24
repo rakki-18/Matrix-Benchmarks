@@ -24,10 +24,13 @@ BaselineOfMatrixBenchmark >> baseline: spec [
 			spec 
 				baseline: 'Roassal3'
 				with: [ spec repository: 'github://ObjectProfile/Roassal3/src' ].
+			spec
+				baseline: 'Spec2'
+				with: [ spec repository: 'github://pharo-spec/Spec' ].
 
 			spec 
 				package: 'Matrix-Benchmarks' 			with: [ spec requires: #('AILinearAlgebra' 'PolyMath' 'CalipeLSBenchmark') ];
-				package: 'Matrix-Benchmarks-UI' 		with: [ spec requires: #('Matrix-Benchmarks' 'Roassal3') ];
+				package: 'Matrix-Benchmarks-UI' 		with: [ spec requires: #('Matrix-Benchmarks' 'Roassal3' 'Spec2') ];
 				package: 'Matrix-Benchmarks-Tests' 	with: [ spec requires: #('Matrix-Benchmarks') ].
 				
 
