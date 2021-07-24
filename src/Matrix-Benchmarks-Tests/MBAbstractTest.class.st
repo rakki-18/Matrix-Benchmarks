@@ -9,7 +9,7 @@ MBAbstractTest >> testRunAll [
 
 	"initialize with a small matrix size so that tests don't take too much time.
 	Matrix size is a power of 2 so that strassen multiplication test can work."
-	self shouldnt: (self classname runBenchmarks: 32) raise: Error.
+	self shouldnt: [self classname runBenchmarks: 32] raise: Error
 
 
 ]

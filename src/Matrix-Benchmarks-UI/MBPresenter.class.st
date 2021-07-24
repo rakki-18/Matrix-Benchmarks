@@ -8,7 +8,7 @@ Class {
 		'benchmarkButton',
 		'stopButton'
 	],
-	#category : #'Matrix-Benchmark-Application'
+	#category : #'Matrix-Benchmarks-UI'
 }
 
 { #category : #specs }
@@ -17,7 +17,7 @@ MBPresenter class >> defaultSpec [
 	^ SpBoxLayout newTopToBottom
 	
 
-	add: #matrixSize withConstraints: [ :constraints | constraints height: self labelHeight];
+	add: #matrixSizeLabel withConstraints: [ :constraints | constraints height: self labelledPresenterHeight ];
 
 	add: 'Select the operation to benchmark' expand: false;
 	add: #operations ;
@@ -67,8 +67,8 @@ MBPresenter >> getMatrixSize [
 MBPresenter >> initializePresenters [
 
 
-	matrixSize := self instantiate: (SpLabeledPresenter label: 'Matrix Size' input: (self newTextInput placeholder: '100') description: 'Size of the square matrices on which the benchmarks will be run.').
-
+	matrixSizeInput := self newTextInput placeholder: '100'.
+	matrixSizeLabel := self instantiate: (SpLabelledPresenter label: 'Matrix Size' input: matrixSizeInput  description: 'Size of the square matrices on which the benchmarks will be run.').
 	
 	operations := self newList.
 	operations 

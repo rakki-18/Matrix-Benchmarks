@@ -8,7 +8,7 @@ MBApplication new start.
 Class {
 	#name : #MBApplication,
 	#superclass : #SpApplication,
-	#category : #'Matrix-Benchmark-Application'
+	#category : #'Matrix-Benchmarks-UI'
 }
 
 { #category : #accessing }
