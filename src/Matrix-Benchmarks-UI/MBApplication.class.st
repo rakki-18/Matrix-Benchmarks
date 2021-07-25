@@ -11,13 +11,12 @@ Class {
 	#category : #'Matrix-Benchmarks-UI'
 }
 
-{ #category : #accessing }
+{ #category : #initialization }
 MBApplication >> initialize [ 
 
-		self 
-		useBackend: #Morphic 
-		with: MBApplicationConfiguration  new.
-
+	^ self 
+		useBackend: #Morphic
+		with: MBApplicationConfiguration new.
 ]
 
 { #category : #accessing }

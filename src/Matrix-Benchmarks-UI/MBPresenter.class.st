@@ -66,11 +66,17 @@ MBPresenter >> getMatrixSize [
 	^ self matrixSizeInput number
 ]
 
+{ #category : #api }
+MBPresenter >> initialExtent [
+
+	^ 600@400
+]
+
 { #category : #initialization }
 MBPresenter >> initializePresenters [
 
-	runSingleBenchmarkButton  := self newButton label: 'Single Benchmarks'.
-	runMultipleBenchmarkButton  := self newButton label: 'Multiple Benchmarks'.
+	runSingleBenchmarkButton  := self newButton label: 'Single Benchmarks'; addStyle: 'myButton'.
+	runMultipleBenchmarkButton  := self newButton label: 'Multiple Benchmarks'; addStyle: 'myButton'.
 
 	matrixSizeInput := self newNumberInput placeholder: '100'.
 	matrixSizeLabel := self instantiate: (SpLabelledPresenter label: 'Matrix Size' input: matrixSizeInput  description: 'Size of the square matrices on which the benchmarks will be run.').

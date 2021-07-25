@@ -7,17 +7,19 @@ Class {
 { #category : #styling }
 MBApplicationConfiguration >> styleSheet [
 
-
-	^ super styleSheet, (SpStyleVariableSTONReader  fromString: '
+	^ super styleSheet, (SpStyleVariableSTONReader   fromString: '
 		.application [
 
-				.myButton [
-					Container { 
-					#padding: 5
-					}
-				]
-			]	
-		]')
+	 		.button [ 
+
+			.myButton[
+				Container {  #padding: 5 }
+			]
+		]
+		 
+	]')
+
+
 
 
 ]
