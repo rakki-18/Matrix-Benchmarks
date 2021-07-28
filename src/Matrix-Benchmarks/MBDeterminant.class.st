@@ -21,6 +21,13 @@ Class {
 }
 
 { #category : #accessing }
+MBDeterminant class >> friendlyName [ 
+
+
+	^ 'Determinant of a Matrix'
+]
+
+{ #category : #accessing }
 MBDeterminant class >> title [
 
 

@@ -16,6 +16,13 @@ Class {
 }
 
 { #category : #accessing }
+MBDivision class >> friendlyName [ 
+
+
+	^ 'Division of a Matrix with a number'
+]
+
+{ #category : #accessing }
 MBDivision class >> title [
 
 

@@ -17,6 +17,14 @@ Class {
 }
 
 { #category : #accessing }
+MBBuildZeros class >> friendlyName [ 
+
+
+	^ 'Building a Matrix filled with zeros'
+
+]
+
+{ #category : #accessing }
 MBBuildZeros class >> title [
 
 

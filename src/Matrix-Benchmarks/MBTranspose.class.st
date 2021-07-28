@@ -18,6 +18,13 @@ Class {
 }
 
 { #category : #accessing }
+MBTranspose class >> friendlyName [ 
+
+
+	^ 'Transpose of a matrix'
+]
+
+{ #category : #accessing }
 MBTranspose class >> title [
 
 

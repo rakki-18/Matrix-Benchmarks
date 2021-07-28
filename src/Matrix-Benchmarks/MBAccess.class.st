@@ -17,6 +17,13 @@ Class {
 }
 
 { #category : #accessing }
+MBAccess class >> friendlyName [
+
+
+	^ 'Accessing a cell in a matrix'
+]
+
+{ #category : #accessing }
 MBAccess class >> title [
 
 

@@ -18,6 +18,12 @@ Class {
 }
 
 { #category : #accessing }
+MBQRDecomposition class >> friendlyName [ 
+
+	^ 'QR Decomposition of a matrix'
+]
+
+{ #category : #accessing }
 MBQRDecomposition class >> title [
 
 

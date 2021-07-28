@@ -20,6 +20,13 @@ Class {
 }
 
 { #category : #accessing }
+MBInverse class >> friendlyName [ 
+
+
+	^ 'Matrix Inverse '
+]
+
+{ #category : #accessing }
 MBInverse class >> title [
 
 

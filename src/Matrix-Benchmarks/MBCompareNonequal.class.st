@@ -16,6 +16,12 @@ Class {
 }
 
 { #category : #accessing }
+MBCompareNonequal class >> friendlyName [ 
+
+	^ 'Compare equality of two non-equal matrices '
+]
+
+{ #category : #accessing }
 MBCompareNonequal class >> title [
 
 

@@ -18,6 +18,12 @@ Class {
 }
 
 { #category : #accessing }
+MBTrace class >> friendlyName [ 
+
+	^ 'Trace of a Matrix'
+]
+
+{ #category : #accessing }
 MBTrace class >> title [
 
 

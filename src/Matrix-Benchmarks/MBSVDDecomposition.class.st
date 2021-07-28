@@ -18,6 +18,12 @@ Class {
 }
 
 { #category : #accessing }
+MBSVDDecomposition class >> friendlyName [ 
+
+	^'SVD Decomposition of a Matrix'
+]
+
+{ #category : #accessing }
 MBSVDDecomposition class >> title [
 
 	^'SVD Decomposition '

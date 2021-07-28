@@ -17,6 +17,13 @@ Class {
 }
 
 { #category : #accessing }
+MBAddition class >> friendlyName [ 
+
+
+	^ 'Matrix Addition'
+]
+
+{ #category : #accessing }
 MBAddition class >> title [
 
 

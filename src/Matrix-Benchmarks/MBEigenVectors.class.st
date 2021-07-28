@@ -17,6 +17,12 @@ Class {
 }
 
 { #category : #accessing }
+MBEigenVectors class >> friendlyName [ 
+
+	^'Eigen vector decomposition of a Matrix'
+]
+
+{ #category : #accessing }
 MBEigenVectors class >> title [
 
 	^'Eigen vector decomposition '

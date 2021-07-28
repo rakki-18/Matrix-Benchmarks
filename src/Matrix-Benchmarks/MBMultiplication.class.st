@@ -20,6 +20,13 @@ Class {
 }
 
 { #category : #accessing }
+MBMultiplication class >> friendlyName [ 
+
+
+	^ 'Scalar multiplication of a matrix with a number'
+]
+
+{ #category : #accessing }
 MBMultiplication class >> title [
 
 
