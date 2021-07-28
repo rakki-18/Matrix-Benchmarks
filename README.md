@@ -21,18 +21,12 @@ In order to supress load warnings, you may prefer
   load] on: MCMergeOrLoadWarning do: [:warning | warning load ]
 ```
 
-## How to depend on the project?
-
-If you want to add a dependency to your project, include the following lines into your baseline method:
-
+## Running the Benchmark GUI
 ```Smalltalk
-spec
-  baseline: 'MatrixBenchmark'
-  with: [ spec repository: 'github://rakki-18/Matrix-Benchmarks/src' ].
+MBApplication new start
 ```
 
-Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) to learn more about baselines.
-
+If you prefer not to run the User-Interface, then you can run the benchmarks programatically using
 ## Running Benchmarks
 To run benchmarks on a particular operation for a particular matrix size:
 ```Smalltalk
@@ -66,15 +60,6 @@ MBElementWiseMultiplication runBenchmarks: 200.
 MBAccess runAllBenchmarksFrom: 50 to: 200 by: 50 
 ```
 
-To generate a benchmark report on all the operations of a particular matrix implementation,
-- For `Array2D`
-```Smalltalk
-(BenchmarkSuite class: CSArray2DBenchmark ) run.
-```
-- For `PMMatrix`
-```Smalltalk
-(BenchmarkSuite class: CSPMMatrixBenchmark  ) run.
-```
 ## Matrix Implementations covered 
 - Array2D
 - PMMatrix
@@ -111,3 +96,14 @@ To generate a benchmark report on all the operations of a particular matrix impl
 - Singular Value Decomposition
 - Strassen Multiplication
 
+## How to depend on the project?
+
+If you want to add a dependency to your project, include the following lines into your baseline method:
+
+```Smalltalk
+spec
+  baseline: 'MatrixBenchmark'
+  with: [ spec repository: 'github://rakki-18/Matrix-Benchmarks/src' ].
+```
+
+Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) to learn more about baselines.
