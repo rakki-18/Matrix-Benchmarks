@@ -12,7 +12,10 @@ Class {
 		'toMatrixSize',
 		'byMatrixSizeGap',
 		'flag',
-		'matrixArgsWindow'
+		'matrixArgsWindow',
+		'resultsButton',
+		'abstractPresenter',
+		'resultsPresenter'
 	],
 	#category : #'Matrix-Benchmarks-UI'
 }
@@ -34,40 +37,107 @@ MBPresenter >> connectPresenters [
 
 	self runSingleBenchmarkButton action: [ 
 		flag := 'SingleBenchmark'.
-		self updateMatrixArgsWindow.
+		self updateLayout.
 		].
 	
 	self runMultipleBenchmarkButton action: [ 
 		flag := 'MultipleBenchmark'.
-		self updateMatrixArgsWindow.
+		self updateLayout.
 		].
 	
 	self benchmarkButton action: [ 
 		|benchmarkClass|
 		benchmarkClass := self getBenchmarkClass.
 
-		flag = 'SingleBenchmark' ifTrue: [  
-				benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
+		flag = 'SingleBenchmark' ifTrue: [ 
+				|benchmarkOutput| 
+				
+				benchmarkOutput := benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
+				self resultsPresenter: benchmarkOutput.
+				self designLayoutWithResults.
 			]
 		ifFalse: [ 
 			 benchmarkClass perform: #runAllBenchmarksFrom:to:by: with: self getFromMatrixSize with: self getToMatrixSize with: self getByMatrixSizeGap.
 			]
-		]
+		].
+	
+
  
 ]
 
-{ #category : #initialization }
-MBPresenter >> designLayout [
+{ #category : #layout }
+MBPresenter >> designLayoutWithMultipleBenchmarks [
 
 	self layout: (SpBoxLayout newTopToBottom 
 	add: 
 		(SpBoxLayout  newLeftToRight 
 			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
 			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
+			yourself) 
+	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 2 ];
+	
+	add: 		(	SpBoxLayout newLeftToRight 
+					                     		add: (self newLabel label: 'MatrixSize from  ');
+					                     		add: (fromMatrixSize := self fromMatrixSize ) expand: false;
+					                     		add: (self newLabel label: ' To ');
+						                     	add: (toMatrixSize := self toMatrixSize ) expand: false;
+					                     		add: (self newLabel label: ' with a gap of ');
+					                     		add: (byMatrixSizeGap  := self byMatrixSizeGap ) expand: false;
+													yourself)
+	withConstraints: [ :constraints | constraints height: self class buttonHeight; padding: 4  ];
+
+	add: 'Select the operation to benchmark' expand: false;
+	add: #operations withConstraints: [:constraints | constraints padding: 4];
+
+	addLast: (SpBoxLayout newLeftToRight 
+			add: #benchmarkButton  withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #stopButton  withConstraints: [ :constraints | constraints padding: 3 ];
+			 yourself
+		) withConstraints: [:constraints | constraints padding: 4];
+	yourself)
+]
+
+{ #category : #layout }
+MBPresenter >> designLayoutWithResults [
+
+	self layout: (SpBoxLayout newTopToBottom 
+	add: 
+		(SpBoxLayout  newLeftToRight 
+			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
 			yourself) 
 	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 1 ];
+	
+	
+	add: #resultsPresenter
+	withConstraints: [ :constraints | constraints padding: 4 ];
+	
+	addLast: (SpBoxLayout newLeftToRight 
+			add: #benchmarkButton  withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #stopButton  withConstraints: [ :constraints | constraints padding: 3 ];
+			 yourself
+		) withConstraints: [:constraints | constraints padding: 4];
+	yourself)
+]
 
-	add: matrixArgsWindow
+{ #category : #layout }
+MBPresenter >> designLayoutWithSingleBenchmarks [
+
+	self layout: (SpBoxLayout newTopToBottom 
+	add: 
+		(SpBoxLayout  newLeftToRight 
+			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
+			yourself) 
+	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 2 ];
+
+	add: (SpBoxLayout newLeftToRight
+					            add: 'Matrix Size on which the benchmarks will be run  ' expand: false ;
+								   add: #matrixSizeInput;
+					            yourself)
 	withConstraints: [ :constraints | constraints height: self class buttonHeight; padding: 4  ];
 
 	add: 'Select the operation to benchmark' expand: false;
@@ -89,7 +159,18 @@ MBPresenter >> fromMatrixSize [
 { #category : #accessing }
 MBPresenter >> getBenchmarkClass [
 
-	^ self operations selection selectedItem
+	"the list contains the friendly name of the benchmark classes. Correct class has to be found from the friendly name"
+	
+	|friendlyName|
+	
+	friendlyName := self operations selection selectedItem.
+	
+	"iterate through all classes to find out which class has the required friendly name.
+	This process can be optimized by storing an inverse map from friendlyNames to class names"
+	
+	MBAbstract subclassesDo: [ :each|
+		each friendlyName = friendlyName ifTrue: [ ^ each ] 
+		]
 ]
 
 { #category : #accessing }
@@ -139,48 +220,48 @@ MBPresenter >> initialExtent [
 ]
 
 { #category : #initialization }
-MBPresenter >> initializeMatrixArgsWindow [
+MBPresenter >> initializeButtons [ 
 
+	runSingleBenchmarkButton  := self newButton label: 'Single Benchmarks'; color: Color gray ; addStyle: 'myButton'.
+	runMultipleBenchmarkButton  := self newButton label: 'Multiple Benchmarks'; color: Color gray ; addStyle: 'myButton'.
+	resultsButton := self newButton label: 'Results'; color: Color gray; disable; addStyle: 'myButton'.
 	
+	benchmarkButton := self newButton label: 'benchmark'; color: Color orange; yourself.
+	stopButton := self newButton label: 'Stop'; color: Color red;  yourself.
+]
 
-	matrixArgsWindow :=  SpBoxLayout newLeftToRight
-					            add: 'Matrix Size on which the benchmarks will be run  ' expand: false ;
-					            add: (matrixSizeInput := self matrixSizeInput ) ;
-					            yourself.    
-	"matrixArgsWindow := SpBoxLayout newLeftToRight 
-	add: 'Matrix Size from' expand: false;
-	add: (fromMatrixSize := self fromMatrixSize);
-	add: 'To' expand: false;
-	add: (toMatrixSize := self toMatrixSize );
-	add: 'with a gap of' expand: false;
-	add: (byMatrixSizeGap := self byMatrixSizeGap );
-	yourself."
+{ #category : #initialization }
+MBPresenter >> initializeList [
+
+	operations := self newList.
+	operations 
+		items: (MBAbstract subclasses collect: [ :each| each perform: #friendlyName]).
+]
+
+{ #category : #initialization }
+MBPresenter >> initializeMatrixArgs [
+	
+	matrixSizeInput := self newNumberInput placeholder: '100'.
+	
+	fromMatrixSize := self newNumberInput placeholder: '50'.
+	toMatrixSize := self newNumberInput placeholder: '200'.
+	byMatrixSizeGap := self newNumberInput placeholder: '50'.
 ]
 
 { #category : #initialization }
 MBPresenter >> initializePresenters [
 
 
-	runSingleBenchmarkButton  := self newButton label: 'Single Benchmarks'; color: Color gray ; addStyle: 'myButton'.
-	runMultipleBenchmarkButton  := self newButton label: 'Multiple Benchmarks'; color: Color gray ; addStyle: 'myButton'.
+	self initializeButtons.
 
-	matrixSizeInput := self newNumberInput placeholder: '100'.
-	
-	fromMatrixSize := self newNumberInput placeholder: '50'.
-	toMatrixSize := self newNumberInput placeholder: '200'.
-	byMatrixSizeGap := self newNumberInput placeholder: '50'.
-	
-	operations := self newList.
-	operations 
-		items: MBAbstract subclasses.
-	benchmarkButton  := self newButton label: 'benchmark'; color: Color orange; yourself.
-	stopButton := self newButton label: 'Stop'; color: Color red;  yourself.
+	self initializeMatrixArgs.
 
+	self initializeList.
+
+	"when UI is opened, single benchmark modal will be displayed"
 	flag := 'SingleBenchmark'.
-	self initializeMatrixArgsWindow.
-	self designLayout.
+	self designLayoutWithSingleBenchmarks.
 
-	"self focusOrder add: matrixSizeLabel."
 	
 ]
 
@@ -200,6 +281,23 @@ MBPresenter >> matrixSizeInput [
 MBPresenter >> operations [ 
 
 	^ operations
+]
+
+{ #category : #accessing }
+MBPresenter >> resultsButton [ 
+	^ resultsButton 
+]
+
+{ #category : #accessing }
+MBPresenter >> resultsPresenter: aResultOutput [
+
+	resultsPresenter  := (SpTablePresenter new)
+		items: aResultOutput outcomes;
+		addColumn: (SpStringTableColumn  title: 'Implementation' evaluated: [:each | each benchmark name]);
+		addColumn: (SpStringTableColumn title: 'Time(ms)' evaluated: [:each | ((each measurements at: 1) at: 3 ) value]);
+		addColumn: (SpStringTableColumn title: 'Memory(Byte)' evaluated: [:each | each spaceMeasurements ]);
+		addColumn: (SpStringTableColumn title: 'MatrixSize' evaluated: [:each | (each parameters at: 1) value]);
+		yourself
 ]
 
 { #category : #accessing }
@@ -227,23 +325,13 @@ MBPresenter >> toMatrixSize [
 ]
 
 { #category : #'model updates' }
-MBPresenter >> updateMatrixArgsWindow [
+MBPresenter >> updateLayout [
 
 	flag = 'SingleBenchmark'
 		                    ifTrue: [ 
-										matrixArgsWindow removeAll;
-					                     add:
-						                     (self newLabel label: 'Matrix Size on which the benchmarks will be run  ')
-					                     expand: false;
-					                     add: (matrixSizeInput := self matrixSizeInput ) 
+										self designLayoutWithSingleBenchmarks
 										]
 		                    ifFalse: [ 
-										matrixArgsWindow removeAll;
-					                     add: (self newLabel label: 'MatrixSize from  ');
-					                     add: (fromMatrixSize := self fromMatrixSize ) expand: false;
-					                     add: (self newLabel label: ' To ');
-					                     add: (toMatrixSize := self toMatrixSize ) expand: false;
-					                     add: (self newLabel label: ' with a gap of ');
-					                     add: (byMatrixSizeGap  := self byMatrixSizeGap ) expand: false 
+										self designLayoutWithMultipleBenchmarks 
 										]
 ]
