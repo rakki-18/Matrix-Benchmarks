@@ -20,6 +20,13 @@ Class {
 	#category : #'Matrix-Benchmarks-UI'
 }
 
+{ #category : #'instance creation' }
+MBPresenter class >> open [
+	<example>
+	
+	^ self new openWithSpec
+]
+
 { #category : #accessing }
 MBPresenter >> benchmarkButton [
 
@@ -63,6 +70,13 @@ MBPresenter >> connectPresenters [
 	
 
  
+]
+
+{ #category : #initialization }
+MBPresenter >> descriptionForItemAt: classRef [
+	" Private - Answer a <String> with a friendly description of classRef "
+
+	^ classRef perform: #friendlyName
 ]
 
 { #category : #layout }
@@ -158,19 +172,9 @@ MBPresenter >> fromMatrixSize [
 
 { #category : #accessing }
 MBPresenter >> getBenchmarkClass [
+	" The list contains the benchmark classes. "
 
-	"the list contains the friendly name of the benchmark classes. Correct class has to be found from the friendly name"
-	
-	|friendlyName|
-	
-	friendlyName := self operations selection selectedItem.
-	
-	"iterate through all classes to find out which class has the required friendly name.
-	This process can be optimized by storing an inverse map from friendlyNames to class names"
-	
-	MBAbstract subclassesDo: [ :each|
-		each friendlyName = friendlyName ifTrue: [ ^ each ] 
-		]
+	^ self operations selection selectedItem.
 ]
 
 { #category : #accessing }
@@ -235,7 +239,9 @@ MBPresenter >> initializeList [
 
 	operations := self newList.
 	operations 
-		items: (MBAbstract subclasses collect: [ :each| each perform: #friendlyName]).
+		items: MBAbstract subclasses;
+		display: [ : classRef | self descriptionForItemAt: classRef ]
+		"contextMenu: [ self menuForSelectedItem ]."
 ]
 
 { #category : #initialization }
