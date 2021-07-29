@@ -1,3 +1,14 @@
+"
+I extend the style of presenters used in `MBApplication` class.
+
+A custom style class myButton is implemented.
+
+Usage
+
+```Smalltalk
+aButtonPresenter addStyle: 'myButton'
+```
+"
 Class {
 	#name : #MBApplicationConfiguration,
 	#superclass : #SpMorphicConfiguration,

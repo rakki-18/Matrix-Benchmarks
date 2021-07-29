@@ -1,3 +1,11 @@
+"
+I am a presenter to run the matrix-benchmark UI.
+
+
+To launch the UI
+`MBPresenter open`
+ 
+"
 Class {
 	#name : #MBPresenter,
 	#superclass : #SpPresenter,
@@ -82,6 +90,9 @@ MBPresenter >> descriptionForItemAt: classRef [
 { #category : #layout }
 MBPresenter >> designLayoutWithMultipleBenchmarks [
 
+	"designing the layout for running benchmarks on a set of matrix sizes.
+	Thus, the layout should have fromMatrixSize, toMatrixSize and byMatrixSizeGap"
+
 	self layout: (SpBoxLayout newTopToBottom 
 	add: 
 		(SpBoxLayout  newLeftToRight 
@@ -115,6 +126,8 @@ MBPresenter >> designLayoutWithMultipleBenchmarks [
 { #category : #layout }
 MBPresenter >> designLayoutWithResults [
 
+	"This layout displays the results obtained after running benchmarks on a single matrix size.
+	Hence, there is no option to select matrix sizes or opertions to benchmark here"
 	self layout: (SpBoxLayout newTopToBottom 
 	add: 
 		(SpBoxLayout  newLeftToRight 
@@ -138,6 +151,10 @@ MBPresenter >> designLayoutWithResults [
 
 { #category : #layout }
 MBPresenter >> designLayoutWithSingleBenchmarks [
+
+
+	"designing the layout for running benchmarks on a single matrix size.
+	Thus, the layout should have matrixSizeInput placeholder"
 
 	self layout: (SpBoxLayout newTopToBottom 
 	add: 
@@ -190,7 +207,7 @@ MBPresenter >> getByMatrixSizeGap [
 { #category : #accessing }
 MBPresenter >> getFromMatrixSize [
 
-	"when matrix size is not entered yet, the default size is 0, return 100 in this case"
+	"when matrix size is not entered yet, the default size is 0, return 50 in this case"
 	self fromMatrixSize  number = 0 ifTrue: [ 
 		 ^ 50 ].
 	
@@ -210,7 +227,7 @@ MBPresenter >> getMatrixSize [
 { #category : #accessing }
 MBPresenter >> getToMatrixSize [
 
-	"when matrix size is not entered yet, the default size is 0, return 100 in this case"
+	"when matrix size is not entered yet, the default size is 0, return 200 in this case"
 	self toMatrixSize   number = 0 ifTrue: [ 
 		 ^ 200 ].
 	
@@ -247,6 +264,7 @@ MBPresenter >> initializeList [
 { #category : #initialization }
 MBPresenter >> initializeMatrixArgs [
 	
+	"placeholders to store the arguments entered for the sizes of the matrices on which the benchmarks will be run."
 	matrixSizeInput := self newNumberInput placeholder: '100'.
 	
 	fromMatrixSize := self newNumberInput placeholder: '50'.
@@ -297,6 +315,7 @@ MBPresenter >> resultsButton [
 { #category : #accessing }
 MBPresenter >> resultsPresenter: aResultOutput [
 
+	"make a tabular report of the outcome of the benchmark"
 	resultsPresenter  := (SpTablePresenter new)
 		items: aResultOutput outcomes;
 		addColumn: (SpStringTableColumn  title: 'Implementation' evaluated: [:each | each benchmark name]);
@@ -333,6 +352,7 @@ MBPresenter >> toMatrixSize [
 { #category : #'model updates' }
 MBPresenter >> updateLayout [
 
+	"update layout based on the button clicked by the user"
 	flag = 'SingleBenchmark'
 		                    ifTrue: [ 
 										self designLayoutWithSingleBenchmarks
