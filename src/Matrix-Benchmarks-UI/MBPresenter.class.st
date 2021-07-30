@@ -63,7 +63,13 @@ MBPresenter >> connectPresenters [
 	self benchmarkButton action: [ 
 		|benchmarkClass|
 		benchmarkClass := self getBenchmarkClass.
-
+		
+		"handle the edge case where the user has not selected any benchmark from the list,
+		but still goes on to click on the benchmark button"
+		benchmarkClass ifNil: [  
+			self handleNoOperationSelected]
+		
+		ifNotNil: [  
 		flag = 'SingleBenchmark' ifTrue: [ 
 				|benchmarkOutput| 
 				
@@ -74,7 +80,8 @@ MBPresenter >> connectPresenters [
 		ifFalse: [ 
 			 benchmarkClass perform: #runAllBenchmarksFrom:to:by: with: self getFromMatrixSize with: self getToMatrixSize with: self getByMatrixSizeGap.
 			]
-		].
+		]
+	].
 	
 
  
@@ -232,6 +239,12 @@ MBPresenter >> getToMatrixSize [
 		 ^ 200 ].
 	
 	^ self toMatrixSize  number
+]
+
+{ #category : #'error handling' }
+MBPresenter >> handleNoOperationSelected [
+
+	^ MBDialogPresenter new openModalWithSpec
 ]
 
 { #category : #api }
