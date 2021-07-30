@@ -30,7 +30,7 @@ MBAccess class >> title [
 	^ 'Accessing a '
 ]
 
-{ #category : #'as yet unclassified' }
+{ #category : #benchmarks }
 MBAccess >> accessAIColumnMatrix [
 
 	

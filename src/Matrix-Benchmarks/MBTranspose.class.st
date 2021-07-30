@@ -95,7 +95,7 @@ MBTranspose >> transposePMMatrix [
 MBTranspose >> transposePMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
 	self initRepetitions timesRepeat:[  a1 transpose ].

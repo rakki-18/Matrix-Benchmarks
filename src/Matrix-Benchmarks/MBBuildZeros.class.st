@@ -95,7 +95,7 @@ MBBuildZeros >> buildZeroPMMatrix [
 MBBuildZeros >> buildZeroPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 
 
 	self initRepetitions timesRepeat:[  PMSymmetricMatrix  zerosRows: matrixSize cols: matrixSize].
