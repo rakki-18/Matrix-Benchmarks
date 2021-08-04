@@ -17,6 +17,12 @@ Class {
 }
 
 { #category : #accessing }
+MBBuild class >> friendlyName [ 
+
+	^ 'Building a NULL Matrix'
+]
+
+{ #category : #accessing }
 MBBuild class >> title [
 
 

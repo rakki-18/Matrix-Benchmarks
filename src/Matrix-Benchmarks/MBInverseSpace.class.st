@@ -16,7 +16,7 @@ MBInverseSpace >> inversePMMatrix [
 { #category : #normal }
 MBInverseSpace >> inversePMSymmetricMatrix [
 
-	<name: 'PMSymmetricMatrix'>
+	<name: 'PMSymmetric'>
 	self setupInvertiblePMSymmetricMatrix.
 
 	^ self bench: [ a1 inverse ].

@@ -16,7 +16,7 @@ MBRankFactorizationSpace >> rankPMMatrix [
 { #category : #normal }
 MBRankFactorizationSpace >> rankPMSymmetricMatrix [
 
-	<name: 'PMSymmetricMatrix'>
+	<name: 'PMSymmetric'>
 	self setupPMSymmetricMatrix.
 
 	^ self bench: [ a1 rank ].

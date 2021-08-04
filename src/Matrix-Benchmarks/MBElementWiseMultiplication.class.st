@@ -16,6 +16,12 @@ Class {
 }
 
 { #category : #accessing }
+MBElementWiseMultiplication class >> friendlyName [ 
+
+	^ ' Matrix Element-wise multiplication '
+]
+
+{ #category : #accessing }
 MBElementWiseMultiplication class >> title [
 
 

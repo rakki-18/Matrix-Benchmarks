@@ -20,6 +20,12 @@ Class {
 }
 
 { #category : #accessing }
+MBLUPDecomposition class >> friendlyName [ 
+
+	^'LUP Decomposition of a Matrix'
+]
+
+{ #category : #accessing }
 MBLUPDecomposition class >> title [
 
 	^'LUP Decomposition '

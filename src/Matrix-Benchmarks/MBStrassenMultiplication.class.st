@@ -17,6 +17,13 @@ Class {
 }
 
 { #category : #accessing }
+MBStrassenMultiplication class >> friendlyName [ 
+
+
+	^ 'Strassen Matrix Multiplication '
+]
+
+{ #category : #accessing }
 MBStrassenMultiplication class >> title [
 
 

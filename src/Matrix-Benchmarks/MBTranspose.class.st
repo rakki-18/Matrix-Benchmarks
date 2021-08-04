@@ -18,6 +18,13 @@ Class {
 }
 
 { #category : #accessing }
+MBTranspose class >> friendlyName [ 
+
+
+	^ 'Transpose of a matrix'
+]
+
+{ #category : #accessing }
 MBTranspose class >> title [
 
 
@@ -88,7 +95,7 @@ MBTranspose >> transposePMMatrix [
 MBTranspose >> transposePMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupPMSymmetricMatrix>
 
 	self initRepetitions timesRepeat:[  a1 transpose ].

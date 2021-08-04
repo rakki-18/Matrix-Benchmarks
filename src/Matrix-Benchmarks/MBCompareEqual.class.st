@@ -17,6 +17,13 @@ Class {
 }
 
 { #category : #accessing }
+MBCompareEqual class >> friendlyName [ 
+
+
+	^ 'Compare equality of two equal matrices'
+]
+
+{ #category : #accessing }
 MBCompareEqual class >> title [
 
 

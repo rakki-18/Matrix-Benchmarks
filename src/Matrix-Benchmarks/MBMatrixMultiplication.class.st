@@ -20,6 +20,13 @@ Class {
 }
 
 { #category : #accessing }
+MBMatrixMultiplication class >> friendlyName [ 
+
+
+	^ 'Matrix Multiplication '
+]
+
+{ #category : #accessing }
 MBMatrixMultiplication class >> title [
 
 

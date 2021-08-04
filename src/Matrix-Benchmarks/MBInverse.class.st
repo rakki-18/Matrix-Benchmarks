@@ -20,6 +20,13 @@ Class {
 }
 
 { #category : #accessing }
+MBInverse class >> friendlyName [ 
+
+
+	^ 'Matrix Inverse '
+]
+
+{ #category : #accessing }
 MBInverse class >> title [
 
 
@@ -46,7 +53,7 @@ MBInverse >> inversePMMatrix [
 MBInverse >> inversePMSymmetricMatrix [
 
 
-	<benchmark: 'PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 	<setup: #setupInvertiblePMSymmetricMatrix>
 
 	self initRepetitions timesRepeat: [ a1 inverse ].

@@ -16,6 +16,13 @@ Class {
 }
 
 { #category : #accessing }
+MBSubtraction class >> friendlyName [ 
+
+
+	^ 'Matrix Subtraction'
+]
+
+{ #category : #accessing }
 MBSubtraction class >> title [
 
 

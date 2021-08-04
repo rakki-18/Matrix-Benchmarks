@@ -21,6 +21,13 @@ MBApplication class >> menu00MatrixBenchmarkslOn: aBuilder [
 		help: 'Open the Matrix Benchmarks Spec Application';
 		order: 778;
 		action: [ MBPresenter new openWithSpec ]
+
+{ #category : #initialization }
+MBApplication >> initialize [ 
+
+	^ self 
+		useBackend: #Morphic
+		with: MBApplicationConfiguration new.
 ]
 
 { #category : #accessing }

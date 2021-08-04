@@ -17,6 +17,14 @@ Class {
 }
 
 { #category : #accessing }
+MBBuildZeros class >> friendlyName [ 
+
+
+	^ 'Building a Matrix filled with zeros'
+
+]
+
+{ #category : #accessing }
 MBBuildZeros class >> title [
 
 
@@ -87,7 +95,7 @@ MBBuildZeros >> buildZeroPMMatrix [
 MBBuildZeros >> buildZeroPMSymmetricMatrix [
 
 	
-	<benchmark: 'PMSymmetricMatrix'>
+	<benchmark: 'PMSymmetric'>
 
 
 	self initRepetitions timesRepeat:[  PMSymmetricMatrix  zerosRows: matrixSize cols: matrixSize].

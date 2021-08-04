@@ -16,7 +16,7 @@ MBQRDecompositionSpace >> qrPMMatrix [
 { #category : #normal }
 MBQRDecompositionSpace >> qrPMSymmetricMatrix [
 
-	<name: 'PMSymmetricMatrix'>
+	<name: 'PMSymmetric'>
 	self setupPMSymmetricMatrix.
 
 	^ self bench: [ a1 qrFactorization  ].

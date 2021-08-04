@@ -57,3 +57,12 @@ MBBuildWithZerosSpace >> buildZeroPMMatrix [
 	^ self bench:[ PMMatrix zerosRows: matrixSize cols: matrixSize ].
 	
 ]
+
+{ #category : #benchmarks }
+MBBuildWithZerosSpace >> buildZeroPMSymmetricMatrix [ 
+
+	
+	<name: 'PMSymmetric'>
+	^ self bench:[ PMSymmetricMatrix zerosRows: matrixSize cols: matrixSize ].
+	
+]

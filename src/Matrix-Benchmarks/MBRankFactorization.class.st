@@ -18,6 +18,13 @@ Class {
 }
 
 { #category : #accessing }
+MBRankFactorization class >> friendlyName [ 
+
+
+	^ 'Rank Factorization of a matrix'
+]
+
+{ #category : #accessing }
 MBRankFactorization class >> title [
 
 

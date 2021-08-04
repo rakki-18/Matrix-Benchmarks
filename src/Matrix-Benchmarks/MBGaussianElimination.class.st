@@ -18,6 +18,11 @@ Class {
 }
 
 { #category : #accessing }
+MBGaussianElimination class >> friendlyName [ 
+	^'Gaussian Elimination of a Matrix'
+]
+
+{ #category : #accessing }
 MBGaussianElimination class >> title [
 
 	^'Gaussian Elimination '
