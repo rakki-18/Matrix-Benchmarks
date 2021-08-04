@@ -11,6 +11,18 @@ Class {
 	#category : #'Matrix-Benchmarks-UI'
 }
 
+{ #category : #menu }
+MBApplication class >> menu00MatrixBenchmarksOn: aBuilder [
+
+	<worldMenu>
+	(aBuilder item: #MB)
+		parent: #Tools;
+		label: 'Matrix Benchmarks';
+		help: 'Open the Matrix Benchmarks Spec Application';
+		order: 778;
+		action: [ MBPresenter new openWithSpec ]
+]
+
 { #category : #initialization }
 MBApplication >> initialize [ 
 
