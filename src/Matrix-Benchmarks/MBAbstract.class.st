@@ -33,10 +33,22 @@ Class {
 		'aNumber'
 	],
 	#classInstVars : [
-		'protocol'
+		'protocol',
+		'UI'
 	],
 	#category : #'Matrix-Benchmarks-Core'
 }
+
+{ #category : #private }
+MBAbstract class >> displayStackedVisualizations [
+
+	^ UI class displayStackedVisualizations
+]
+
+{ #category : #accessing }
+MBAbstract class >> friendlyName [
+	^ self subclassResponsibility
+]
 
 { #category : #examples }
 MBAbstract class >> operations [
@@ -83,7 +95,9 @@ MBAbstract class >> runAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aN
 	
 	self assert: toMatrixSize > (fromMatrixSize + 1) description: 'to matrix size should be greater than from matrix size'.
 	
-	^ self runAndPlotAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber 
+
+	^ self runAndPlotAllBenchmarksFrom: fromMatrixSize to: toMatrixSize by: aNumber.
+
 ]
 
 { #category : #private }
@@ -127,7 +141,7 @@ MBAbstract class >> runAndPlotAllBenchmarksWithProtocolFrom: fromMatrixSize to: 
 	result := self sortResult: result.
 	
 	"visulize the benchmark"
-	MBBenchmarkVisualizer plotBenchmarksLineGraph: result title: self title protocol: protocol.
+	MBBenchmarkVisualizer  plotBenchmarksLineGraph: result title: self title protocol: protocol.
 
 
 
@@ -156,11 +170,9 @@ MBAbstract class >> runAndPlotBenchmarksWithProtocol: anInteger [
 
 	aBenchmark := self new class runBenchmarksWithProtocol: anInteger .
 	" visulize the benchmark"
-	MBBenchmarkVisualizer plotBenchmarksBarGraph: aBenchmark title: self title protocol: protocol.
+	UI class plotBenchmarksBarGraph: aBenchmark title: self title protocol: protocol.
 	
 	^aBenchmark
-
-
 ]
 
 { #category : #'running - benchmark' }
@@ -179,7 +191,10 @@ MBAbstract class >> runBenchmarks: anInteger [
 	integerasString := anInteger asString.
 	"plot the benchmark results"
 	Cursor wait showWhile: [
+		UI := MBBenchmarkVisualizer new.
+		UI class initializeCanvas.
 		self runAndPlotBenchmarks: anInteger.
+		self displayStackedVisualizations.
 		].
 	
 	"run space benchmarks"
@@ -223,6 +238,11 @@ MBAbstract class >> sortResult: aBenchmarkResultSet [
 	
 	"sort the outcomes in the result set based on the name of the matrix implementation"
 	^ aBenchmarkResultSet  collect: [ :each | each outcomes asSortedCollection: [ :c :d | c benchmark name <= d benchmark name] ].
+]
+
+{ #category : #accessing }
+MBAbstract class >> title [
+	^ self subclassResponsibility
 ]
 
 { #category : #parameters }

@@ -8,8 +8,17 @@ I implement two methods
 Class {
 	#name : #MBBenchmarkVisualizer,
 	#superclass : #Object,
+	#classInstVars : [
+		'aCanvas'
+	],
 	#category : #'Matrix-Benchmarks-UI'
 }
+
+{ #category : #adding }
+MBBenchmarkVisualizer class >> addToCanvas: aRSGroup [
+
+	aCanvas add: aRSGroup asShape
+]
 
 { #category : #decoration }
 MBBenchmarkVisualizer class >> chartAddDecoration: chart [
@@ -40,6 +49,16 @@ MBBenchmarkVisualizer class >> chartAddPlot: chart result: result x: x color: co
 	^chart.
 ]
 
+{ #category : #'plotting - benchmarks' }
+MBBenchmarkVisualizer class >> displayStackedVisualizations [ 
+
+	RSHorizontalLineLayout on: aCanvas shapes.
+	
+	aCanvas @ RSCanvasController .
+	aCanvas open.
+
+]
+
 { #category : #accessing }
 MBBenchmarkVisualizer class >> getMatrixSize: aBenchmarkResultSet [
 	
@@ -54,6 +73,13 @@ MBBenchmarkVisualizer class >> getNames: aBenchmarkResultSet [
 	^ aBenchmarkResultSet first  collect: [ :each | each benchmark name].
 ]
 
+{ #category : #initialization }
+MBBenchmarkVisualizer class >> initializeCanvas [
+
+	aCanvas := RSCanvas new.
+
+]
+
 { #category : #decoration }
 MBBenchmarkVisualizer class >> legendAddText: legend text: names color: colors [
 	" make legends with the given text and color"
@@ -65,13 +91,14 @@ MBBenchmarkVisualizer class >> legendAddText: legend text: names color: colors [
 { #category : #'plotting - benchmarks' }
 MBBenchmarkVisualizer class >> plotBenchmarksBarGraph: aBenchmark title: title protocol: protocol [
 	"Plots bar chart for the results obtained by MBAbstract>>#runBenchmarks:"
-	|data names chart xlabel|	
+	|data names chart xlabel group|	
 	
 	data := aBenchmark outcomes collect: [ :each | ( each measurements first at: 3) value].
 	names := aBenchmark outcomes collect: [ :each | each benchmark name].
 	
 	chart := RSChart new.
-
+	group := RSGroup new.
+	chart container: group.
 	chart barHeights: data.
 	chart addDecoration: (RSYLabelDecoration  new title: 'Time(ms)'; offset: -15).
 	
@@ -87,7 +114,8 @@ MBBenchmarkVisualizer class >> plotBenchmarksBarGraph: aBenchmark title: title p
 		names := temp].
 	chart addDecoration: ((RSHorizontalTick new labelRotation: -45) fromNames: names).
 	chart title: title,protocol,' matrix'.
-	chart open.
+	chart build.
+	self addToCanvas: group.
 ]
 
 { #category : #'plotting - benchmarks' }
@@ -96,6 +124,8 @@ MBBenchmarkVisualizer class >> plotBenchmarksLineGraph: result title: title prot
 	|chart x legend names colors|
 	
 	chart := RSChart new.
+
+
 	" get the matrix size from the benchmark result that will be displayed in the X-axis."
 	x := self getMatrixSize: result. 
 	colors := self tenDistinctColors.
@@ -119,7 +149,7 @@ MBBenchmarkVisualizer class >> plotBenchmarksLineGraph: result title: title prot
 	legend layout horizontal gapSize: 10.
 	legend build.
 	
-	^ chart canvas open.
+	^ chart canvas open
 ]
 
 { #category : #decoration }
