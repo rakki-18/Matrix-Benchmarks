@@ -8,8 +8,20 @@ MBApplication new start.
 Class {
 	#name : #MBApplication,
 	#superclass : #SpApplication,
-	#category : #'Matrix-Benchmark-Application'
+	#category : #'Matrix-Benchmarks-UI'
 }
+
+{ #category : #menu }
+MBApplication class >> menu00MatrixBenchmarkslOn: aBuilder [
+	<worldMenu>
+	(aBuilder item: #MB)
+		parent: #Tools;
+		label: 'Matrix Benchmarks';
+		"icon: self mbIcon;"
+		help: 'Open the Matrix Benchmarks Spec Application';
+		order: 778;
+		action: [ MBPresenter new openWithSpec ]
+]
 
 { #category : #accessing }
 MBApplication >> start [

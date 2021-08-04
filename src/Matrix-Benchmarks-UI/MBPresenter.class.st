@@ -4,29 +4,25 @@ Class {
 	#instVars : [
 		'matrixSizeLabel',
 		'matrixSizeInput',
-		'operations',
 		'benchmarkButton',
-		'stopButton'
+		'stopButton',
+		'operationsListPresenter'
 	],
-	#category : #'Matrix-Benchmark-Application'
+	#category : #'Matrix-Benchmarks-UI'
 }
 
 { #category : #specs }
 MBPresenter class >> defaultSpec [
 
 	^ SpBoxLayout newTopToBottom
-	
-
-	add: #matrixSize withConstraints: [ :constraints | constraints height: self labelHeight];
-
-	add: 'Select the operation to benchmark' expand: false;
-	add: #operations ;
-	
-	addLast: (SpBoxLayout newLeftToRight 
-		add: #benchmarkButton ;
-		add: #stopButton ; yourself
-		);
-	yourself
+		add: #matrixSizeInput withConstraints: [ :constraints | constraints height: self toolbarHeight * 2 ];
+		add: 'Select the operation to benchmark' expand: false;
+		add: #operationsListPresenter ;
+		addLast: (SpBoxLayout newLeftToRight 
+			add: #benchmarkButton ;
+			add: #stopButton ; 
+			yourself);
+		yourself
 ]
 
 { #category : #accessing }
@@ -41,7 +37,7 @@ MBPresenter >> connectPresenters [
 	"self benchmarkButton action: [ Transcript show: self operations selection selectedItem ]"
 	"self benchmarkButton action: [ Transcript show: self matrixSizeInput number  ]."
 	self benchmarkButton action: [ 
-		|benchmarkClass matrixSize|
+		| benchmarkClass matrixSize |
 		benchmarkClass := self getBenchmarkClass.
 		matrixSize :=  self getMatrixSize.
 		benchmarkClass perform: #runBenchmarks: with: matrixSize ]
@@ -50,7 +46,7 @@ MBPresenter >> connectPresenters [
 { #category : #accessing }
 MBPresenter >> getBenchmarkClass [
 
-	^ self operations selection selectedItem
+	^ self operationsListPresenter selection selectedItem
 ]
 
 { #category : #accessing }
@@ -64,18 +60,28 @@ MBPresenter >> getMatrixSize [
 ]
 
 { #category : #initialization }
+MBPresenter >> initializeFocusOrder [
+
+	self focusOrder 
+		add: matrixSizeInput;
+		add: operationsListPresenter;
+		add: benchmarkButton;
+		add: stopButton
+]
+
+{ #category : #initialization }
 MBPresenter >> initializePresenters [
+	" Private - See superimplementor's comment "
 
-
-	matrixSize := self instantiate: (SpLabeledPresenter label: 'Matrix Size' input: (self newTextInput placeholder: '100') description: 'Size of the square matrices on which the benchmarks will be run.').
-
-	
-	operations := self newList.
-	operations 
-		items: MBAbstract subclasses.
+	matrixSizeInput := (SpLabeledPresenter 
+		label: 'Matrix Size' 
+		input: (self newTextInput placeholder: '100') 
+		description: 'Size of the square matrices on which the benchmarks will be run.').
+	operationsListPresenter := self newList.
+	operationsListPresenter items: MBAbstract subclasses.
 	benchmarkButton  := self newButton label: 'benchmark'; color: Color orange ; yourself.
 	stopButton := self newButton label: 'Stop'; color: Color red; yourself.
-	self focusOrder add: matrixSizeLabel.
+	self initializeFocusOrder.
 ]
 
 { #category : #accessing }
@@ -85,7 +91,7 @@ MBPresenter >> matrixSizeInput [
 ]
 
 { #category : #accessing }
-MBPresenter >> operations [ 
+MBPresenter >> operationsListPresenter [ 
 
-	^ operations
+	^ operationsListPresenter
 ]
