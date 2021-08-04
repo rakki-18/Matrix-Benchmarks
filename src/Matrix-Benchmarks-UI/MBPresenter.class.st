@@ -11,7 +11,7 @@ Class {
 	#superclass : #SpPresenter,
 	#instVars : [
 		'matrixSizeInput',
-		'operations',
+		'operationsListPresenter',
 		'benchmarkButton',
 		'stopButton',
 		'runSingleBenchmarkButton',
@@ -120,7 +120,7 @@ MBPresenter >> designLayoutWithMultipleBenchmarks [
 	withConstraints: [ :constraints | constraints height: self class buttonHeight; padding: 4  ];
 
 	add: 'Select the operation to benchmark' expand: false;
-	add: #operations withConstraints: [:constraints | constraints padding: 4];
+	add: #operationsListPresenter withConstraints: [:constraints | constraints padding: 4];
 
 	addLast: (SpBoxLayout newLeftToRight 
 			add: #benchmarkButton  withConstraints: [ :constraints | constraints padding: 3 ];
@@ -179,7 +179,7 @@ MBPresenter >> designLayoutWithSingleBenchmarks [
 	withConstraints: [ :constraints | constraints height: self class buttonHeight; padding: 4  ];
 
 	add: 'Select the operation to benchmark' expand: false;
-	add: #operations withConstraints: [:constraints | constraints padding: 4];
+	add: #operationsListPresenter withConstraints: [:constraints | constraints padding: 4];
 
 	addLast: (SpBoxLayout newLeftToRight 
 			add: #benchmarkButton  withConstraints: [ :constraints | constraints padding: 3 ];
@@ -198,7 +198,7 @@ MBPresenter >> fromMatrixSize [
 MBPresenter >> getBenchmarkClass [
 	" The list contains the benchmark classes. "
 
-	^ self operations selection selectedItem.
+	^ self operationsListPresenter selection selectedItem.
 ]
 
 { #category : #accessing }
@@ -267,8 +267,8 @@ MBPresenter >> initializeButtons [
 { #category : #initialization }
 MBPresenter >> initializeList [
 
-	operations := self newList.
-	operations 
+	operationsListPresenter  := self newList.
+	operationsListPresenter  
 		items: MBAbstract subclasses;
 		display: [ : classRef | self descriptionForItemAt: classRef ]
 		"contextMenu: [ self menuForSelectedItem ]."
@@ -315,9 +315,9 @@ MBPresenter >> matrixSizeInput [
 ]
 
 { #category : #accessing }
-MBPresenter >> operations [ 
+MBPresenter >> operationsListPresenter [
 
-	^ operations
+	^ operationsListPresenter 
 ]
 
 { #category : #accessing }
