@@ -22,8 +22,7 @@ Class {
 		'flag',
 		'matrixArgsWindow',
 		'resultsButton',
-		'resultsPresenter',
-		'resultsHeading'
+		'resultsPresenter'
 	],
 	#category : #'Matrix-Benchmarks-UI'
 }
@@ -146,8 +145,7 @@ MBPresenter >> designLayoutWithResults: aBenchmarkOutput [
 	
 	add: aBenchmarkOutput benchmarkClass class friendlyName
 	withConstraints: [ :constraints| constraints expand: false; padding: 2 ];
-	"add: #resultsHeading 
-	withConstraints: [ :constraints | constraints padding: 4; expand:false ];"
+
 
 	add: #resultsPresenter
 	withConstraints: [ :constraints | constraints padding: 4 ];
@@ -274,8 +272,9 @@ MBPresenter >> initializeList [
 	operationsListPresenter  := self newList.
 	operationsListPresenter  
 		items: MBAbstract subclasses;
-		display: [ : classRef | self descriptionForItemAt: classRef ]
-		"contextMenu: [ self menuForSelectedItem ]."
+		display: [ : classRef | self descriptionForItemAt: classRef ];
+		contextMenu: [ self openBrowser].
+
 ]
 
 { #category : #initialization }
@@ -317,8 +316,7 @@ MBPresenter >> initializeResults: aResultOutput [
 		addColumn: (SpStringTableColumn title: 'Memory(Byte)' evaluated: [:each | each spaceMeasurements ]);
 		addColumn: (SpStringTableColumn title: 'MatrixSize' evaluated: [:each | (each parameters at: 1) value]);
 		yourself.
-	"add a heading to the report denoting the operation being benchmarked"
-	resultsHeading := SpTextPresenter new text: aResultOutput benchmarkClass class friendlyName 
+	
 ]
 
 { #category : #accessing }
@@ -333,6 +331,12 @@ MBPresenter >> matrixSizeInput [
 	^ matrixSizeInput
 ]
 
+{ #category : #initialization }
+MBPresenter >> openBrowser [
+
+	^ self operationsListPresenter selection selectedItem browse
+]
+
 { #category : #accessing }
 MBPresenter >> operationsListPresenter [
 
@@ -342,19 +346,6 @@ MBPresenter >> operationsListPresenter [
 { #category : #accessing }
 MBPresenter >> resultsButton [ 
 	^ resultsButton 
-]
-
-{ #category : #initialization }
-MBPresenter >> resultsPresenter: aResultOutput [
-
-	"make a tabular report of the outcome of the benchmark"
-	resultsPresenter  := (SpTablePresenter new)
-		items: aResultOutput outcomes;
-		addColumn: (SpStringTableColumn  title: 'Implementation' evaluated: [:each | each benchmark name]);
-		addColumn: (SpStringTableColumn title: 'Time(ms)' evaluated: [:each | ((each measurements at: 1) at: 3 ) value]);
-		addColumn: (SpStringTableColumn title: 'Memory(Byte)' evaluated: [:each | each spaceMeasurements ]);
-		addColumn: (SpStringTableColumn title: 'MatrixSize' evaluated: [:each | (each parameters at: 1) value]);
-		yourself
 ]
 
 { #category : #accessing }

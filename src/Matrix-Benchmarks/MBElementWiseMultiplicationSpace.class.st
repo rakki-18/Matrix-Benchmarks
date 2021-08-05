@@ -58,7 +58,7 @@ MBElementWiseMultiplicationSpace >> elementWiseMultiplyArray2D [
 MBElementWiseMultiplicationSpace >> elementWiseMultiplyPMMatrix [
 
 	<name: 'PMMatrix'>
-	self setuptwoArray2D.
+	self setuptwoPMMatrix.
 
 	^ self bench:[ a1 hadamardProduct:  a2 ].
 	
