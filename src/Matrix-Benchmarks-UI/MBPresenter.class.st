@@ -22,8 +22,8 @@ Class {
 		'flag',
 		'matrixArgsWindow',
 		'resultsButton',
-		'abstractPresenter',
-		'resultsPresenter'
+		'resultsPresenter',
+		'resultsHeading'
 	],
 	#category : #'Matrix-Benchmarks-UI'
 }
@@ -74,8 +74,8 @@ MBPresenter >> connectPresenters [
 				|benchmarkOutput| 
 				
 				benchmarkOutput := benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
-				self resultsPresenter: benchmarkOutput.
-				self designLayoutWithResults.
+				self initializeResults: benchmarkOutput.
+				self designLayoutWithResults: benchmarkOutput .
 			]
 		ifFalse: [ 
 			 benchmarkClass perform: #runAllBenchmarksFrom:to:by: with: self getFromMatrixSize with: self getToMatrixSize with: self getByMatrixSizeGap.
@@ -131,7 +131,7 @@ MBPresenter >> designLayoutWithMultipleBenchmarks [
 ]
 
 { #category : #layout }
-MBPresenter >> designLayoutWithResults [
+MBPresenter >> designLayoutWithResults: aBenchmarkOutput [
 
 	"This layout displays the results obtained after running benchmarks on a single matrix size.
 	Hence, there is no option to select matrix sizes or opertions to benchmark here"
@@ -144,7 +144,11 @@ MBPresenter >> designLayoutWithResults [
 			yourself) 
 	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 1 ];
 	
-	
+	add: aBenchmarkOutput benchmarkClass class friendlyName
+	withConstraints: [ :constraints| constraints expand: false; padding: 2 ];
+	"add: #resultsHeading 
+	withConstraints: [ :constraints | constraints padding: 4; expand:false ];"
+
 	add: #resultsPresenter
 	withConstraints: [ :constraints | constraints padding: 4 ];
 	
@@ -302,6 +306,21 @@ MBPresenter >> initializePresenters [
 	
 ]
 
+{ #category : #initialization }
+MBPresenter >> initializeResults: aResultOutput [
+
+	"make a tabular report of the outcome of the benchmark"
+	resultsPresenter  := (SpTablePresenter new)
+		items: aResultOutput outcomes;
+		addColumn: (SpStringTableColumn  title: 'Implementation' evaluated: [:each | each benchmark name]);
+		addColumn: (SpStringTableColumn title: 'Time(ms)' evaluated: [:each | ((each measurements at: 1) at: 3 ) value]);
+		addColumn: (SpStringTableColumn title: 'Memory(Byte)' evaluated: [:each | each spaceMeasurements ]);
+		addColumn: (SpStringTableColumn title: 'MatrixSize' evaluated: [:each | (each parameters at: 1) value]);
+		yourself.
+	"add a heading to the report denoting the operation being benchmarked"
+	resultsHeading := SpTextPresenter new text: aResultOutput benchmarkClass class friendlyName 
+]
+
 { #category : #accessing }
 MBPresenter >> matrixArgsWindow [
 
@@ -325,7 +344,7 @@ MBPresenter >> resultsButton [
 	^ resultsButton 
 ]
 
-{ #category : #accessing }
+{ #category : #initialization }
 MBPresenter >> resultsPresenter: aResultOutput [
 
 	"make a tabular report of the outcome of the benchmark"
