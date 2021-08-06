@@ -8,17 +8,20 @@ Package to benchmark different matrix types and operations in Pharo
 2. Execute the following Metacello script (select it and press Do-it button or Ctrl+D):
 
 ```Smalltalk
-Metacello new
-  baseline: 'MatrixBenchmark';
-  repository: 'github://rakki-18/Matrix-Benchmarks/src';
-  load.
+EpMonitor disableDuring: [ 
+	Metacello new
+		baseline: 'MatrixBenchmark';
+		repository: 'github://rakki-18/Matrix-Benchmarks/src';
+		load ]
 ```
 In order to supress load warnings, you may prefer
 ```Smalltalk
-[Metacello new
+[ Metacello new
   baseline: 'MatrixBenchmark';
   repository: 'github://rakki-18/Matrix-Benchmarks/src';
-  load] on: MCMergeOrLoadWarning do: [:warning | warning load ]
+  load ] 
+on: MCMergeOrLoadWarning 
+do: [:warning | warning load ]
 ```
 
 ## Running the Benchmark GUI
