@@ -5,7 +5,8 @@ Class {
 	#name : #MBDialogPresenter,
 	#superclass : #SpPresenter,
 	#instVars : [
-		'content'
+		'content',
+		'flag'
 	],
 	#category : #'Matrix-Benchmarks-UI'
 }
@@ -21,7 +22,11 @@ MBDialogPresenter class >> defaultSpec [
 { #category : #initialization }
 MBDialogPresenter >> content [
 
-	^ 'Select an operation to benchmark'
+	flag = 'List' ifTrue: [  
+		^ 'Select an operation to benchmark'
+		]
+	ifFalse: [ 
+		^ 'Execute a benchmark to see plots' ]
 ]
 
 { #category : #initialization }
@@ -40,5 +45,24 @@ MBDialogPresenter >> initializeDialogWindow: aDialogPresenter [
 MBDialogPresenter >> initializePresenters [ 
 
 	content := self newText.
-	content text: self content
+
+
+]
+
+{ #category : #accessing }
+MBDialogPresenter >> setFlag: aFlag [
+
+
+	flag := aFlag.
+	self updateContent.
+]
+
+{ #category : #initialization }
+MBDialogPresenter >> updateContent [
+
+	flag = 'List' ifTrue: [  
+		content text: 'Select an operation to benchmark'
+		]
+	ifFalse: [ 
+		content text: 'Execute a benchmark to see plots' ]
 ]

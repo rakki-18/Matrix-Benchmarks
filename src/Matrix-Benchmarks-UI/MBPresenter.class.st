@@ -22,7 +22,9 @@ Class {
 		'flag',
 		'matrixArgsWindow',
 		'resultsButton',
-		'resultsPresenter'
+		'reportPresenter',
+		'benchmarkPlot',
+		'plotButton'
 	],
 	#category : #'Matrix-Benchmarks-UI'
 }
@@ -59,6 +61,15 @@ MBPresenter >> connectPresenters [
 		self updateLayout.
 		].
 	
+	self plotButton action: [ 
+		benchmarkPlot ifNil: 	[ 
+			self handleNoPlot
+			]
+		ifNotNil: [  
+		self designLayoutWithPlots.
+		]
+	].
+	
 	self benchmarkButton action: [ 
 		|benchmarkClass|
 		benchmarkClass := self getBenchmarkClass.
@@ -73,7 +84,8 @@ MBPresenter >> connectPresenters [
 				|benchmarkOutput| 
 				
 				benchmarkOutput := benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
-				self initializeResults: benchmarkOutput.
+				self initializeReport: benchmarkOutput.
+				self initializePlots.
 				self designLayoutWithResults: benchmarkOutput .
 			]
 		ifFalse: [ 
@@ -105,6 +117,7 @@ MBPresenter >> designLayoutWithMultipleBenchmarks [
 			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
 			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
 			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #plotButton withConstraints: [ :constraints | constraints padding: 3 ];
 			yourself) 
 	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 2 ];
 	
@@ -130,6 +143,32 @@ MBPresenter >> designLayoutWithMultipleBenchmarks [
 ]
 
 { #category : #layout }
+MBPresenter >> designLayoutWithPlots [
+
+	"designing the layout for displaying the benchmark plots."
+
+	self layout: (SpBoxLayout newTopToBottom 
+	add: 
+		(SpBoxLayout  newLeftToRight 
+			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #plotButton withConstraints: [ :constraints | constraints padding: 3 ];
+			yourself) 
+	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 2 ];
+	
+	add: #benchmarkPlot
+	withConstraints: [ :constraints | constraints padding: 4 ];
+
+	addLast: (SpBoxLayout newLeftToRight 
+			add: #benchmarkButton  withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #stopButton  withConstraints: [ :constraints | constraints padding: 3 ];
+			 yourself
+		) withConstraints: [:constraints | constraints padding: 4];
+	yourself)
+]
+
+{ #category : #layout }
 MBPresenter >> designLayoutWithResults: aBenchmarkOutput [
 
 	"This layout displays the results obtained after running benchmarks on a single matrix size.
@@ -140,14 +179,14 @@ MBPresenter >> designLayoutWithResults: aBenchmarkOutput [
 			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
 			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
 			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #plotButton withConstraints: [ :constraints | constraints padding: 3 ];
 			yourself) 
 	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 1 ];
 	
 	add: aBenchmarkOutput benchmarkClass class friendlyName
 	withConstraints: [ :constraints| constraints expand: false; padding: 2 ];
 
-
-	add: #resultsPresenter
+	add: #reportPresenter
 	withConstraints: [ :constraints | constraints padding: 4 ];
 	
 	addLast: (SpBoxLayout newLeftToRight 
@@ -171,6 +210,7 @@ MBPresenter >> designLayoutWithSingleBenchmarks [
 			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
 			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
 			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #plotButton withConstraints: [ :constraints | constraints padding: 3 ];
 			yourself) 
 	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 2 ];
 
@@ -246,7 +286,19 @@ MBPresenter >> getToMatrixSize [
 { #category : #'error handling' }
 MBPresenter >> handleNoOperationSelected [
 
-	^ MBDialogPresenter new openModalWithSpec
+	| dialogPresenter |
+	dialogPresenter := MBDialogPresenter new.
+	dialogPresenter setFlag: 'List'.
+	^ dialogPresenter openModalWithSpec
+]
+
+{ #category : #'error handling' }
+MBPresenter >> handleNoPlot [
+
+	| dialogPresenter |
+	dialogPresenter := MBDialogPresenter new.
+	dialogPresenter setFlag: 'Plot'.
+	^ dialogPresenter openModalWithSpec
 ]
 
 { #category : #api }
@@ -261,7 +313,8 @@ MBPresenter >> initializeButtons [
 	runSingleBenchmarkButton  := self newButton label: 'Single Benchmarks'; color: Color gray ; addStyle: 'myButton'.
 	runMultipleBenchmarkButton  := self newButton label: 'Multiple Benchmarks'; color: Color gray ; addStyle: 'myButton'.
 	resultsButton := self newButton label: 'Results'; color: Color gray; disable; addStyle: 'myButton'.
-	
+	plotButton := self newButton label: 'Plots'; color: Color gray; addStyle: 'myButton'.
+
 	benchmarkButton := self newButton label: 'benchmark'; color: Color orange; yourself.
 	stopButton := self newButton label: 'Stop'; color: Color red;  yourself.
 ]
@@ -289,6 +342,13 @@ MBPresenter >> initializeMatrixArgs [
 ]
 
 { #category : #initialization }
+MBPresenter >> initializePlots [
+
+	benchmarkPlot := SpRoassalPresenter new.
+	benchmarkPlot canvas: MBBenchmarkVisualizer canvas.
+]
+
+{ #category : #initialization }
 MBPresenter >> initializePresenters [
 
 
@@ -306,16 +366,17 @@ MBPresenter >> initializePresenters [
 ]
 
 { #category : #initialization }
-MBPresenter >> initializeResults: aResultOutput [
+MBPresenter >> initializeReport: aResultOutput [
 
 	"make a tabular report of the outcome of the benchmark"
-	resultsPresenter  := (SpTablePresenter new)
+	reportPresenter  := (SpTablePresenter new)
 		items: aResultOutput outcomes;
 		addColumn: (SpStringTableColumn  title: 'Implementation' evaluated: [:each | each benchmark name]);
 		addColumn: (SpStringTableColumn title: 'Time(ms)' evaluated: [:each | ((each measurements at: 1) at: 3 ) value]);
 		addColumn: (SpStringTableColumn title: 'Memory(Byte)' evaluated: [:each | each spaceMeasurements ]);
 		addColumn: (SpStringTableColumn title: 'MatrixSize' evaluated: [:each | (each parameters at: 1) value]);
-		yourself.
+		yourself
+
 	
 ]
 
@@ -341,6 +402,12 @@ MBPresenter >> openBrowser [
 MBPresenter >> operationsListPresenter [
 
 	^ operationsListPresenter 
+]
+
+{ #category : #accessing }
+MBPresenter >> plotButton [ 
+
+	^plotButton 
 ]
 
 { #category : #accessing }

@@ -20,6 +20,12 @@ MBBenchmarkVisualizer class >> addToCanvas: aRSGroup [
 	aCanvas add: aRSGroup asShape
 ]
 
+{ #category : #accessing }
+MBBenchmarkVisualizer class >> canvas [
+
+	^ aCanvas
+]
+
 { #category : #decoration }
 MBBenchmarkVisualizer class >> chartAddDecoration: chart [
 	
