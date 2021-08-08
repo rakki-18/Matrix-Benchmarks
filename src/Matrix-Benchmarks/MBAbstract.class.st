@@ -108,10 +108,9 @@ MBAbstract class >> runAllBenchmarksWithProtocolFrom: fromMatrixSize to: toMatri
 	"runs the benchmarks from the sizes fromMatrixSize toMatrixSize with a gap of aNumber"
 
 	result := OrderedCollection new.
-	Cursor wait showWhile: [  
 
-	fromMatrixSize to: toMatrixSize  by: aNumber do: [ :each| result addLast: (self new class runBenchmarksWithProtocol: each)].
-	].
+	(fromMatrixSize to: toMatrixSize  by: aNumber) do: [ :each| result addLast: (self new class runBenchmarksWithProtocol: each)] displayingProgress: [:each | 'Benchmarking Matrix size ', each asString].
+	.
 	^ result.
 	
 ]
@@ -152,14 +151,14 @@ MBAbstract class >> runAndPlotBenchmarks: anInteger [
 
 	|protocols|
 	
-	protocols := #('normal' 'symmetric' 'diagonal').
+	protocols := #( 'diagonal' 'symmetric' 'normal' ).
 	
 	protocols do: [ :each|
 		(self protocols includes: each) ifTrue: [ 
 			protocol := each.
 			self runAndPlotBenchmarksWithProtocol: anInteger.
 			 ]
-		].
+		] displayingProgress: [:each | 'Benchmarking ', each, 'matrices'].
 ]
 
 { #category : #private }
@@ -189,37 +188,36 @@ MBAbstract class >> runBenchmarks: anInteger [
 	|integerasString aBenchmarkSuite|
 	
 	integerasString := anInteger asString.
-	"plot the benchmark results"
-	Cursor wait showWhile: [
-		UI := MBBenchmarkVisualizer new.
-		UI class initializeCanvas.
-		self runAndPlotBenchmarks: anInteger.
-		self displayStackedVisualizations.
-		].
 	
 	"run space benchmarks"
-	Cursor wait showWhile: [
-		self  runSpaceBenchmarks: anInteger.
-		].
+	self  runSpaceBenchmarks: anInteger.
+
 	"run time benchmarks"
-	Cursor wait showWhile: [
-	aBenchmarkSuite := (BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself).
-		].
+	#(1) do: [ :garbage|
+	aBenchmarkSuite := (BenchmarkSuite class: self new class ) run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ;yourself)
+		]displayingProgress: 'Benchmarking ...'.
 
 	aBenchmarkSuite outcomes do: [ :each | 
 		" add the information of space benchmarks"
 		each spaceMeasurements: (self spaceBenchmarkResult at: each benchmark name ).
 		 ].
 	
+	"plot the benchmark results"
+	UI := MBBenchmarkVisualizer new.
+	UI class initializeCanvas.
+	self runAndPlotBenchmarks: anInteger.
+	self displayStackedVisualizations.
+
 	"store the benchmark class in the report for the user to check how the operations have been implemented"
 	aBenchmarkSuite benchmarkClass: self new.
+	
 	^ aBenchmarkSuite 
 	
 ]
 
 { #category : #private }
 MBAbstract class >> runBenchmarksWithProtocol: anInteger [
-		|integerasString selectors suite|
+		|integerasString selectors suite result|
 	
 	 "runs the benchmarks contained in the particular protocol.
 	  For example, protocol -> symmetric, runs PMSymmetricMatrix and AISymmetricMatrix."
@@ -228,7 +226,10 @@ MBAbstract class >> runBenchmarksWithProtocol: anInteger [
 		selectors := self selectorsInProtocol: protocol.
 		suite := BenchmarkSuite new.
 		selectors do: [ :each | suite addBenchmark: (BenchmarkInstance class: self selector: each) ].
-		^ Cursor wait showWhile: [ suite run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ; yourself) ].
+		#(1) do: [ :garbage|
+			result := suite run: BenchmarkResultC new with: (Dictionary new at: #'matrixSize' put: integerasString ; yourself) ] displayingProgress: 'Benchmarking time..'.
+		
+		^ result
 
 	
 ]
