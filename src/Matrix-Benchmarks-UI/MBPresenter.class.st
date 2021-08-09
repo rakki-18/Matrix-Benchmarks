@@ -36,6 +36,13 @@ MBPresenter class >> open [
 	^ self new openWithSpec
 ]
 
+{ #category : #'model updates' }
+MBPresenter >> activateButton: aButton [
+
+	self disableAllButtons.
+	aButton state: true.
+]
+
 { #category : #accessing }
 MBPresenter >> benchmarkButton [
 
@@ -53,11 +60,13 @@ MBPresenter >> connectPresenters [
 
 	self runSingleBenchmarkButton action: [ 
 		flag := 'SingleBenchmark'.
+		self activateButton: runSingleBenchmarkButton..
 		self updateLayout.
 		].
 	
 	self runMultipleBenchmarkButton action: [ 
 		flag := 'MultipleBenchmark'.
+		self activateButton: runMultipleBenchmarkButton.
 		self updateLayout.
 		].
 	
@@ -66,6 +75,7 @@ MBPresenter >> connectPresenters [
 			self handleNoPlot
 			]
 		ifNotNil: [  
+				self activateButton: plotButton.
 		self designLayoutWithPlots.
 		]
 	].
@@ -80,13 +90,15 @@ MBPresenter >> connectPresenters [
 			self handleNoOperationSelected]
 		
 		ifNotNil: [  
+
 		flag = 'SingleBenchmark' ifTrue: [ 
 				|benchmarkOutput| 
 				
 				benchmarkOutput := benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
 				self initializeReport: benchmarkOutput.
 				self initializePlots.
-				self designLayoutWithResults: benchmarkOutput .
+				self designLayoutWithResults: benchmarkOutput.
+				self activateButton: resultsButton.
 			]
 		ifFalse: [ 
 			 benchmarkClass perform: #runAllBenchmarksFrom:to:by: with: self getFromMatrixSize with: self getToMatrixSize with: self getByMatrixSizeGap.
@@ -231,6 +243,15 @@ MBPresenter >> designLayoutWithSingleBenchmarks [
 	yourself)
 ]
 
+{ #category : #'model updates' }
+MBPresenter >> disableAllButtons [ 
+
+	resultsButton  state: false.
+	plotButton  state: false.
+	runSingleBenchmarkButton  state: false.
+	runMultipleBenchmarkButton  state: false.
+]
+
 { #category : #accessing }
 MBPresenter >> fromMatrixSize [
 	^ fromMatrixSize 
@@ -304,7 +325,7 @@ MBPresenter >> initialExtent [
 { #category : #initialization }
 MBPresenter >> initializeButtons [ 
 
-	runSingleBenchmarkButton  := self newButton label: 'Single Benchmarks'; color: Color gray ; addStyle: 'myButton'.
+	runSingleBenchmarkButton  := self newButton label: 'Single Benchmarks'; color: Color gray ; addStyle: 'myButton'; state: true.
 	runMultipleBenchmarkButton  := self newButton label: 'Multiple Benchmarks'; color: Color gray ; addStyle: 'myButton'.
 	resultsButton := self newButton label: 'Results'; color: Color gray; disable; addStyle: 'myButton'.
 	plotButton := self newButton label: 'Plots'; color: Color gray; addStyle: 'myButton'.
