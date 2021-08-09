@@ -286,19 +286,13 @@ MBPresenter >> getToMatrixSize [
 { #category : #'error handling' }
 MBPresenter >> handleNoOperationSelected [
 
-	| dialogPresenter |
-	dialogPresenter := MBDialogPresenter new.
-	dialogPresenter setFlag: 'List'.
-	^ dialogPresenter openModalWithSpec
+	UIManager default alert: 'You need to select an operation to benchmark' title: 'Warning'.
 ]
 
 { #category : #'error handling' }
 MBPresenter >> handleNoPlot [
 
-	| dialogPresenter |
-	dialogPresenter := MBDialogPresenter new.
-	dialogPresenter setFlag: 'Plot'.
-	^ dialogPresenter openModalWithSpec
+	UIManager default alert:'You need to run a benchmark first'  title: 'Warning'
 ]
 
 { #category : #api }
