@@ -24,7 +24,10 @@ Class {
 		'resultsButton',
 		'reportPresenter',
 		'benchmarkPlot',
-		'plotButton'
+		'plotButton',
+		'previousExecutionsButton',
+		'previousExecutionsList',
+		'previousExecutionsListPresenter'
 	],
 	#category : #'Matrix-Benchmarks-UI'
 }
@@ -36,11 +39,34 @@ MBPresenter class >> open [
 	^ self new openWithSpec
 ]
 
+{ #category : #initialization }
+MBPresenter class >> openReport: aResultOutput [
+
+	"make a tabular report of the outcome of the benchmark"
+	|tabularReport|
+	tabularReport := (SpTablePresenter new)
+		items: aResultOutput outcomes;
+		addColumn: (SpStringTableColumn  title: 'Implementation' evaluated: [:each | each benchmark name]);
+		addColumn: (SpStringTableColumn title: 'Time(ms)' evaluated: [:each | ((each measurements at: 1) at: 3 ) value]);
+		addColumn: (SpStringTableColumn title: 'Memory(Byte)' evaluated: [:each | each spaceMeasurements ]);
+		addColumn: (SpStringTableColumn title: 'MatrixSize' evaluated: [:each | (each parameters at: 1) value]);
+		yourself.
+	tabularReport openWithSpec.
+
+	
+]
+
 { #category : #'model updates' }
 MBPresenter >> activateButton: aButton [
 
 	self disableAllButtons.
 	aButton state: true.
+]
+
+{ #category : #'model updates' }
+MBPresenter >> addToPreviousExecutions: aReportPresenter [
+
+	previousExecutionsList add: aReportPresenter.
 ]
 
 { #category : #accessing }
@@ -81,30 +107,14 @@ MBPresenter >> connectPresenters [
 	].
 	
 	self benchmarkButton action: [ 
-		|benchmarkClass|
-		benchmarkClass := self getBenchmarkClass.
-		
-		"handle the edge case where the user has not selected any benchmark from the list,
-		but still goes on to click on the benchmark button"
-		benchmarkClass ifNil: [  
-			self handleNoOperationSelected]
-		
-		ifNotNil: [  
-
-		flag = 'SingleBenchmark' ifTrue: [ 
-				|benchmarkOutput| 
-				
-				benchmarkOutput := benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
-				self initializeReport: benchmarkOutput.
-				self initializePlots.
-				self designLayoutWithResults: benchmarkOutput.
-				self activateButton: resultsButton.
-			]
-		ifFalse: [ 
-			 benchmarkClass perform: #runAllBenchmarksFrom:to:by: with: self getFromMatrixSize with: self getToMatrixSize with: self getByMatrixSizeGap.
-			]
-		]
+		self executeBenchmarks.
 	].
+
+	self previousExecutionsButton action: [ 
+		self displayPreviousExecutions.
+		].
+	previousExecutionsListPresenter whenSelectionChangedDo: [ :selection |
+		self class openReport: selection selectedItem  ].
 	
 
  
@@ -202,8 +212,7 @@ MBPresenter >> designLayoutWithResults: aBenchmarkOutput [
 	withConstraints: [ :constraints | constraints padding: 4 ];
 	
 	addLast: (SpBoxLayout newLeftToRight 
-			add: #benchmarkButton  withConstraints: [ :constraints | constraints padding: 3 ];
-			add: #stopButton  withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #previousExecutionsButton  withConstraints: [ :constraints | constraints padding: 3 ];
 			 yourself
 		) withConstraints: [:constraints | constraints padding: 4];
 	yourself)
@@ -250,6 +259,61 @@ MBPresenter >> disableAllButtons [
 	plotButton  state: false.
 	runSingleBenchmarkButton  state: false.
 	runMultipleBenchmarkButton  state: false.
+]
+
+{ #category : #layout }
+MBPresenter >> displayPreviousExecutions [
+
+
+	self layout: (SpBoxLayout newTopToBottom 
+	add: 
+		(SpBoxLayout  newLeftToRight 
+			add: #runSingleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #runMultipleBenchmarkButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #resultsButton withConstraints: [ :constraints | constraints padding: 3 ];
+			add: #plotButton withConstraints: [ :constraints | constraints padding: 3 ];
+			yourself) 
+	withConstraints: [ :constraints | constraints height: self class buttonHeight;  padding: 1 ];
+	
+	add: 'Click on the benchmark to see the result'
+	withConstraints: [ :constraints| constraints expand: false; padding: 2 ];
+
+	add: previousExecutionsListPresenter 
+	withConstraints: [ :constraints | constraints padding: 4 ];
+	yourself).
+	
+
+
+
+]
+
+{ #category : #benchmark }
+MBPresenter >> executeBenchmarks [
+		|benchmarkClass|
+		benchmarkClass := self getBenchmarkClass.
+		
+		"handle the edge case where the user has not selected any benchmark from the list,
+		but still goes on to click on the benchmark button"
+		benchmarkClass ifNil: [  
+			self handleNoOperationSelected]
+		
+		ifNotNil: [  
+
+		flag = 'SingleBenchmark' ifTrue: [ 
+				|benchmarkOutput| 
+				
+				benchmarkOutput := benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
+				self initializeReport: benchmarkOutput.
+				self addToPreviousExecutions: benchmarkOutput.
+				self initializePlots.
+				self designLayoutWithResults: benchmarkOutput.
+				self activateButton: resultsButton.
+
+			]
+		ifFalse: [ 
+			 benchmarkClass perform: #runAllBenchmarksFrom:to:by: with: self getFromMatrixSize with: self getToMatrixSize with: self getByMatrixSizeGap.
+			]
+		]
 ]
 
 { #category : #accessing }
@@ -332,6 +396,8 @@ MBPresenter >> initializeButtons [
 
 	benchmarkButton := self newButton label: 'benchmark'; color: Color orange; yourself.
 	stopButton := self newButton label: 'Stop'; color: Color red;  yourself.
+	
+	previousExecutionsButton := self newButton label: 'Previous Executions'; color: Color orange; yourself.
 ]
 
 { #category : #initialization }
@@ -342,6 +408,13 @@ MBPresenter >> initializeList [
 		items: MBAbstract subclasses;
 		display: [ : classRef | self descriptionForItemAt: classRef ];
 		contextMenu: [ self openBrowser].
+
+	previousExecutionsList := OrderedCollection new.
+	previousExecutionsListPresenter := self newList 
+												items: previousExecutionsList;
+												display: [ :item | item benchmarkClass class friendlyName,'  ',item timestamp asString].
+	
+	
 
 ]
 
@@ -384,15 +457,13 @@ MBPresenter >> initializePresenters [
 MBPresenter >> initializeReport: aResultOutput [
 
 	"make a tabular report of the outcome of the benchmark"
-	reportPresenter  := (SpTablePresenter new)
-		items: aResultOutput outcomes;
+	reportPresenter := (SpTablePresenter new)
+		items: aResultOutput  outcomes;
 		addColumn: (SpStringTableColumn  title: 'Implementation' evaluated: [:each | each benchmark name]);
 		addColumn: (SpStringTableColumn title: 'Time(ms)' evaluated: [:each | ((each measurements at: 1) at: 3 ) value]);
 		addColumn: (SpStringTableColumn title: 'Memory(Byte)' evaluated: [:each | each spaceMeasurements ]);
 		addColumn: (SpStringTableColumn title: 'MatrixSize' evaluated: [:each | (each parameters at: 1) value]);
-		yourself
-
-	
+		yourself.
 ]
 
 { #category : #accessing }
@@ -407,7 +478,7 @@ MBPresenter >> matrixSizeInput [
 	^ matrixSizeInput
 ]
 
-{ #category : #initialization }
+{ #category : #display }
 MBPresenter >> openBrowser [
 
 	^ self operationsListPresenter selection selectedItem browse
@@ -423,6 +494,18 @@ MBPresenter >> operationsListPresenter [
 MBPresenter >> plotButton [ 
 
 	^plotButton 
+]
+
+{ #category : #accessing }
+MBPresenter >> previousExecutionsButton [ 
+
+	^previousExecutionsButton
+]
+
+{ #category : #accessing }
+MBPresenter >> reportPresenter [ 
+
+	^reportPresenter
 ]
 
 { #category : #accessing }
