@@ -113,6 +113,7 @@ MBPresenter >> connectPresenters [
 	self previousExecutionsButton action: [ 
 		self displayPreviousExecutions.
 		].
+	"display report of previous execution when selection of the list is changed"
 	previousExecutionsListPresenter whenSelectionChangedDo: [ :selection |
 		self class openReport: selection selectedItem  ].
 	
@@ -264,7 +265,8 @@ MBPresenter >> disableAllButtons [
 { #category : #layout }
 MBPresenter >> displayPreviousExecutions [
 
-
+	"displays the list of previous executions in a list.
+	User can click on the list elements to open a particular report."
 	self layout: (SpBoxLayout newTopToBottom 
 	add: 
 		(SpBoxLayout  newLeftToRight 
@@ -303,6 +305,7 @@ MBPresenter >> executeBenchmarks [
 				|benchmarkOutput| 
 				
 				benchmarkOutput := benchmarkClass perform: #runBenchmarks: with: self getMatrixSize.
+				"results tab will be now displayed, along with the plots"
 				self initializeReport: benchmarkOutput.
 				self addToPreviousExecutions: benchmarkOutput.
 				self initializePlots.
