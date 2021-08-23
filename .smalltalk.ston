@@ -1,7 +1,7 @@
 SmalltalkCISpec {
     #loading : [
     SCIMetacelloLoadSpec {
-      #baseline : 'Matrix-Benchmark',
+      #baseline : 'MatrixBenchmark',
       #directory : 'src'
     }
   ],
