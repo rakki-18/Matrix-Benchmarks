@@ -109,4 +109,16 @@ spec
   with: [ spec repository: 'github://rakki-18/Matrix-Benchmarks/src' ].
 ```
 
+
 Check out [Baselines](https://github.com/pharo-open-documentation/pharo-wiki/blob/master/General/Baselines.md) to learn more about baselines.
+
+
+## Running Benchmark UI
+- Select the matrix operation.
+- Select the matrix sizes parameters and execute
+- Outputs the benchmark results and plots.
+
+![benchmark_ui](https://user-images.githubusercontent.com/55957545/155751533-e4e3f32a-08e8-4322-9236-5802b4dda6f7.png)
+
+
+![benchmark_result](https://user-images.githubusercontent.com/55957545/155751747-935aa3e0-63ef-43c9-9bda-2b587cd66846.png)
